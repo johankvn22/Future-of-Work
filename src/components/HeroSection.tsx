@@ -150,15 +150,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
               </div>
             </div>
 
-            {/* RIGHT VIDEO CARD — portrait Reel style in the blue area */}
-            <div className="w-full lg:w-[52%] flex justify-center lg:justify-start items-start">
-              <div className="w-full max-w-[340px] bg-[#0B1628]/85 backdrop-blur-sm border border-white/15 rounded-3xl overflow-hidden shadow-2xl hover:border-white/30 transition-all">
+            {/* RIGHT VIDEO CARD — portrait Reel style, centered in blue area */}
+            <div className="w-full lg:w-[52%] flex justify-center items-center">
+              <div className="w-full max-w-[360px] rounded-3xl overflow-hidden shadow-2xl border border-white/20 hover:border-white/40 transition-all" style={{background: 'rgba(10, 25, 80, 0.55)', backdropFilter: 'blur(12px)'}}>
 
                 {/* IG bar */}
-                <div className="px-4 py-2.5 bg-white/5 border-b border-white/10 flex items-center justify-between text-xs">
+                <div className="px-4 py-3 flex items-center justify-between text-xs" style={{background: 'rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.12)'}}>
                   <div className="flex items-center gap-2">
                     <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 p-[2px] flex items-center justify-center">
-                      <div className="w-full h-full bg-[#0B1628] rounded-full flex items-center justify-center text-[8px] font-black text-white">IG</div>
+                      <div className="w-full h-full rounded-full flex items-center justify-center text-[8px] font-black text-white" style={{background: 'rgba(10,25,80,0.9)'}}>IG</div>
                     </div>
                     <span className="font-bold text-white">@maxy.academy</span>
                   </div>
@@ -171,13 +171,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                 </div>
 
                 {/* Video — portrait/reel height */}
-                <div className="w-full h-[440px] bg-black flex items-center justify-center overflow-hidden">
+                <div className="w-full h-[400px] bg-black flex items-center justify-center overflow-hidden">
                   <video
                     src={VIDEO_LINKS.hero.videoSrc}
                     poster={VIDEO_LINKS.hero.thumbnailSrc}
                     controls
                     playsInline
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   >
                     Your browser does not support HTML5 video.
                   </video>
@@ -197,18 +197,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                 </div>
 
                 {/* Quick specs */}
-                <div className="grid grid-cols-3 divide-x divide-white/10 border-t border-white/10">
+                <div className="grid grid-cols-3 divide-x border-t" style={{borderColor: 'rgba(255,255,255,0.12)', divideColor: 'rgba(255,255,255,0.12)'}}>
                   <div className="px-3 py-2.5 text-center">
                     <p className="text-white text-[11px] font-bold leading-tight">28-29 Juli 2026</p>
-                    <p className="text-slate-400 text-[9px] mt-0.5">Online &amp; Onsite</p>
+                    <p className="text-blue-200/70 text-[9px] mt-0.5">Online &amp; Onsite</p>
                   </div>
-                  <div className="px-3 py-2.5 text-center">
+                  <div className="px-3 py-2.5 text-center" style={{borderLeft: '1px solid rgba(255,255,255,0.12)', borderRight: '1px solid rgba(255,255,255,0.12)'}}>
                     <p className="text-white text-[11px] font-bold leading-tight">MAXY AI HUB</p>
-                    <p className="text-slate-400 text-[9px] mt-0.5">Jakarta</p>
+                    <p className="text-blue-200/70 text-[9px] mt-0.5">Jakarta</p>
                   </div>
                   <div className="px-3 py-2.5 text-center">
                     <p className="text-white text-[11px] font-bold leading-tight">2 × 8 jam</p>
-                    <p className="text-slate-400 text-[9px] mt-0.5">Intensif</p>
+                    <p className="text-blue-200/70 text-[9px] mt-0.5">Intensif</p>
                   </div>
                 </div>
 

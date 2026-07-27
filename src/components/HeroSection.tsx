@@ -82,7 +82,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                 AI Tools yang Dikuasai (Praktik Use Case Bisnis Nyata):
               </div>
               <div className="flex flex-wrap gap-2">
-                {['Gemini', 'Claude', 'NotebookLM', 'Google AI Studio', 'ChatGPT'].map((tool) => (
+                {['ChatGPT', 'Gemini', 'NotebookLM', 'FlowBuddy'].map((tool) => (
                   <span
                     key={tool}
                     className="bg-[#132038] border border-[#1B2C4A] text-[#E2E8F0] font-display font-bold text-xs px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5"

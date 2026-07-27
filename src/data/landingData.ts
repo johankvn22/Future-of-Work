@@ -317,7 +317,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: "faq-3",
     question: "Tools AI apa yang perlu disiapkan sebelum kelas?",
-    answer: "Cukup laptop dan akun Google. Sebagian besar praktik bisa diikuti dengan versi gratis Gemini, Claude, NotebookLM, dan Google AI Studio. Checklist persiapan lengkap dikirim sebelum hari-H.",
+    answer: "Cukup laptop dan akun Google. Praktik bisa diikuti dengan versi gratis ChatGPT, Gemini, NotebookLM, dan FlowBuddy. Checklist lengkap dikirim sebelum hari-H.",
     category: "Persiapan"
   },
   {

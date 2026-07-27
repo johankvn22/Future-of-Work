@@ -92,23 +92,23 @@ export const AI_TOOLS = [
 export const REALITA_PAIN_POINTS = [
   {
     icon: "Flame",
-    title: "Target Terus Naik, Headcount Tidak Bertambah",
-    description: "Ekspektasi bisnis terus naik, tapi Anda masih memaksa tim mengejarnya dengan cara manual. Beban bertambah tanpa alat pendukung yang tepat.",
+    title: "Target meroket, tapi tim burnout",
+    description: "Ekspektasi bisnis naik, tapi Anda masih memaksa tim mengejarnya dengan workflow manual. Ini bukan soal dedikasi — ini soal menunggu sistem hancur karena kelelahan massal.",
   },
   {
     icon: "UserX",
-    title: "High Performer Justru Paling Rentan Burnout",
-    description: "Mereka yang paling committed dan paling produktif — paling cepat kelelahan. Dan biaya kehilangan satu high performer jauh lebih besar dari biaya mencegahnya.",
+    title: "Talenta terbaik ada di ambang pintu keluar",
+    description: "Yang paling produktif justru beban kerjanya paling tidak masuk akal. Biaya kerugian saat kompetitor membajak high performer Anda jauh lebih fatal dari yang Anda bayangkan.",
   },
   {
-    icon: "Cpu",
-    title: "AI Sudah Dibeli, Namun Adaptasinya Masih Trial & Error",
-    description: "Banyak perusahaan sudah berlangganan tools AI — tapi makin terhambat karena tidak ada sistem penggunaan yang relevan dengan pekerjaan harian tim.",
+    icon: "TrendingDown",
+    title: "AI Anda berakhir sebagai \"cost dengan zero impact\"",
+    description: "Perusahaan membayar langganan tools AI, tapi operasional masih manual. Adopsi trial & error tanpa roadmap hanya membakar anggaran tanpa menyentuh akar masalah.",
   },
   {
     icon: "Clock",
-    title: "Keputusan Bisnis Masih Lambat",
-    description: "Meeting panjang, laporan terlambat, analisis menunggu — padahal kompetitor sudah menggunakan AI untuk memangkas waktu pengambilan keputusan hingga 60%.",
+    title: "Tenggelam birokrasi saat kompetitor berekspansi",
+    description: "Masih menunggu berminggu-minggu untuk olah data? Eksekutif lain memetakan pasar dalam hitungan jam dengan AI. Eksekutif yang lambat adalah eksekutif yang tertinggal.",
   }
 ];
 

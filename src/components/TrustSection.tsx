@@ -19,13 +19,17 @@ export const TrustSection: React.FC = () => {
         </div>
 
         {/* Brand Chips Carousel / Grid */}
-        <div className="flex flex-wrap justify-center items-center gap-2.5 max-w-5xl mx-auto mb-8">
+        <div className="flex flex-wrap justify-center items-center gap-3 max-w-6xl mx-auto mb-8">
           {TRUSTED_BRANDS.map((brand, idx) => (
             <div
               key={idx}
-              className="bg-white border border-slate-200 text-[#475569] font-display font-bold text-xs sm:text-sm px-4.5 py-2.5 rounded-lg shadow-xs hover:border-slate-300 transition-all text-center tracking-wide"
+              className="bg-white border border-slate-200 text-[#475569] font-display font-bold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-xs hover:border-slate-300 hover:shadow-sm transition-all flex items-center justify-center min-h-[60px] min-w-[120px] max-w-[200px] text-center tracking-wide"
             >
-              {brand}
+              {brand.logo ? (
+                <img src={brand.logo} alt={brand.name} className="h-7 sm:h-8 w-auto max-w-[150px] object-contain" />
+              ) : (
+                <span className="text-[#475569] px-2">{brand.name}</span>
+              )}
             </div>
           ))}
         </div>

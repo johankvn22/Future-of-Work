@@ -1,5 +1,5 @@
 import React from 'react';
-import { PROGRAM_PILLARS } from '../data/landingData';
+import { PROGRAM_PILLARS, AI_TOOLS } from '../data/landingData';
 import { HeartHandshake, Sparkles, Check, ArrowUpRight } from 'lucide-react';
 
 interface ProgramSectionProps {
@@ -103,18 +103,19 @@ export const ProgramSection: React.FC<ProgramSectionProps> = ({ onOpenRegister }
         </div>
 
         {/* AI Tools yang Akan Dikuasai Badge Box */}
-        <div className="max-w-2xl mx-auto mb-16 p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 text-center shadow-xs">
-          <h4 className="text-xs font-display font-extrabold tracking-[0.1em] text-slate-400 uppercase mb-4">
+        <div className="max-w-3xl mx-auto mb-16 p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 text-center shadow-xs">
+          <h4 className="text-xs font-display font-extrabold tracking-[0.1em] text-slate-400 uppercase mb-5">
             AI Tools yang Akan Dikuasai
           </h4>
-          <div className="flex flex-wrap justify-center items-center gap-2.5">
-            {['ChatGPT', 'Gemini', 'NotebookLM', 'FlowBuddy'].map((tool, idx) => (
-              <span
+          <div className="flex flex-wrap justify-center items-center gap-3.5">
+            {AI_TOOLS.map((tool, idx) => (
+              <div
                 key={idx}
-                className="px-5 py-2.5 rounded-lg bg-[#F8FAFC] border border-slate-200 text-[#0F172A] text-sm font-display font-bold shadow-xs hover:border-slate-300 transition-all"
+                className="px-5 py-3 rounded-xl bg-[#F8FAFC] border border-slate-200 text-[#0F172A] text-sm font-display font-bold shadow-xs hover:border-slate-300 hover:shadow-sm transition-all flex items-center gap-3"
               >
-                {tool}
-              </span>
+                <img src={tool.logo} alt={tool.name} className="h-6 sm:h-7 w-auto max-w-[90px] object-contain shrink-0" />
+                <span>{tool.name}</span>
+              </div>
             ))}
           </div>
         </div>

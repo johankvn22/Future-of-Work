@@ -1,5 +1,5 @@
 import React from 'react';
-import { EVENT_DETAILS, VIDEO_LINKS } from '../data/landingData';
+import { EVENT_DETAILS, VIDEO_LINKS, AI_TOOLS } from '../data/landingData';
 import { Calendar, MapPin, Clock, Play, CheckCircle2, ArrowRight, ShieldCheck, Zap, ExternalLink } from 'lucide-react';
 import holonIqBadge from '../assets/images/holoniq-badge.png';
 
@@ -78,18 +78,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
 
             {/* AI Tools Badge */}
             <div className="pt-2">
-              <div className="text-xs font-display font-extrabold uppercase tracking-wider text-slate-400 mb-2">
-                AI Tools yang Dikuasai (Praktik Use Case Bisnis Nyata):
+              <div className="text-xs font-display font-extrabold uppercase tracking-wider text-slate-400 mb-2.5">
+                AI Tools yang Dikuasai:
               </div>
-              <div className="flex flex-wrap gap-2">
-                {['ChatGPT', 'Gemini', 'NotebookLM', 'FlowBuddy'].map((tool) => (
-                  <span
-                    key={tool}
-                    className="bg-[#132038] border border-[#1B2C4A] text-[#E2E8F0] font-display font-bold text-xs px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5"
+              <div className="flex flex-wrap gap-2.5">
+                {AI_TOOLS.map((tool) => (
+                  <div
+                    key={tool.name}
+                    className="bg-white/95 border border-white/20 text-slate-900 font-display font-bold text-xs sm:text-sm px-3.5 py-2 rounded-xl transition-all flex items-center gap-2.5 shadow-md hover:scale-105"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#F59E0B]"></span>
-                    {tool}
-                  </span>
+                    <img src={tool.logo} alt={tool.name} className="h-5 sm:h-6 w-auto max-w-[80px] object-contain shrink-0" />
+                    <span className="tracking-wide">{tool.name}</span>
+                  </div>
                 ))}
               </div>
             </div>
@@ -125,23 +125,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
             
             <div className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl hover:border-amber-500/40 transition-all group">
               
-              <div className="px-5 py-3.5 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
-                <span className="text-xs font-extrabold text-amber-400 uppercase tracking-wider bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20 flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
-                  ▶ Video Overview & Pendaftaran
-                </span>
-                <button
-                  onClick={() => onOpenVideo(VIDEO_LINKS.hero.url, VIDEO_LINKS.hero.title)}
-                  className="text-slate-400 hover:text-amber-300 text-xs font-semibold inline-flex items-center gap-1 transition-colors"
-                >
-                  Perbesar ↗
-                </button>
-              </div>
-
               {/* Instagram Reel Direct Embed Wrapper with Native Inline Video Playback */}
-              <div className="w-full bg-slate-950 border-t border-b border-slate-800/60 relative">
+              <div className="w-full bg-slate-950 border-b border-slate-800/60 relative">
                 {/* Instagram Header Bar */}
-                <div className="px-4 py-2.5 bg-gradient-to-r from-purple-600/15 via-pink-600/15 to-amber-500/15 border-b border-slate-800/80 flex items-center justify-between text-xs">
+                <div className="px-4 py-3 bg-gradient-to-r from-purple-600/15 via-pink-600/15 to-amber-500/15 border-b border-slate-800/80 flex items-center justify-between text-xs">
                   <div className="flex items-center gap-2">
                     <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 p-[2px] flex items-center justify-center shadow-md">
                       <div className="w-full h-full bg-slate-950 rounded-full flex items-center justify-center text-[9px] font-extrabold text-white">
@@ -153,9 +140,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                       <span className="text-[10px] text-slate-400 -mt-0.5 block">Instagram Reels · Diputar Langsung</span>
                     </div>
                   </div>
-                  <span className="text-[10px] bg-slate-800/90 text-amber-300 font-bold px-2 py-0.5 rounded-md border border-slate-700">
-                    Reels
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] bg-slate-800/90 text-amber-300 font-bold px-2 py-0.5 rounded-md border border-slate-700">
+                      Reels
+                    </span>
+                    <button
+                      onClick={() => onOpenVideo(VIDEO_LINKS.hero.url, VIDEO_LINKS.hero.title)}
+                      className="text-slate-400 hover:text-amber-300 text-xs font-semibold inline-flex items-center gap-1 transition-colors bg-slate-900/80 px-2 py-0.5 rounded-md border border-slate-800"
+                    >
+                      Perbesar ↗
+                    </button>
+                  </div>
                 </div>
 
                 {/* Direct Inline HTML5 Player (Plays instantly without opening Instagram) */}

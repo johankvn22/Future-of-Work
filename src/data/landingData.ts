@@ -59,15 +59,22 @@ export const EVENT_DETAILS = {
 };
 
 export const TRUSTED_BRANDS = [
-  "ASSA",
-  "SINARMAS LAND",
-  "BANK BRI",
-  "TRIPUTRA GROUP",
-  "PLN ICON PLUS",
-  "ADIRA FINANCE",
-  "ANTERAJA",
-  "MITO",
-  "100+ ORGANISASI LAINNYA",
+  { name: "ASSA", logo: "/images/assa.png" },
+  { name: "SINARMAS LAND", logo: "/images/Sinar_Mas_Land_Logo.png" },
+  { name: "BANK BRI", logo: "/images/Logo_BRI.png" },
+  { name: "TRIPUTRA GROUP", logo: "/images/logo-triputra-group_(1).png" },
+  { name: "ADIRA FINANCE", logo: "/images/AF-Logo-Sponsor.png" },
+  { name: "ANTERAJA", logo: "/images/AnterAja.png" },
+  { name: "MITO", logo: "/images/mito.png" },
+  { name: "PLN ICON PLUS" },
+  { name: "100+ ORGANISASI LAINNYA" },
+];
+
+export const AI_TOOLS = [
+  { name: "ChatGPT", logo: "/images/ChatGPT-Logo-PNG-Images.png" },
+  { name: "Gemini", logo: "/images/Google_Gemini_logo_2025.svg.webp" },
+  { name: "NotebookLM", logo: "/images/notebooklm-logo-png_seeklogo-617841.png" },
+  { name: "FlowBuddy", logo: "/images/flowbuddy.png" },
 ];
 
 export const REALITA_PAIN_POINTS = [

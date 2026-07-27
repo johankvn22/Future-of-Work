@@ -47,7 +47,7 @@ export const VIDEO_LINKS = {
 export const EVENT_DETAILS = {
   title: "The Future of Work: How AI is Shaping Productivity & Workplace Happiness",
   subtitle: "Program hybrid 2 hari untuk HR Manager, Direktur, Entrepreneur, dan Owner. Pulang membawa sistem AI + Happiness siap jalan, bukan teori.",
-  dateText: "9–10 Juni 2026",
+  dateText: "28 & 29 Juli 2026",
   timeText: "08.30 – 17.00 WIB",
   location: "MAXY AI HUB, Jakarta",
   fullAddress: "Grha Pengharapan 2nd Floor, Jl. Denpasar Raya No.2, Blok F3, South Jakarta",
@@ -55,7 +55,7 @@ export const EVENT_DETAILS = {
   adminPhone: "+62 821 4499 5255",
   rawPhone: "6282144995255",
   earlyBirdCount: 10,
-  countdownTargetDate: "2026-06-09T08:30:00+07:00",
+  countdownTargetDate: "2026-07-28T08:30:00+07:00",
 };
 
 export const TRUSTED_BRANDS = [

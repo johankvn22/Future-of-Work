@@ -8,6 +8,17 @@ import portfolioBatch2Video from '../assets/videos/portfolio-batch2.mp4';
 import heroThumb from '../assets/videos/hero-thumb.jpg';
 import testimoniThumb from '../assets/videos/testimoni-thumb.jpg';
 import portfolioBatch2Thumb from '../assets/videos/portfolio-batch2-thumb.jpg';
+import logoAssa from '../assets/images/assa.png';
+import logoSinarmas from '../assets/images/Sinar_Mas_Land_Logo.png';
+import logoBri from '../assets/images/Logo_BRI.png';
+import logoTriputra from '../assets/images/logo-triputra-group_(1).png';
+import logoAdira from '../assets/images/AF-Logo-Sponsor.png';
+import logoAnteraja from '../assets/images/AnterAja.png';
+import logoMito from '../assets/images/mito.png';
+import logoChatGpt from '../assets/images/ChatGPT-Logo-PNG-Images.png';
+import logoGemini from '../assets/images/Google_Gemini_logo_2025.svg.webp';
+import logoNotebookLm from '../assets/images/notebooklm-logo-png_seeklogo-617841.png';
+import logoFlowbuddy from '../assets/images/flowbuddy.png';
 
 export const VIDEO_LINKS = {
   hero: {
@@ -59,22 +70,22 @@ export const EVENT_DETAILS = {
 };
 
 export const TRUSTED_BRANDS = [
-  { name: "ASSA", logo: "/images/assa.png" },
-  { name: "SINARMAS LAND", logo: "/images/Sinar_Mas_Land_Logo.png" },
-  { name: "BANK BRI", logo: "/images/Logo_BRI.png" },
-  { name: "TRIPUTRA GROUP", logo: "/images/logo-triputra-group_(1).png" },
-  { name: "ADIRA FINANCE", logo: "/images/AF-Logo-Sponsor.png" },
-  { name: "ANTERAJA", logo: "/images/AnterAja.png" },
-  { name: "MITO", logo: "/images/mito.png" },
+  { name: "ASSA", logo: logoAssa },
+  { name: "SINARMAS LAND", logo: logoSinarmas },
+  { name: "BANK BRI", logo: logoBri },
+  { name: "TRIPUTRA GROUP", logo: logoTriputra },
+  { name: "ADIRA FINANCE", logo: logoAdira },
+  { name: "ANTERAJA", logo: logoAnteraja },
+  { name: "MITO", logo: logoMito },
   { name: "PLN ICON PLUS" },
   { name: "100+ ORGANISASI LAINNYA" },
 ];
 
 export const AI_TOOLS = [
-  { name: "ChatGPT", logo: "/images/ChatGPT-Logo-PNG-Images.png" },
-  { name: "Gemini", logo: "/images/Google_Gemini_logo_2025.svg.webp" },
-  { name: "NotebookLM", logo: "/images/notebooklm-logo-png_seeklogo-617841.png" },
-  { name: "FlowBuddy", logo: "/images/flowbuddy.png" },
+  { name: "ChatGPT", logo: logoChatGpt },
+  { name: "Gemini", logo: logoGemini },
+  { name: "NotebookLM", logo: logoNotebookLm },
+  { name: "FlowBuddy", logo: logoFlowbuddy },
 ];
 
 export const REALITA_PAIN_POINTS = [

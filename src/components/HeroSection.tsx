@@ -22,11 +22,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
       <div
         className="absolute z-0 bg-white pointer-events-none"
         style={{
-          width: '150vw',
-          height: '150vw',
+          width: '170vw',
+          height: '170vw',
           borderRadius: '50%',
           top: '50%',
-          left: '-20vw',
+          left: '-10vw',
           transform: 'translate(-50%, -50%)',
         }}
       />
@@ -58,10 +58,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
       {/* ── Main Content ── */}
       <div className="relative z-10 w-full min-h-screen flex items-center">
         <div className="w-full px-6 sm:px-10 lg:px-16 xl:px-20 py-20">
-          <div className="flex flex-col lg:flex-row items-center gap-10 xl:gap-16">
+          <div className="flex flex-col lg:flex-row items-start gap-8 xl:gap-10">
 
             {/* LEFT TEXT — constrained to max ~430px so it always sits on white */}
-            <div className="w-full lg:w-[42%] xl:w-[44%] max-w-[460px] space-y-5">
+            <div className="w-full lg:w-[48%] space-y-5">
 
               {/* Eyebrow */}
               <div>
@@ -151,7 +151,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
             </div>
 
             {/* RIGHT VIDEO CARD — sits on blue area */}
-            <div className="w-full lg:w-[50%] xl:w-[48%] max-w-md lg:max-w-lg lg:ml-auto">
+            <div className="w-full lg:w-[52%]">
               <div className="bg-[#0B1628]/85 backdrop-blur-sm border border-white/15 rounded-3xl overflow-hidden shadow-2xl hover:border-white/30 transition-all">
 
                 {/* IG bar */}

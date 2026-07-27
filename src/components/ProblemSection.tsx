@@ -52,69 +52,74 @@ export const ProblemSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Transformation Comparison Table: Cara Lama vs Cara Baru */}
+        {/* Transformation Comparison Table: Manajemen Konvensional vs AI & Happiness-Driven */}
         <div className="bg-slate-950 border border-slate-800 rounded-3xl p-6 lg:p-10 mb-16 shadow-2xl">
-          <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
-            <span className="text-amber-400 text-xs font-bold uppercase tracking-widest">
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
+            <span className="text-amber-400 text-xs font-extrabold uppercase tracking-widest bg-amber-400/10 border border-amber-400/20 px-3.5 py-1 rounded-full inline-block">
               Pilihan Ada di Tangan Anda
             </span>
-            <h3 className="text-2xl font-extrabold text-white">
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
               Transformasi Cara Kerja Eksekutif &amp; Management
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             
-            {/* Cara Lama */}
-            <div className="bg-rose-950/20 border border-rose-900/40 rounded-2xl p-6 space-y-4">
-              <div className="flex items-center gap-2 text-rose-400 font-extrabold text-lg">
-                <X className="w-5 h-5 text-rose-500" />
-                <span>Cara Lama (Status Quo)</span>
+            {/* Manajemen Konvensional */}
+            <div className="bg-rose-950/30 border border-rose-900/50 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+              <div>
+                <div className="flex items-center gap-2 text-rose-400 font-extrabold text-xl pb-4 border-b border-rose-900/40">
+                  <span className="text-2xl">😮‍💨</span>
+                  <span>Manajemen Konvensional</span>
+                </div>
+                <ul className="divide-y divide-rose-900/30">
+                  <li className="py-4 first:pt-4 flex items-start gap-3 text-sm text-rose-200/90 leading-relaxed">
+                    <X className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                    <span>Mengorbankan banyak waktu untuk bekerja manual dalam analisis &amp; tugas repetitif</span>
+                  </li>
+                  <li className="py-4 flex items-start gap-3 text-sm text-rose-200/90 leading-relaxed">
+                    <X className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                    <span>Mengorbankan kesejahteraan karyawan demi target jangka pendek</span>
+                  </li>
+                  <li className="py-4 flex items-start gap-3 text-sm text-rose-200/90 leading-relaxed">
+                    <X className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                    <span>Pengambilan keputusan selalu terhambat birokrasi dan olah data</span>
+                  </li>
+                  <li className="py-4 flex items-start gap-3 text-sm text-rose-200/90 leading-relaxed">
+                    <X className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                    <span>Membiarkan talenta terbaik burnout karena beban kerja tak terukur</span>
+                  </li>
+                </ul>
               </div>
-              <ul className="space-y-3 text-sm text-slate-300">
-                <li className="flex items-start gap-2.5">
-                  <span className="text-rose-500 font-bold shrink-0">✕</span>
-                  <span>Membebankan analisis &amp; tugas repetitif secara manual ke tim</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-rose-500 font-bold shrink-0">✕</span>
-                  <span>High performer kelelahan &amp; paling cepat resign</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-rose-500 font-bold shrink-0">✕</span>
-                  <span>AI dianggap sebatas "cost tambahan" tanpa sistem terpakai</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-rose-500 font-bold shrink-0">✕</span>
-                  <span>Pengambilan keputusan bisnis masih lambat (berminggu-minggu)</span>
-                </li>
-              </ul>
             </div>
 
-            {/* Cara Masa Depan */}
-            <div className="bg-emerald-950/20 border border-emerald-900/40 rounded-2xl p-6 space-y-4">
-              <div className="flex items-center gap-2 text-emerald-400 font-extrabold text-lg">
-                <Check className="w-5 h-5 text-emerald-400" />
-                <span>Cara Masa Depan (Happily Productive)</span>
+            {/* AI & Happiness-Driven */}
+            <div className="bg-slate-900/90 border border-amber-500/30 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
+              <div>
+                <div className="flex items-center gap-2 text-amber-400 font-extrabold text-xl pb-4 border-b border-slate-800">
+                  <span className="text-2xl">⚡</span>
+                  <span>AI &amp; Happiness-Driven</span>
+                </div>
+                <ul className="divide-y divide-slate-800/80">
+                  <li className="py-4 first:pt-4 flex items-start gap-3 text-sm text-slate-200 leading-relaxed">
+                    <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>Hemat banyak waktu dalam mengerjakan tugas repetitif</span>
+                  </li>
+                  <li className="py-4 flex items-start gap-3 text-sm text-slate-200 leading-relaxed">
+                    <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>Ubah wellbeing karyawan menjadi keunggulan bisnis yang terukur</span>
+                  </li>
+                  <li className="py-4 flex items-start gap-3 text-sm text-slate-200 leading-relaxed">
+                    <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>Jadikan AI co-pilot strategis untuk keputusan yang lebih cepat &amp; tajam</span>
+                  </li>
+                  <li className="py-4 flex items-start gap-3 text-sm text-slate-200 leading-relaxed">
+                    <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>Jaga top performer Anda pada performa terbaiknya tanpa perlu takut turnover tinggi</span>
+                  </li>
+                </ul>
               </div>
-              <ul className="space-y-3 text-sm text-slate-200">
-                <li className="flex items-start gap-2.5">
-                  <span className="text-emerald-400 font-bold shrink-0">✓</span>
-                  <span>Alihkan beban rutin 100% ke AI, energi tim ke pekerjaan strategis</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-emerald-400 font-bold shrink-0">✓</span>
-                  <span>Retensi talent terjaga dengan sistem wellbeing berbasis data PERMA</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-emerald-400 font-bold shrink-0">✓</span>
-                  <span>Adopsi AI terstruktur dengan 30-Day Implementation Roadmap</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-emerald-400 font-bold shrink-0">✓</span>
-                  <span>AI sebagai daily partner eksekutif — keputusan 60% lebih cepat</span>
-                </li>
-              </ul>
             </div>
 
           </div>

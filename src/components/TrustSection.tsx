@@ -23,10 +23,10 @@ export const TrustSection: React.FC = () => {
           {TRUSTED_BRANDS.map((brand, idx) => (
             <div
               key={idx}
-              className="bg-white border border-slate-200 text-[#475569] font-display font-bold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-xs hover:border-slate-300 hover:shadow-sm transition-all flex items-center justify-center min-h-[60px] min-w-[120px] max-w-[200px] text-center tracking-wide"
+              className="bg-white border border-slate-200 text-[#475569] font-display font-bold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-xs hover:border-slate-300 hover:shadow-sm transition-all flex items-center justify-center min-h-[64px] min-w-[130px] max-w-[220px] text-center tracking-wide"
             >
               {brand.logo ? (
-                <img src={brand.logo} alt={brand.name} className="h-7 sm:h-8 w-auto max-w-[150px] object-contain" />
+                <img src={brand.logo} alt={brand.name} className="h-8 sm:h-10 w-auto max-w-[160px] object-contain" />
               ) : (
                 <span className="text-[#475569] px-2">{brand.name}</span>
               )}

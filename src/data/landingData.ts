@@ -19,6 +19,7 @@ import logoChatGpt from '../assets/images/ChatGPT-Logo-PNG-Images.png';
 import logoGemini from '../assets/images/Google_Gemini_logo_2025.svg.webp';
 import logoNotebookLm from '../assets/images/notebooklm-logo-png_seeklogo-617841.png';
 import logoFlowbuddy from '../assets/images/flowbuddy.png';
+import logoPlnIconPlus from '../assets/images/pln-icon-plus.png';
 
 export const VIDEO_LINKS = {
   hero: {
@@ -77,7 +78,7 @@ export const TRUSTED_BRANDS = [
   { name: "ADIRA FINANCE", logo: logoAdira },
   { name: "ANTERAJA", logo: logoAnteraja },
   { name: "MITO", logo: logoMito },
-  { name: "PLN ICON PLUS" },
+  { name: "PLN ICON PLUS", logo: logoPlnIconPlus },
   { name: "100+ ORGANISASI LAINNYA" },
 ];
 

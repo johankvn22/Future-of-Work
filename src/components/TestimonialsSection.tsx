@@ -77,11 +77,11 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
           </div>
         </div>
 
-        {/* Video Cards Grid: Batch 1 (Portrait) & Batch 2 (Landscape) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Video Cards Grid: Batch 1 & Batch 2 (Equal Size & Symmetric) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
           
-          {/* 1. Video Portfolio Batch 1 (Portrait / Reel Format) */}
-          <div className="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between hover:border-cyan-500/40 transition-all group">
+          {/* 1. Video Portfolio Batch 1 */}
+          <div className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between hover:border-cyan-500/40 transition-all group">
             <div>
               <div className="px-5 py-3.5 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
                 <span className="text-xs font-extrabold text-cyan-400 uppercase tracking-wider bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
@@ -130,7 +130,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
               </div>
             </div>
 
-            <div className="px-5 py-3.5 bg-slate-950/80 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+            <div className="px-5 py-3.5 bg-slate-950/80 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 mt-auto">
               <span className="flex items-center gap-1.5 font-medium text-emerald-400">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 Siap putar langsung di atas 👆
@@ -146,12 +146,12 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
             </div>
           </div>
 
-          {/* 2. Video Portfolio Batch 2 (Landscape Format) */}
-          <div className="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between hover:border-indigo-500/40 transition-all group">
+          {/* 2. Video Portfolio Batch 2 */}
+          <div className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between hover:border-indigo-500/40 transition-all group">
             <div>
               <div className="px-5 py-3.5 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
                 <span className="text-xs font-extrabold text-indigo-400 uppercase tracking-wider bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
-                  ▶ Portfolio Batch 2 (Landscape)
+                  ▶ Portfolio Batch 2
                 </span>
                 <button
                   onClick={() => onOpenVideo(VIDEO_LINKS.portfolioBatch2.url, VIDEO_LINKS.portfolioBatch2.title)}
@@ -162,7 +162,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
                 </button>
               </div>
 
-              {/* Landscape Video Embed UI */}
+              {/* Instagram Reel Embed UI */}
               <div className="w-full bg-slate-950 border-t border-b border-slate-800/60 relative">
                 <div className="px-4 py-2 bg-gradient-to-r from-purple-600/15 via-pink-600/15 to-indigo-500/15 border-b border-slate-800/80 flex items-center justify-between text-xs">
                   <div className="flex items-center gap-2">
@@ -171,9 +171,9 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
                     </div>
                     <span className="font-bold text-slate-200">@maxy.academy</span>
                   </div>
-                  <span className="text-[10px] text-slate-400 font-medium">Landscape Video</span>
+                  <span className="text-[10px] text-slate-400 font-medium">Reels</span>
                 </div>
-                <div className="w-full aspect-video bg-black relative flex items-center justify-center overflow-hidden">
+                <div className="w-full h-[450px] bg-black relative flex items-center justify-center overflow-hidden">
                   <video
                     src={VIDEO_LINKS.portfolioBatch2.videoSrc}
                     poster={VIDEO_LINKS.portfolioBatch2.thumbnailSrc}
@@ -196,7 +196,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
               </div>
             </div>
 
-            <div className="px-5 py-3.5 bg-slate-950/80 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+            <div className="px-5 py-3.5 bg-slate-950/80 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 mt-auto">
               <span className="flex items-center gap-1.5 font-medium text-emerald-400">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 Siap putar langsung di atas 👆

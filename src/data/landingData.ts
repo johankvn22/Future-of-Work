@@ -95,140 +95,87 @@ export const REALITA_PAIN_POINTS = [
 
 export const PROGRAM_PILLARS = [
   {
-    day: "Dimensi 1",
-    title: "Happiness at Work",
-    subtitle: "Metode Berbasis Sains dari Woohoo Academy Denmark",
-    description: "Cara mengukur dan membangun workplace wellbeing yang secara langsung berkorelasi dengan produktivitas dan retensi.",
+    day: "HARI 1 · FONDASI",
+    title: "🧠 Happiness at Work",
+    subtitle: "Fondasi Psikologis & Sistem Kebahagiaan Kerja",
+    description: "Kenapa 79 dari 100 karyawan sudah 'resign' secara mental — dan Anda belum menyadarinya.",
     icon: "HeartHandshake",
     points: [
-      "Framework sustain performance tanpa burnout",
-      "Metrik wellbeing yang terkoneksi ke business KPI",
-      "Strategi retensi talent berbasis psychological safety",
+      "Bukti kuantitatif kenapa happiness adalah keputusan bisnis, bukan program CSR",
+      "Garis pemisah antara satisfaction dan happiness — dan Fish Philosophy sebagai model kerja",
+      "Empat prinsip Fish Philosophy & model ERIC: rancang kebiasaan personal yang menular ke tim",
+      "Petakan posisi organisasi Anda di salah satu dari 3 tahap Happily Productive Journey",
     ]
   },
   {
-    day: "Dimensi 2",
-    title: "AI for Leaders",
-    subtitle: "Implementasi AI yang Relevan untuk Eksekutif & Leaders",
-    description: "Bukan sisi teknis, tapi use case bisnis nyata: keputusan lebih cepat, beban repetitif berkurang, tim fokus ke pekerjaan bernilai tinggi.",
+    day: "HARI 2 · IMPLEMENTASI",
+    title: "🤖 AI for Happily Productive",
+    subtitle: "Otomatisasi & Transformasi Alur Kerja Bersama AI",
+    description: "Dari beban kerja rutin yang menumpuk, jadi asisten AI personal yang bekerja untuk Anda.",
     icon: "Sparkles",
     points: [
-      "Analisis dokumen & laporan dalam hitungan menit",
-      "Persiapan meeting & riset pasar dengan AI",
-      "Roadmap adopsi AI 30 hari untuk tim Anda",
+      "Diskusi reflektif membangun mindset keterbukaan terhadap disrupsi AI di cara kerja Anda",
+      "FGD menyelaraskan konsep Happily Productive 3.0 dengan fitur-fitur nyata FlowBuddy",
+      "Kuasai framework RCTF (Role, Context, Task, Format) untuk sintesis & kelola dokumen kerja internal",
+      "Rancang AI assistant personal (Custom Gem) untuk otomatisasi tugas rutin sesuai peran Anda",
     ]
   }
 ];
 
 export const DELIVERABLES: Deliverable[] = [
   {
-    id: "survey",
-    title: "Employee Happiness Survey siap deploy",
-    description: "Survei terstruktur berbasis PERMA untuk mengukur kondisi mental & produktivitas tim secara akurat.",
-    category: "happiness",
-    iconName: "ClipboardCheck",
-    sampleContent: `[EMPLOYEE HAPPINESS SURVEY - PERMA FRAMEWORK]
-1. Positive Emotion: Seberapa sering Anda merasa mendapat apresiasi positif dari tim minggu ini?
-2. Engagement: Seberapa leluasa Anda menggunakan keahlian utama dalam pekerjaan sehari-hari?
-3. Relationships: Apakah ada rasa saling percaya dan saling mendukung di tim Anda?
-4. Meaning: Seberapa jelas Anda melihat kaitan antara tugas harian Anda dengan visi besar perusahaan?
-5. Accomplishment: Seberapa sering target dan progres kerja Anda dirayakan secara adil?`
-  },
-  {
-    id: "gap-map",
-    title: "Happiness Gap Map per dimensi PERMA",
-    description: "Peta kesenjangan wellbeing tiap departemen untuk mendeteksi potensi burnout sebelum terlambat.",
-    category: "happiness",
-    iconName: "BarChart3",
-    sampleContent: `[HAPPINESS GAP MAP - PERMA ANALYSIS]
-- HR Dept: Gap pada Positive Emotion (Beban kerja administrasi rekrutmen tinggi) -> Solusi: Prompt Automation HR.
-- Ops Dept: Gap pada Accomplishment (Beban lembur terulang) -> Solusi: AI Document Summarizer.
-- Management: Gap pada Meaning -> Solusi: Executive Dashboard Clarification.`
-  },
-  {
-    id: "playbook",
-    title: "Manager Playbook 30 aksi konkret",
-    description: "Panduan taktis 30 langkah praktis yang bisa langsung diterapkan oleh para manajer besok pagi.",
+    id: "gap-analysis",
+    title: "GAP Analysis Cara Kerja",
+    description: "Jarak nyata organisasi Anda menuju future of work — bukan asumsi",
     category: "strategy",
-    iconName: "BookOpen",
-    sampleContent: `[MANAGER PLAYBOOK - ACTION ITEM #01]
-"Daily 10-Minute Standup & AI Workflow Check"
-Langkah:
-1. Identifikasi 1 tugas paling repetitif hari ini.
-2. Gunakan NotebookLM / Gemini untuk membuat ringkasan/draft pertama.
-3. Alokasikan waktu sisa untuk supervisi strategis dan check-in tim.`
-  },
-  {
-    id: "roadmap",
-    title: "30-Day Implementation Roadmap",
-    description: "Rencana adopsi AI 30 hari secara bertahap dan terukur untuk tim dan departemen Anda.",
-    category: "ai",
-    iconName: "Milestone",
-    sampleContent: `[30-DAY AI ADOPTION ROADMAP]
-- Minggu 1: Audit tugas repetitif & pengenalan dasar Gemini / Claude.
-- Minggu 2: Pembuatan Prompt Library spesifik untuk tugas rutin harian.
-- Minggu 3: Integrasi NotebookLM & Google AI Studio pada laporan rapat.
-- Minggu 4: Evaluasi pemangkasan waktu kerja (target -60% waktu keputusan).`
-  },
-  {
-    id: "campaign",
-    title: "Happiness Campaign 30 hari siap launch",
-    description: "Kalender kampanye internal, template email, dan materi apresiasi tim selama 30 hari.",
-    category: "happiness",
-    iconName: "CalendarDays",
-    sampleContent: `[HAPPINESS CAMPAIGN 30 HARI]
-- Day 1: Email Pengumuman CEO - "Komitmen Baru: Happily Productive Work Culture"
-- Day 7: AI Speed Hack Friday - Saling Berbagi Prompt AI Efektif
-- Day 14: Peer Appreciation Day - Ucapan Terima Kasih antar Rekan Kerja
-- Day 30: Review Dampak & Apresiasi Kinerja Tim`
-  },
-  {
-    id: "roi-deck",
-    title: "ROI Deck 8 slide board-ready",
-    description: "Presentasi 8 slide profesional siap dibawakan ke meja direksi untuk menunjukkan dampak bisnis wellbeing & AI.",
-    category: "strategy",
-    iconName: "Presentation",
-    sampleContent: `[ROI DECK 8 SLIDE SUMMARY]
-Slide 1: Tantangan Headcount & Burnout
-Slide 2: Biaya Kehilangan Top Talent vs Biaya Pencegahan
-Slide 3: Implementasi AI for Leaders & Efisiensi Waktu
-Slide 4: Peta Metrik Wellbeing x Business KPI
-Slide 5: Simulasi Penghematan Jam Kerja (-60% Waktu Keputusan)
-Slide 6: Project Plan 30 Hari
-Slide 7: Kebutuhan Invesstasi & Resource
-Slide 8: Projected Return on Investment (ROI)`
-  },
-  {
-    id: "prompt-hr",
-    title: "Template prompt HR siap pakai",
-    description: "Kumpulan prompt siap pakai untuk rekrutmen, pembuatan JD, SOP, dan analisis dokumen HR.",
-    category: "ai",
-    iconName: "ShieldCheck",
-    sampleContent: `[TEMPLATE PROMPT HR SIAP PAKAI]
-Prompt Screening CV:
-"Bertindak sebagai HR Director berpengalaman. Analisis CV berikut berdasarkan kriteria kebutuhan posisi Manager. Berikan skor kesesuaian (1-100), sebutkan 3 keunggulan utama, serta 2 poin klarifikasi saat interview."`
-  },
-  {
-    id: "policy",
-    title: "Kebijakan AI Minimum untuk tim HR",
-    description: "Dokumen panduan tata kelola & batasan etis penggunaan AI yang aman bagi data perusahaan.",
-    category: "ai",
-    iconName: "ShieldCheck",
-    sampleContent: `[KEBIJAKAN AI MINIMUM UNTUK TIM HR]
-1. Kerahasiaan Data: Dilarang memasukkan data sensitif seperti NIK, gaji, atau rahasia bisnis tanpa anonimisasi.
-2. Verifikasi Manusia: Semua laporan atau draf yang dihasilkan AI wajib diperiksa ulang oleh tim terkait.
-3. Transparansi: Penggunaan AI bersifat membantu efisiensi, bukan menggantikan tanggung jawab eksekusi.`
-  },
-  {
-    id: "automation",
-    title: "Sistem engagement data otomatis dari rapat",
-    description: "Workflow ekstraksi insight dan aksi dari rapat internal secara cepat menggunakan AI.",
-    category: "ai",
     iconName: "BarChart3",
-    sampleContent: `[WORKFLOW ENGAGEMENT DATA OTOMATIS]
-1. Upload transkrip / audio rapat ke NotebookLM / Google AI Studio.
-2. Prompt: "Ekstrak 3 poin keputusan utama, daftar action item beserta penanggung jawab, dan potensi bottleneck tim."
-3. Kirim rekap otomatis ke grup kerja dalam 2 menit pasca rapat.`
+    sampleContent: `[GAP ANALYSIS CARA KERJA]
+1. Audit proses kerja manual vs potensi otomatisasi AI.
+2. Analisis kesenjangan wellbeing dan risiko burnout per divisi.
+3. Roadmap transisi nyata menuju budaya kerja Future of Work yang efisien.`
+  },
+  {
+    id: "matriks-sinergi",
+    title: "Matriks Sinergi Talenta",
+    description: "Peta jelas: mana tugas milik manusia, mana milik AI automation",
+    category: "ai",
+    iconName: "Cpu",
+    sampleContent: `[MATRIKS SINERGI TALENTA]
+- Kuadran Manusia: Kepemimpinan empatik, kreativitas strategis, negosiasi & keputusan klinis.
+- Kuadran AI: Sintesis dokumen, drafting awal, pengolahan data rutin & riset pasar.
+- Hasil: Pembagian kerja harmonis tanpa kekhawatiran tim tergantikan oleh AI.`
+  },
+  {
+    id: "flowbuddy-sim",
+    title: "Simulasi FlowBuddy Teruji",
+    description: "Satu kasus kerja nyata Anda, dijalankan lewat meeting/decision partner",
+    category: "ai",
+    iconName: "Sparkles",
+    sampleContent: `[SIMULASI FLOWBUDDY TERUJI]
+- Simulasi penyelesaian bottleneck SDM dan produktivitas tim bersama FlowBuddy.
+- Pemanfaatan AI sebagai decision partner interaktif dalam rapat strategi pengambil keputusan.
+- Ekstraksi kesimpulan dan rencana taktis yang bisa langsung dieksekusi.`
+  },
+  {
+    id: "happiness-practice",
+    title: "Personal Happiness Practice",
+    description: "Jurnal refleksi harian (gratitude/mood tracking) yang bisa terus jalan",
+    category: "happiness",
+    iconName: "HeartHandshake",
+    sampleContent: `[PERSONAL HAPPINESS PRACTICE]
+- Panduan Jurnal Refleksi Harian & Mood Tracking mingguan untuk Leaders & Tim.
+- Integrasi 4 prinsip Fish Philosophy (Choose Your Attitude, Play, Make Their Day, Be There).
+- Strategi pembentukan kebiasaan personal positif yang menular ke seluruh lingkungan kerja.`
+  },
+  {
+    id: "prompt-rctf",
+    title: "Prompt RCTF Terstruktur",
+    description: "Koleksi prompt terstruktur siap pakai untuk analisis, sintesis & komunikasi tim",
+    category: "ai",
+    iconName: "FileText",
+    sampleContent: `[PROMPT RCTF TERSTRUKTUR SIAP PAKAI]
+- Framework: R (Role) + C (Context) + T (Task) + F (Format).
+- Contoh Prompt Evaluasi Tim: "Bertindak sebagai Strategic HR Consultant (Role). Dalam situasi evaluasi efisiensi bulanan (Context), sintesis laporan kinerja 5 divisi ini (Task) ke dalam format tabel matriks prioritas perbaikan (Format)."`
   }
 ];
 

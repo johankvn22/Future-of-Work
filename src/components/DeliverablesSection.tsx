@@ -25,23 +25,23 @@ export const DeliverablesSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
           <span className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-bold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full inline-block">
-            Bukan Teori. Semua Deliverables.
+            ROI YANG LANGSUNG TERLIHAT
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Semua yang Anda Bawa Pulang dari <span className="text-amber-400">2 Hari Ini</span>
+            Anda pulang membawa <span className="text-amber-400">deliverables, bukan teori.</span>
           </h2>
           <p className="text-slate-300 text-base leading-relaxed">
-            Anda pulang membawa sistem, survei, playbook, dan prompt library yang siap dijalankan di perusahaan Anda besok pagi.
+            Dalam 2 hari, Anda tidak hanya <em className="text-white font-semibold">tahu</em> cara membangun tim yang happily productive — Anda pulang membawa sistemnya, siap jalan besok pagi.
           </p>
         </div>
 
         {/* Category Filter Tabs */}
         <div className="flex flex-wrap justify-center gap-2 mb-10">
           {[
-            { id: 'all', label: 'Semua Deliverables (7)' },
-            { id: 'happiness', label: 'Happiness & PERMA' },
+            { id: 'all', label: 'Semua Deliverables (5)' },
+            { id: 'happiness', label: 'Happiness & Practice' },
             { id: 'ai', label: 'AI Tools & Prompts' },
-            { id: 'strategy', label: 'Strategy & ROI Deck' },
+            { id: 'strategy', label: 'Strategy & GAP Analysis' },
           ].map((tab) => (
             <button
               key={tab.id}

@@ -51,7 +51,7 @@ export const ProgramSection: React.FC<ProgramSectionProps> = ({ onOpenRegister }
                         : 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30'
                     }`}
                   >
-                    {pillar.day} · Focus Area
+                    {pillar.day}
                   </span>
 
                   <div className="w-12 h-12 rounded-2xl bg-slate-800/80 border border-slate-700 flex items-center justify-center">
@@ -88,7 +88,7 @@ export const ProgramSection: React.FC<ProgramSectionProps> = ({ onOpenRegister }
 
               <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between">
                 <span className="text-xs text-slate-400 font-medium">
-                  Deliverable: {idx === 0 ? 'PERMA Happiness Gap Map & Playbook' : '30-Day AI Roadmap & Prompts'}
+                  Deliverable: {idx === 0 ? 'GAP Analysis & Personal Happiness Practice' : 'Matriks Sinergi, FlowBuddy & Prompt RCTF'}
                 </span>
                 <button
                   onClick={() => onOpenRegister(idx === 0 ? 'online' : 'onsite')}
@@ -100,6 +100,23 @@ export const ProgramSection: React.FC<ProgramSectionProps> = ({ onOpenRegister }
 
             </div>
           ))}
+        </div>
+
+        {/* AI Tools yang Akan Dikuasai Badge Box */}
+        <div className="max-w-2xl mx-auto mb-16 p-6 sm:p-8 rounded-3xl bg-slate-900/90 border border-slate-800 text-center shadow-xl">
+          <h4 className="text-xs font-extrabold tracking-widest text-slate-400 uppercase mb-5">
+            AI Tools yang Akan Dikuasai
+          </h4>
+          <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4">
+            {['ChatGPT', 'Gemini', 'NotebookLM', 'FlowBuddy'].map((tool, idx) => (
+              <span
+                key={idx}
+                className="px-6 py-3 rounded-2xl bg-slate-950 border border-slate-700/80 text-white text-sm font-extrabold shadow-lg shadow-black/40 hover:border-amber-500/50 hover:text-amber-300 transition-all"
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* 3 Strategic Pillars (01, 02, 03) */}

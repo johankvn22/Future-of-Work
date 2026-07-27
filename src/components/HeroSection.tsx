@@ -232,14 +232,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
               </div>
             </div>
 
-            {/* Quick Guarantee & HolonIQ Award Badge Box */}
-            <div className="bg-[#132038] border border-white/10 rounded-2xl p-4 flex items-center justify-center gap-3.5 shadow-md">
-              <img src={holonIqBadge} alt="HolonIQ Southeast Asia EdTech 50" className="w-10 h-10 object-contain rounded-md shrink-0 border border-white/10" />
-              <div className="text-left text-xs">
-                <span className="text-white font-bold block leading-snug">Diselenggarakan oleh MAXY Academy</span>
-                <span className="text-slate-300 font-medium">HolonIQ Southeast Asia EdTech Top 50 Winner</span>
-              </div>
-            </div>
+
 
           </div>
 

@@ -25,11 +25,11 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
         </div>
 
         {/* Testimonials Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="flex flex-wrap justify-center gap-6 mb-16">
           {TESTIMONIALS.map((t) => (
             <div
               key={t.id}
-              className="bg-white border border-slate-200 hover:border-slate-300 rounded-2xl p-6 flex flex-col justify-between shadow-xs relative group transition-all"
+              className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] bg-white border border-slate-200 hover:border-slate-300 rounded-2xl p-6 flex flex-col justify-between shadow-xs relative group transition-all"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">

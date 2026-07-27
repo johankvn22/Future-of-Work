@@ -189,12 +189,45 @@ export const DELIVERABLES: Deliverable[] = [
   {
     id: "prompt-rctf",
     title: "Prompt RCTF Terstruktur",
-    description: "Koleksi prompt terstruktur siap pakai untuk analisis, sintesis & komunikasi tim",
+    description: "Untuk satu tugas nyata — laporan, ringkasan rapat, atau lainnya",
     category: "ai",
     iconName: "FileText",
     sampleContent: `[PROMPT RCTF TERSTRUKTUR SIAP PAKAI]
 - Framework: R (Role) + C (Context) + T (Task) + F (Format).
 - Contoh Prompt Evaluasi Tim: "Bertindak sebagai Strategic HR Consultant (Role). Dalam situasi evaluasi efisiensi bulanan (Context), sintesis laporan kinerja 5 divisi ini (Task) ke dalam format tabel matriks prioritas perbaikan (Format)."`
+  },
+  {
+    id: "sumber-notebooklm",
+    title: "Sumber NotebookLM Aktif",
+    description: "Dokumen kerja Anda sendiri, siap tanya-jawab & ringkasan otomatis",
+    category: "ai",
+    iconName: "BookOpen",
+    sampleContent: `[SUMBER NOTEBOOKLM AKTIF]
+- Dokumen SOP, kebijakan HR, dan knowledge base internal organisasi diubah menjadi sistem interaktif.
+- Tanya-jawab otomatis dengan sumber verifikatif terakreditasi dari file Anda sendiri.
+- Efisiensi pencarian informasi & penyelarasan regulasi bagi tim.`
+  },
+  {
+    id: "custom-gem-utuh",
+    title: "Custom Gem Dibangun Utuh",
+    description: "Instruksi, default tool, dan knowledge file sesuai peran Anda",
+    category: "ai",
+    iconName: "Cpu",
+    sampleContent: `[CUSTOM GEM DIBANGUN UTUH]
+- AI Asisten khusus berarsitektur kustom dengan instruksi khusus (System Prompting) sesuai peran Anda (HR, Management, C-Level).
+- Integrasi default tools & knowledge files penjelas standar organisasi.
+- Bekerja konstan sesuai format dan pedoman komunikasi perusahaan.`
+  },
+  {
+    id: "custom-gem-teruji",
+    title: "Custom Gem Teruji & Disempurnakan",
+    description: "Diuji pada kasus nyata, direvisi langsung dari hasilnya",
+    category: "ai",
+    iconName: "CheckCircle2",
+    sampleContent: `[CUSTOM GEM TERUJI & DIsempurnakan]
+- Hasil evaluasi & stress-test Custom Gem pada kasus riil di ekosistem bisnis Anda.
+- Revisi & optimasi parameter prompt berdasarkan output percontohan langsung di sesi Executive Program.
+- Ready-to-deploy sistem yang stabil untuk operasional sehari-hari.`
   }
 ];
 

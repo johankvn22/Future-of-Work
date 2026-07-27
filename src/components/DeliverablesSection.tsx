@@ -4,13 +4,8 @@ import { Deliverable } from '../types';
 import { CheckCircle2, Copy, Check, FileText, ArrowRight, X, Sparkles, Download } from 'lucide-react';
 
 export const DeliverablesSection: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<'all' | 'happiness' | 'ai' | 'strategy'>('all');
   const [activeDeliverable, setActiveDeliverable] = useState<Deliverable | null>(null);
   const [copied, setCopied] = useState(false);
-
-  const filteredDeliverables = selectedCategory === 'all'
-    ? DELIVERABLES
-    : DELIVERABLES.filter(d => d.category === selectedCategory);
 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -19,77 +14,54 @@ export const DeliverablesSection: React.FC = () => {
   };
 
   return (
-    <section id="deliverables" className="py-16 lg:py-24 bg-[#0B1628] text-white relative border-b border-[#1B2C4A]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="deliverables" className="py-20 lg:py-28 bg-[#071325] text-white relative border-b border-[#1A2942]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <span className="bg-[#00C4E8]/14 text-[#00C4E8] font-display font-extrabold text-xs uppercase tracking-[0.1em] px-4 py-1.5 rounded-full inline-block">
+        <div className="text-center max-w-4xl mx-auto space-y-4 mb-14">
+          <span className="bg-[#00C4E8]/15 text-[#00C4E8] font-display font-extrabold text-xs uppercase tracking-[0.15em] px-5 py-2 rounded-full inline-block shadow-sm">
             ROI YANG LANGSUNG TERLIHAT
           </span>
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight text-white">
-            Anda pulang membawa <span className="text-[#F59E0B]">deliverables, bukan teori.</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black tracking-tight text-white leading-tight">
+            Anda pulang membawa deliverables, bukan teori.
           </h2>
-          <p className="text-[#94A3B8] text-base leading-relaxed">
-            Dalam 2 hari, Anda tidak hanya <em className="text-white font-semibold">tahu</em> cara membangun tim yang happily productive — Anda pulang membawa sistemnya, siap jalan besok pagi.
+          <p className="text-[#8B9DB7] text-base sm:text-lg max-w-3xl mx-auto leading-relaxed pt-2">
+            Dalam 2 hari, Anda tidak hanya <em className="text-white font-semibold not-italic italic">tahu</em> cara membangun tim yang happily productive — Anda pulang membawa sistemnya, siap jalan besok pagi.
           </p>
         </div>
 
-        {/* Category Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {[
-            { id: 'all', label: 'Semua Deliverables (5)' },
-            { id: 'happiness', label: 'Happiness & Practice' },
-            { id: 'ai', label: 'AI Tools & Prompts' },
-            { id: 'strategy', label: 'Strategy & GAP Analysis' },
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setSelectedCategory(tab.id as any)}
-              className={`text-xs font-display font-extrabold px-4 py-2 rounded-xl transition-all ${
-                selectedCategory === tab.id
-                  ? 'bg-[#F59E0B] text-amber-950 shadow-lg shadow-amber-500/20'
-                  : 'bg-[#132038] text-slate-300 border border-white/10 hover:border-white/30'
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Deliverables Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {filteredDeliverables.map((item) => (
+        {/* 8 Deliverables Grid (3-Column Layout matching screenshot) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-16">
+          {DELIVERABLES.map((item) => (
             <div
               key={item.id}
               onClick={() => setActiveDeliverable(item)}
-              className="bg-white/5 border border-white/10 hover:bg-[#00C4E8]/10 hover:border-[#00C4E8]/40 rounded-xl p-5 transition-all hover:scale-[1.01] cursor-pointer group flex flex-col justify-between"
+              className="bg-[#0D1D35]/90 border border-[#1E304F] hover:bg-[#112544] hover:border-[#00C4E8]/50 rounded-2xl p-6 transition-all duration-300 hover:scale-[1.02] cursor-pointer group shadow-lg flex items-start gap-3.5 text-left"
+              title="Klik untuk lihat preview template & prompt"
             >
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="w-8 h-8 rounded-lg bg-emerald-400/10 border border-emerald-400/20 flex items-center justify-center text-[#34D399]">
-                    <CheckCircle2 className="w-5 h-5" />
-                  </span>
-                  <span className="text-[10px] font-display font-extrabold uppercase tracking-wider text-slate-400 bg-white/5 border border-white/10 px-2.5 py-1 rounded-md">
-                    Preview
-                  </span>
-                </div>
-
-                <h3 className="text-lg font-display font-bold text-white group-hover:text-[#00C4E8] transition-colors">
+              <span className="text-[#00C4E8] font-extrabold text-lg shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
+                ✓
+              </span>
+              <div className="space-y-1.5">
+                <h3 className="text-base sm:text-lg font-display font-bold text-white group-hover:text-[#00C4E8] transition-colors leading-snug">
                   {item.title}
                 </h3>
-
-                <p className="text-xs text-[#94A3B8] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#8B9DB7] leading-relaxed font-normal">
                   {item.description}
                 </p>
               </div>
-
-              <div className="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-xs text-[#F59E0B] font-display font-extrabold">
-                <span>Preview Template &amp; Prompt</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </div>
             </div>
           ))}
+        </div>
+
+        {/* Glowing Orange CTA Button at bottom */}
+        <div className="text-center flex justify-center">
+          <a
+            href="#daftar"
+            className="inline-flex items-center justify-center gap-2 bg-[#F59E0B] hover:bg-[#FBBF24] text-[#0A1628] font-display font-black text-base sm:text-lg px-8 py-4 rounded-xl shadow-[0_0_40px_rgba(245,158,11,0.35)] hover:shadow-[0_0_55px_rgba(245,158,11,0.55)] transition-all transform hover:-translate-y-0.5 active:translate-y-0 tracking-wide"
+          >
+            Daftar &amp; Bawa Pulang Sistemnya &rarr;
+          </a>
         </div>
 
         {/* Deliverable Preview Drawer/Modal */}

@@ -4,18 +4,18 @@ import { MessageCircle, ShieldCheck, Heart } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-950 text-slate-400 border-t border-slate-800 py-12 text-sm">
+    <footer className="bg-[#0B1628] text-slate-400 border-t border-white/10 py-12 text-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800 text-center md:text-left">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10 text-center md:text-left">
           
           <div className="space-y-2">
             <div className="flex items-center justify-center md:justify-start gap-2">
-              <div className="w-8 h-8 rounded-lg bg-blue-600 text-white font-extrabold text-base flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-blue-600 text-white font-display font-extrabold text-base flex items-center justify-center">
                 M
               </div>
-              <span className="text-xl font-extrabold text-white">
-                MAXY <span className="text-amber-400">ACADEMY</span>
+              <span className="text-xl font-display font-extrabold text-white">
+                MAXY <span className="text-[#F59E0B]">ACADEMY</span>
               </span>
             </div>
             <p className="text-xs text-slate-400 max-w-md">
@@ -28,13 +28,13 @@ export const Footer: React.FC = () => {
               href={`https://wa.me/${EVENT_DETAILS.rawPhone}?text=Halo%20Admin%20MAXY,%20saya%20ingin%20tanya%20mengenai%20kelas%20The%20Future%20of%20Work`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-bold px-4 py-2.5 rounded-xl border border-slate-800 flex items-center gap-2 transition-colors"
+              className="bg-[#132038] hover:bg-[#1B2C4A] text-slate-200 text-xs font-display font-bold px-4 py-2.5 rounded-xl border border-white/10 flex items-center gap-2 transition-colors"
             >
-              <MessageCircle className="w-4 h-4 text-emerald-400" />
+              <MessageCircle className="w-4 h-4 text-[#25D366]" />
               WhatsApp Admin ({EVENT_DETAILS.adminName} · {EVENT_DETAILS.adminPhone})
             </a>
             <span className="text-xs text-slate-400 flex items-center gap-1">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" /> HolonIQ SEA Top 50
+              <ShieldCheck className="w-4 h-4 text-[#34D399]" /> HolonIQ SEA Top 50
             </span>
           </div>
 

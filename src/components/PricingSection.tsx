@@ -18,25 +18,25 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenRegister }
   };
 
   return (
-    <section id="harga" className="py-16 lg:py-24 bg-slate-950 text-white relative border-b border-slate-800">
+    <section id="harga" className="py-16 lg:py-24 bg-white text-slate-900 relative border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <span className="bg-amber-500/10 text-amber-400 border border-amber-500/30 font-bold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full inline-block">
+          <span className="bg-[#EFF4FF] text-[#1B4FD8] font-display font-extrabold text-xs uppercase tracking-[0.1em] px-4 py-1.5 rounded-full inline-block">
             Investasi Strategis Perusahaan
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Pilih Paket &amp; <span className="text-amber-400">Amankan Slot Anda</span>
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight text-[#0F172A]">
+            Pilih Paket &amp; <span className="text-[#F59E0B]">Amankan Slot Anda</span>
           </h2>
-          <p className="text-slate-300 text-base leading-relaxed">
+          <p className="text-slate-600 text-base leading-relaxed">
             Pendaftaran dibuka untuk individu maupun perwakilan tim korporat. Tersedia invoice resmi dan dokumen pengadaan resmi untuk reimbursement kantor.
           </p>
         </div>
 
         {/* Interactive Pax / Seat Calculator Switcher */}
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 max-w-xl mx-auto mb-12 shadow-xl text-center space-y-4">
-          <div className="flex items-center justify-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
+        <div className="bg-[#F8FAFC] border border-slate-200 rounded-2xl p-6 max-w-xl mx-auto mb-12 shadow-xs text-center space-y-4">
+          <div className="flex items-center justify-center gap-2 text-xs font-display font-extrabold text-[#1B4FD8] uppercase tracking-wider">
             <Users className="w-4 h-4" />
             <span>Kalkulator Simulasi Jumlah Peserta (Pax):</span>
           </div>
@@ -46,17 +46,17 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenRegister }
               <button
                 key={num}
                 onClick={() => setSelectedPax(num)}
-                className={`w-10 h-10 rounded-xl font-bold text-sm transition-all ${
+                className={`w-10 h-10 rounded-xl font-display font-bold text-sm transition-all ${
                   selectedPax === num
-                    ? 'bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/30 scale-105'
-                    : 'bg-slate-950 text-slate-300 border border-slate-800 hover:border-slate-700'
+                    ? 'bg-[#F59E0B] text-amber-950 shadow-md scale-105'
+                    : 'bg-white text-slate-700 border border-slate-200 hover:border-slate-300'
                 }`}
               >
                 {num}x
               </button>
             ))}
           </div>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-slate-500 font-medium">
             {selectedPax > 1 ? `Simulasi total biaya untuk ${selectedPax} peserta perusahaan Anda:` : 'Harga per 1 peserta:'}
           </p>
         </div>
@@ -70,48 +70,48 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenRegister }
               return (
                 <div
                   key={pkg.id}
-                  className="bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-3xl p-8 flex flex-col justify-between transition-all"
+                  className="bg-white border border-slate-200 rounded-2xl p-8 flex flex-col justify-between shadow-xs hover:shadow-md transition-all"
                 >
                   <div className="space-y-6">
                     <div>
-                      <span className="text-xs font-bold uppercase tracking-widest text-slate-400 bg-slate-950 px-3 py-1 rounded-md border border-slate-800">
+                      <span className="text-xs font-display font-extrabold uppercase tracking-widest text-slate-500 bg-[#F8FAFC] px-3 py-1 rounded-md border border-slate-200">
                         Corporate In-House
                       </span>
-                      <h3 className="text-2xl font-extrabold text-white mt-3">
+                      <h3 className="text-2xl font-display font-extrabold text-[#0F172A] mt-3">
                         {pkg.name}
                       </h3>
-                      <p className="text-xs text-slate-400 mt-1">
+                      <p className="text-xs text-slate-500 mt-1">
                         {pkg.location}
                       </p>
                     </div>
 
-                    <div className="py-2 border-y border-slate-800">
-                      <div className="text-xl font-bold text-amber-400">
+                    <div className="py-2 border-y border-slate-200">
+                      <div className="text-xl font-display font-extrabold text-[#1B4FD8]">
                         Custom Proposal
                       </div>
-                      <p className="text-xs text-slate-400 mt-1">
+                      <p className="text-xs text-slate-500 mt-1">
                         Disesuaikan jumlah divisi &amp; kebutuhan kurikulum khusus
                       </p>
                     </div>
 
-                    <ul className="space-y-3 text-sm text-slate-300">
+                    <ul className="space-y-3 text-sm text-slate-700">
                       {pkg.features.map((feat, fIdx) => (
                         <li key={fIdx} className="flex items-start gap-2.5">
-                          <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                          <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" />
                           <span>{feat}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-slate-800">
+                  <div className="pt-6 mt-6 border-t border-slate-200">
                     <a
                       href={`https://wa.me/${EVENT_DETAILS.rawPhone}?text=Halo%20Admin%20MAXY,%20saya%20ingin%20konsultasi%20In-House%20Corporate%20Training%20The%20Future%20of%20Work`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-bold text-sm py-3.5 rounded-xl border border-slate-700 transition-all flex items-center justify-center gap-2"
+                      className="w-full bg-[#0B1628] hover:bg-slate-800 text-white font-display font-extrabold text-sm py-3.5 rounded-xl border border-[#0B1628] transition-all flex items-center justify-center gap-2"
                     >
-                      <MessageCircle className="w-4 h-4 text-emerald-400" />
+                      <MessageCircle className="w-4 h-4 text-[#25D366]" />
                       Konsultasi Corporate
                     </a>
                   </div>
@@ -122,83 +122,83 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenRegister }
             return (
               <div
                 key={pkg.id}
-                className={`rounded-3xl p-8 flex flex-col justify-between transition-all relative ${
+                className={`rounded-2xl p-8 flex flex-col justify-between transition-all relative ${
                   pkg.isRecommended
-                    ? 'bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border-2 border-amber-500 shadow-2xl shadow-amber-500/10'
-                    : 'bg-slate-900 border border-slate-800 hover:border-slate-700'
+                    ? 'bg-white border-2 border-[#F59E0B] shadow-xl shadow-amber-500/10'
+                    : 'bg-white border border-slate-200 shadow-xs'
                 }`}
               >
                 {/* Recommended Badge */}
                 {pkg.isRecommended && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-slate-950 text-xs font-black px-4 py-1 rounded-full uppercase tracking-widest shadow-lg flex items-center gap-1">
-                    <Star className="w-3.5 h-3.5 fill-slate-950" /> RECOMMENDED ONSITE
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#F59E0B] text-amber-950 text-xs font-display font-extrabold px-4 py-1 rounded-full uppercase tracking-widest shadow-md flex items-center gap-1">
+                    <Star className="w-3.5 h-3.5 fill-amber-950" /> RECOMMENDED ONSITE
                   </div>
                 )}
 
                 <div className="space-y-6">
                   <div>
-                    <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-md border ${
-                      pkg.isRecommended ? 'bg-amber-500/10 text-amber-400 border-amber-500/30' : 'bg-slate-950 text-slate-400 border-slate-800'
+                    <span className={`text-xs font-display font-extrabold uppercase tracking-widest px-3 py-1 rounded-md border ${
+                      pkg.isRecommended ? 'bg-amber-50 text-[#B45309] border-amber-200' : 'bg-[#F8FAFC] text-slate-500 border-slate-200'
                     }`}>
                       {pkg.id === 'onsite' ? '2 Days Onsite Experience' : '2 Days Online Zoom'}
                     </span>
-                    <h3 className="text-2xl font-extrabold text-white mt-3">
+                    <h3 className="text-2xl font-display font-extrabold text-[#0F172A] mt-3">
                       {pkg.name}
                     </h3>
-                    <p className="text-xs text-slate-400 mt-1">
+                    <p className="text-xs text-slate-500 mt-1">
                       {pkg.location}
                     </p>
                   </div>
 
                   {/* Price Box */}
-                  <div className="py-2 border-y border-slate-800">
+                  <div className="py-2 border-y border-slate-200">
                     <div className="flex items-baseline gap-2">
-                      <span className="text-3xl font-extrabold text-white">
+                      <span className="text-3xl font-display font-extrabold text-[#0F172A]">
                         {formatRupiah(totalPrice)}
                       </span>
                       {selectedPax > 1 && (
-                        <span className="text-xs text-slate-400 font-medium">
+                        <span className="text-xs text-slate-500 font-medium">
                           ({formatRupiah(pkg.pricePerPax)} / pax)
                         </span>
                       )}
                     </div>
-                    <p className="text-xs text-slate-400 mt-1">
+                    <p className="text-xs text-slate-500 mt-1">
                       Termasuk sertifikat, dokumen invoice resmi &amp; deliverables
                     </p>
                   </div>
 
                   {/* Bonuses List (if onsite) */}
                   {pkg.bonuses && (
-                    <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 space-y-2">
-                      <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1">
+                    <div className="bg-amber-50 border border-amber-200/80 rounded-xl p-3 space-y-2">
+                      <span className="text-[11px] font-display font-extrabold text-[#B45309] uppercase tracking-wider flex items-center gap-1">
                         <Sparkles className="w-3 h-3" /> Special Bonus Onsite:
                       </span>
                       {pkg.bonuses.map((bonus, bIdx) => (
-                        <div key={bIdx} className="text-xs text-amber-200 font-medium flex items-center gap-1.5">
-                          <span className="text-amber-400">★</span> {bonus}
+                        <div key={bIdx} className="text-xs text-[#B45309] font-medium flex items-center gap-1.5">
+                          <span className="text-[#F59E0B]">★</span> {bonus}
                         </div>
                       ))}
                     </div>
                   )}
 
                   {/* Features List */}
-                  <ul className="space-y-3 text-sm text-slate-200">
+                  <ul className="space-y-3 text-sm text-slate-700">
                     {pkg.features.map((feat, fIdx) => (
                       <li key={fIdx} className="flex items-start gap-2.5">
-                        <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                        <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" />
                         <span>{feat}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-slate-800">
+                <div className="pt-6 mt-6 border-t border-slate-200">
                   <button
                     onClick={() => onOpenRegister(pkg.id, selectedPax)}
-                    className={`w-full font-extrabold text-sm py-4 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 ${
+                    className={`w-full font-display font-extrabold text-sm py-3.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-2 ${
                       pkg.isRecommended
-                        ? 'bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-amber-500/20 hover:scale-[1.01]'
-                        : 'bg-slate-800 hover:bg-slate-700 text-white hover:border-slate-500 border border-slate-700'
+                        ? 'bg-[#F59E0B] hover:bg-amber-400 text-amber-950 shadow-amber-500/20'
+                        : 'border-2 border-[#0B1628] text-[#0B1628] hover:bg-[#0B1628] hover:text-white'
                     }`}
                   >
                     Daftar {pkg.name}
@@ -212,16 +212,16 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenRegister }
         </div>
 
         {/* Corporate In-House Banner */}
-        <div className="bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 border border-slate-800 rounded-3xl p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+        <div className="bg-[#F8FAFC] border border-dashed border-slate-300 rounded-2xl p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs max-w-4xl mx-auto">
           <div className="space-y-2 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 text-xs font-display font-extrabold text-[#1B4FD8] uppercase tracking-wider">
               <Building2 className="w-4 h-4" />
               <span>Kebutuhan Korporat Lebih Besar?</span>
             </div>
-            <h3 className="text-2xl font-extrabold text-white">
+            <h3 className="text-2xl font-display font-extrabold text-[#0F172A]">
               Tersedia Paket In-House Corporate Training
             </h3>
-            <p className="text-sm text-slate-300 max-w-2xl">
+            <p className="text-sm text-slate-600 max-w-2xl">
               Latih seluruh divisi di kantor Anda dengan kurikulum yang dikustomisasi sesuai industri dan tantangan spesifik perusahaan. Lengkap dengan proposal resmi &amp; NDA.
             </p>
           </div>
@@ -230,7 +230,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenRegister }
             href={`https://wa.me/${EVENT_DETAILS.rawPhone}?text=Halo%20Admin%20MAXY,%20saya%20tertarik%20dengan%20Proposal%20In-House%20Training%20The%20Future%20of%20Work`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm px-6 py-3.5 rounded-xl transition-all shrink-0 flex items-center gap-2 shadow-lg shadow-emerald-500/20"
+            className="bg-[#25D366] hover:bg-emerald-600 text-white font-display font-extrabold text-sm px-6 py-3.5 rounded-xl transition-all shrink-0 flex items-center gap-2 shadow-md"
           >
             <MessageCircle className="w-4 h-4" />
             Tanyakan Proposal Corporate

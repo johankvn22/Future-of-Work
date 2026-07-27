@@ -19,18 +19,18 @@ export const DeliverablesSection: React.FC = () => {
   };
 
   return (
-    <section id="deliverables" className="py-16 lg:py-24 bg-slate-900 text-white relative border-b border-slate-800">
+    <section id="deliverables" className="py-16 lg:py-24 bg-[#0B1628] text-white relative border-b border-[#1B2C4A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <span className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-bold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full inline-block">
+          <span className="bg-[#00C4E8]/14 text-[#00C4E8] font-display font-extrabold text-xs uppercase tracking-[0.1em] px-4 py-1.5 rounded-full inline-block">
             ROI YANG LANGSUNG TERLIHAT
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Anda pulang membawa <span className="text-amber-400">deliverables, bukan teori.</span>
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight text-white">
+            Anda pulang membawa <span className="text-[#F59E0B]">deliverables, bukan teori.</span>
           </h2>
-          <p className="text-slate-300 text-base leading-relaxed">
+          <p className="text-[#94A3B8] text-base leading-relaxed">
             Dalam 2 hari, Anda tidak hanya <em className="text-white font-semibold">tahu</em> cara membangun tim yang happily productive — Anda pulang membawa sistemnya, siap jalan besok pagi.
           </p>
         </div>
@@ -46,10 +46,10 @@ export const DeliverablesSection: React.FC = () => {
             <button
               key={tab.id}
               onClick={() => setSelectedCategory(tab.id as any)}
-              className={`text-xs font-bold px-4 py-2 rounded-xl transition-all ${
+              className={`text-xs font-display font-extrabold px-4 py-2 rounded-xl transition-all ${
                 selectedCategory === tab.id
-                  ? 'bg-amber-500 text-slate-950 shadow-lg shadow-amber-500/20'
-                  : 'bg-slate-950 text-slate-300 border border-slate-800 hover:border-slate-700'
+                  ? 'bg-[#F59E0B] text-amber-950 shadow-lg shadow-amber-500/20'
+                  : 'bg-[#132038] text-slate-300 border border-white/10 hover:border-white/30'
               }`}
             >
               {tab.label}
@@ -63,28 +63,28 @@ export const DeliverablesSection: React.FC = () => {
             <div
               key={item.id}
               onClick={() => setActiveDeliverable(item)}
-              className="bg-slate-950/90 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-6 transition-all hover:scale-[1.01] cursor-pointer group flex flex-col justify-between"
+              className="bg-white/5 border border-white/10 hover:bg-[#00C4E8]/10 hover:border-[#00C4E8]/40 rounded-xl p-5 transition-all hover:scale-[1.01] cursor-pointer group flex flex-col justify-between"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                  <span className="w-8 h-8 rounded-lg bg-emerald-400/10 border border-emerald-400/20 flex items-center justify-center text-[#34D399]">
                     <CheckCircle2 className="w-5 h-5" />
                   </span>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-md">
-                    Klik untuk preview
+                  <span className="text-[10px] font-display font-extrabold uppercase tracking-wider text-slate-400 bg-white/5 border border-white/10 px-2.5 py-1 rounded-md">
+                    Preview
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">
+                <h3 className="text-lg font-display font-bold text-white group-hover:text-[#00C4E8] transition-colors">
                   {item.title}
                 </h3>
 
-                <p className="text-sm text-slate-300 leading-relaxed">
+                <p className="text-xs text-[#94A3B8] leading-relaxed">
                   {item.description}
                 </p>
               </div>
 
-              <div className="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-amber-400 font-semibold">
+              <div className="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-xs text-[#F59E0B] font-display font-extrabold">
                 <span>Preview Template &amp; Prompt</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>

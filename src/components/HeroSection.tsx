@@ -9,20 +9,20 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpenVideo }) => {
   return (
-    <section className="relative bg-slate-950 text-white overflow-hidden pt-8 pb-16 lg:py-20 border-b border-slate-800">
+    <section className="relative bg-[#0B1628] text-white overflow-hidden pt-8 pb-16 lg:py-20 border-b border-[#1B2C4A]">
       {/* Subtle Background Glow Accent */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Target Audience Badge */}
         <div className="flex flex-wrap items-center gap-2 mb-6">
-          <span className="bg-amber-500/10 border border-amber-500/30 text-amber-400 font-semibold text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider flex items-center gap-1.5">
-            <Zap className="w-3.5 h-3.5 text-amber-400" />
-            Hybrid Class · 2 Hari Full
+          <span className="bg-[#00C4E8]/10 border border-[#00C4E8]/20 text-[#00C4E8] font-display font-bold text-xs px-3.5 py-1.5 rounded-full uppercase tracking-[0.14em] flex items-center gap-1.5">
+            <Zap className="w-3.5 h-3.5 text-[#00C4E8]" />
+            Hybrid Class · 28–29 Juli 2026 · MAXY AI HUB Jakarta
           </span>
-          <span className="bg-slate-800/80 text-slate-300 text-xs px-3 py-1.5 rounded-full font-medium border border-slate-700">
+          <span className="bg-[#132038] text-slate-300 text-xs px-3.5 py-1.5 rounded-full font-medium border border-white/10">
             Khusus: HR Manager · Direktur · Entrepreneur · Owner
           </span>
         </div>
@@ -32,33 +32,33 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
           {/* Main Copy Area */}
           <div className="lg:col-span-7 space-y-6">
             
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
-              The Future of Work: <br />
-              <span className="bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 bg-clip-text text-transparent">
-                How AI is Shaping Productivity
-              </span>{' '}
-              &amp; Workplace Happiness
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-white leading-[1.15]">
+              Sistem kerja Anda sedang menguras profit &amp; mencetak <span className="text-[#F59E0B]">burnout.</span>
             </h1>
 
-            <p className="text-slate-300 text-base sm:text-lg font-normal leading-relaxed max-w-2xl">
-              Sistem kerja Anda sedang menguras profit dan mencetak burnout. Tim Anda tidak butuh motivasi tambahan — <strong className="text-white font-semibold">mereka butuh sistem.</strong>
+            <p className="text-[#C7D3E4] text-base sm:text-lg font-normal leading-relaxed max-w-2xl">
+              Tim Anda tidak butuh sesi motivasi tambahan. <strong className="text-white font-semibold">Mereka butuh sistem.</strong> Setiap jam yang Anda tunda mengadopsi AI adalah jam terbuang untuk pekerjaan repetitif — sementara talenta terbaik Anda diam-diam membuka lowongan di tab sebelah.
             </p>
 
-            <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 space-y-3 shadow-inner">
-              <h3 className="text-xs font-bold text-amber-400 uppercase tracking-widest">
+            <p className="border-l-3 border-[#00C4E8] pl-4 text-slate-400 text-sm italic font-sans py-0.5">
+              Sementara Anda masih menanti laporan manual, eksekutif di perusahaan kompetitor sudah mengambil keputusan bisnis 60% lebih cepat dengan AI.
+            </p>
+
+            <div className="bg-[#132038] border border-white/10 rounded-2xl p-5 space-y-3 shadow-md">
+              <h3 className="text-xs font-display font-extrabold text-[#F59E0B] uppercase tracking-widest">
                 Yang Akan Anda Capai dalam 2 Hari:
               </h3>
               <ul className="space-y-2.5">
                 <li className="flex items-start gap-3 text-sm text-slate-200">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-[#34D399] shrink-0 mt-0.5" />
                   <span><strong>Sustain performance tanpa burnout tim</strong> — Alihkan beban administratif &amp; repetitif 100% ke AI.</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-200">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-[#34D399] shrink-0 mt-0.5" />
                   <span><strong>Kolaborasi Wellbeing &amp; Business Performance</strong> — Metrik happiness terukur yang langsung berkorelasi dengan ROI.</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-200">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-[#34D399] shrink-0 mt-0.5" />
                   <span><strong>AI sebagai Daily Partner Eksekutif</strong> — Pengambilan keputusan bisnis tajam hingga 60% lebih cepat.</span>
                 </li>
               </ul>
@@ -66,16 +66,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
 
             {/* AI Tools Badge */}
             <div className="pt-2">
-              <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+              <div className="text-xs font-display font-extrabold uppercase tracking-wider text-slate-400 mb-2">
                 AI Tools yang Dikuasai (Praktik Use Case Bisnis Nyata):
               </div>
               <div className="flex flex-wrap gap-2">
                 {['Gemini', 'Claude', 'NotebookLM', 'Google AI Studio', 'ChatGPT'].map((tool) => (
                   <span
                     key={tool}
-                    className="bg-slate-900 border border-slate-700 hover:border-amber-400/50 text-slate-200 text-xs font-bold px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5"
+                    className="bg-[#132038] border border-[#1B2C4A] text-[#E2E8F0] font-display font-bold text-xs px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#F59E0B]"></span>
                     {tool}
                   </span>
                 ))}
@@ -86,15 +86,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <button
                 onClick={() => onOpenRegister('onsite')}
-                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-base px-7 py-4 rounded-xl shadow-xl shadow-amber-500/25 transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"
+                className="bg-[#F59E0B] hover:bg-amber-400 text-amber-950 font-display font-extrabold text-base px-7 py-4 rounded-xl shadow-lg shadow-amber-500/25 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2"
               >
-                Amankan Slot Onsite / Online
+                Amankan Slot Anda Sekarang
                 <ArrowRight className="w-5 h-5" />
               </button>
 
               <a
                 href="#harga"
-                className="bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold text-sm px-6 py-4 rounded-xl border border-slate-700 hover:border-slate-500 transition-all text-center flex items-center justify-center gap-2"
+                className="bg-[#132038] hover:bg-slate-800 text-slate-200 font-display font-bold text-sm px-6 py-4 rounded-xl border border-white/10 transition-all text-center flex items-center justify-center gap-2"
               >
                 Lihat Paket &amp; Harga
               </a>

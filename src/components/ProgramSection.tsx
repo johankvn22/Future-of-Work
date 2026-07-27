@@ -8,19 +8,19 @@ interface ProgramSectionProps {
 
 export const ProgramSection: React.FC<ProgramSectionProps> = ({ onOpenRegister }) => {
   return (
-    <section id="program" className="py-16 lg:py-24 bg-slate-950 text-white border-b border-slate-800">
+    <section id="program" className="py-16 lg:py-24 bg-[#F8FAFC] text-slate-900 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <span className="bg-amber-500/10 text-amber-400 border border-amber-500/30 font-bold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full inline-block">
-            Struktur Kurikulum Masterclass
+          <span className="bg-[#EFF4FF] text-[#1B4FD8] font-display font-extrabold text-xs uppercase tracking-[0.1em] px-4 py-1.5 rounded-full inline-block">
+            Solusi Anda Ada di Sini
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Dua Hari. <span className="text-amber-400">Dua Dimensi Transformasi.</span>
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight text-[#0F172A]">
+            How AI Drives <span className="text-[#1B4FD8]">Happiness &amp; Productivity</span>
           </h2>
-          <p className="text-slate-300 text-base leading-relaxed">
-            Program hybrid yang memadukan ilmu <strong className="text-white">Happiness at Work</strong> dengan implementasi <strong className="text-white">AI praktis</strong> — dua hal yang sering dipandang terpisah, padahal nyatanya saling menguatkan.
+          <p className="text-slate-600 text-base leading-relaxed">
+            Program hybrid yang memadukan ilmu <strong className="text-[#0F172A]">Happiness at Work</strong> dengan implementasi <strong className="text-[#0F172A]">AI praktis</strong> — dua hal yang sering dipandang terpisah, padahal nyatanya saling menguatkan.
           </p>
         </div>
 
@@ -29,55 +29,55 @@ export const ProgramSection: React.FC<ProgramSectionProps> = ({ onOpenRegister }
           {PROGRAM_PILLARS.map((pillar, idx) => (
             <div
               key={idx}
-              className={`rounded-3xl p-8 lg:p-10 border transition-all relative overflow-hidden flex flex-col justify-between ${
+              className={`rounded-2xl p-6 lg:p-8 border transition-all relative overflow-hidden flex flex-col justify-between bg-white shadow-xs ${
                 idx === 0
-                  ? 'bg-gradient-to-b from-slate-900 to-slate-950 border-amber-500/30 hover:border-amber-500/50'
-                  : 'bg-gradient-to-b from-slate-900 to-slate-950 border-cyan-500/30 hover:border-cyan-500/50'
+                  ? 'border-slate-200 hover:border-amber-400'
+                  : 'border-slate-200 hover:border-blue-400'
               }`}
             >
               {/* Top Accent Light Bar */}
               <div
-                className={`absolute top-0 left-0 right-0 h-1.5 ${
-                  idx === 0 ? 'bg-amber-400' : 'bg-cyan-400'
+                className={`absolute top-0 left-0 right-0 h-1 ${
+                  idx === 0 ? 'bg-gradient-to-r from-[#F59E0B] to-[#FCD34D]' : 'bg-gradient-to-r from-[#1B4FD8] to-[#00C4E8]'
                 }`}
               />
 
               <div>
                 <div className="flex items-center justify-between mb-6">
                   <span
-                    className={`font-mono font-extrabold text-xs uppercase px-3.5 py-1.5 rounded-full border ${
+                    className={`font-display font-extrabold text-xs uppercase px-3.5 py-1.5 rounded-full border ${
                       idx === 0
-                        ? 'bg-amber-500/10 text-amber-400 border-amber-500/30'
-                        : 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30'
+                        ? 'bg-amber-50 text-[#B45309] border-amber-200'
+                        : 'bg-blue-50 text-[#1B4FD8] border-blue-200'
                     }`}
                   >
                     {pillar.day}
                   </span>
 
-                  <div className="w-12 h-12 rounded-2xl bg-slate-800/80 border border-slate-700 flex items-center justify-center">
+                  <div className="w-11 h-11 rounded-xl bg-[#F8FAFC] border border-slate-200 flex items-center justify-center">
                     {idx === 0 ? (
-                      <HeartHandshake className="w-6 h-6 text-amber-400" />
+                      <HeartHandshake className="w-5 h-5 text-[#F59E0B]" />
                     ) : (
-                      <Sparkles className="w-6 h-6 text-cyan-400" />
+                      <Sparkles className="w-5 h-5 text-[#1B4FD8]" />
                     )}
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-extrabold text-white mb-2">
+                <h3 className="text-2xl font-display font-extrabold text-[#0F172A] mb-2">
                   {pillar.title}
                 </h3>
-                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-display">
                   {pillar.subtitle}
                 </p>
 
-                <p className="text-sm text-slate-300 leading-relaxed mb-6 border-l-2 border-slate-700 pl-4 py-0.5 italic">
+                <p className="text-sm text-slate-600 leading-relaxed mb-6 border-l-2 border-slate-200 pl-3 py-0.5 italic">
                   &ldquo;{pillar.description}&rdquo;
                 </p>
 
                 <ul className="space-y-3 mb-8">
                   {pillar.points.map((point, pIdx) => (
-                    <li key={pIdx} className="flex items-start gap-3 text-sm text-slate-200">
-                      <div className={`mt-0.5 p-0.5 rounded-full shrink-0 ${idx === 0 ? 'bg-amber-500/20 text-amber-400' : 'bg-cyan-500/20 text-cyan-400'}`}>
+                    <li key={pIdx} className="flex items-start gap-3 text-sm text-[#0F172A] font-medium">
+                      <div className={`mt-0.5 shrink-0 ${idx === 0 ? 'text-[#F59E0B]' : 'text-[#1B4FD8]'}`}>
                         <Check className="w-4 h-4" />
                       </div>
                       <span>{point}</span>
@@ -86,13 +86,13 @@ export const ProgramSection: React.FC<ProgramSectionProps> = ({ onOpenRegister }
                 </ul>
               </div>
 
-              <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                <span className="text-xs text-slate-400 font-medium">
+              <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
+                <span className="text-xs text-slate-500 font-semibold">
                   Deliverable: {idx === 0 ? 'GAP Analysis & Personal Happiness Practice' : 'Matriks Sinergi, FlowBuddy & Prompt RCTF'}
                 </span>
                 <button
                   onClick={() => onOpenRegister(idx === 0 ? 'online' : 'onsite')}
-                  className="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1 group"
+                  className="text-xs font-display font-extrabold text-[#1B4FD8] hover:text-blue-700 flex items-center gap-1 group"
                 >
                   Lihat Detail <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </button>
@@ -103,15 +103,15 @@ export const ProgramSection: React.FC<ProgramSectionProps> = ({ onOpenRegister }
         </div>
 
         {/* AI Tools yang Akan Dikuasai Badge Box */}
-        <div className="max-w-2xl mx-auto mb-16 p-6 sm:p-8 rounded-3xl bg-slate-900/90 border border-slate-800 text-center shadow-xl">
-          <h4 className="text-xs font-extrabold tracking-widest text-slate-400 uppercase mb-5">
+        <div className="max-w-2xl mx-auto mb-16 p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 text-center shadow-xs">
+          <h4 className="text-xs font-display font-extrabold tracking-[0.1em] text-slate-400 uppercase mb-4">
             AI Tools yang Akan Dikuasai
           </h4>
-          <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4">
+          <div className="flex flex-wrap justify-center items-center gap-2.5">
             {['ChatGPT', 'Gemini', 'NotebookLM', 'FlowBuddy'].map((tool, idx) => (
               <span
                 key={idx}
-                className="px-6 py-3 rounded-2xl bg-slate-950 border border-slate-700/80 text-white text-sm font-extrabold shadow-lg shadow-black/40 hover:border-amber-500/50 hover:text-amber-300 transition-all"
+                className="px-5 py-2.5 rounded-lg bg-[#F8FAFC] border border-slate-200 text-[#0F172A] text-sm font-display font-bold shadow-xs hover:border-slate-300 transition-all"
               >
                 {tool}
               </span>
@@ -121,26 +121,26 @@ export const ProgramSection: React.FC<ProgramSectionProps> = ({ onOpenRegister }
 
         {/* 3 Strategic Pillars (01, 02, 03) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 relative overflow-hidden">
-            <span className="font-extrabold text-4xl text-amber-400/20 absolute top-4 right-6 font-mono">01</span>
-            <h4 className="text-lg font-bold text-white mb-2">Sustain Performance</h4>
-            <p className="text-sm text-slate-300 leading-relaxed">
+          <div className="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden shadow-xs">
+            <span className="font-display font-extrabold text-4xl text-amber-500/20 absolute top-4 right-6">01</span>
+            <h4 className="text-lg font-display font-bold text-[#0F172A] mb-2">Sustain Performance</h4>
+            <p className="text-sm text-slate-600 leading-relaxed">
               Beban repetitif dialihkan ke AI — energi tim difokuskan ke pekerjaan bernilai tinggi.
             </p>
           </div>
 
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 relative overflow-hidden">
-            <span className="font-extrabold text-4xl text-cyan-400/20 absolute top-4 right-6 font-mono">02</span>
-            <h4 className="text-lg font-bold text-white mb-2">Wellbeing × Performance</h4>
-            <p className="text-sm text-slate-300 leading-relaxed">
+          <div className="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden shadow-xs">
+            <span className="font-display font-extrabold text-4xl text-cyan-500/20 absolute top-4 right-6">02</span>
+            <h4 className="text-lg font-display font-bold text-[#0F172A] mb-2">Wellbeing × Performance</h4>
+            <p className="text-sm text-slate-600 leading-relaxed">
               Bukan pilihan antara produktif atau bahagia — keduanya berjalan bersama secara terukur.
             </p>
           </div>
 
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 relative overflow-hidden">
-            <span className="font-extrabold text-4xl text-emerald-400/20 absolute top-4 right-6 font-mono">03</span>
-            <h4 className="text-lg font-bold text-white mb-2">Keputusan Lebih Cepat</h4>
-            <p className="text-sm text-slate-300 leading-relaxed">
+          <div className="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden shadow-xs">
+            <span className="font-display font-extrabold text-4xl text-blue-500/20 absolute top-4 right-6">03</span>
+            <h4 className="text-lg font-display font-bold text-[#0F172A] mb-2">Keputusan Lebih Cepat</h4>
+            <p className="text-sm text-slate-600 leading-relaxed">
               AI sebagai daily partner — bukan sebatas tools IT, melainkan alat kerja utama eksekutif.
             </p>
           </div>

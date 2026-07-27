@@ -4,18 +4,18 @@ import { MapPin, Calendar, Clock, Navigation, Wifi, Coffee, Users, ShieldCheck }
 
 export const VenueSection: React.FC = () => {
   return (
-    <section className="py-16 lg:py-24 bg-slate-950 text-white border-b border-slate-800">
+    <section className="py-16 lg:py-24 bg-white text-slate-900 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <span className="bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 font-bold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full inline-block">
+          <span className="bg-[#EFF4FF] text-[#1B4FD8] font-display font-extrabold text-xs uppercase tracking-[0.1em] px-4 py-1.5 rounded-full inline-block">
             Lokasi &amp; Fasilitas Pelaksanaan
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Detail Program <span className="text-amber-400">Masterclass</span>
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight text-[#0F172A]">
+            Detail Program <span className="text-[#1B4FD8]">Masterclass</span>
           </h2>
-          <p className="text-slate-300 text-base leading-relaxed">
+          <p className="text-slate-600 text-base leading-relaxed">
             Dilaksanakan di fasilitas AI HUB modern Jakarta Selatan dengan lingkungan pembelajaran eksklusif untuk para pemimpin perusahaan.
           </p>
         </div>
@@ -23,41 +23,41 @@ export const VenueSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Details Column */}
-          <div className="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-3xl p-8 space-y-6 flex flex-col justify-between">
+          <div className="lg:col-span-7 bg-[#F8FAFC] border border-slate-200 rounded-2xl p-8 space-y-6 flex flex-col justify-between shadow-xs">
             
             <div className="space-y-6">
               
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-950 border border-slate-800">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200">
+                <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 text-[#F59E0B] flex items-center justify-center shrink-0">
                   <Calendar className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block">Tanggal &amp; Waktu</span>
-                  <h4 className="text-lg font-bold text-white">{EVENT_DETAILS.dateText}</h4>
-                  <p className="text-xs text-slate-300">{EVENT_DETAILS.timeText} (Full Day 2 Hari)</p>
+                  <span className="text-xs font-display font-extrabold text-slate-500 uppercase tracking-wider block">Tanggal &amp; Waktu</span>
+                  <h4 className="text-lg font-display font-bold text-[#0F172A]">{EVENT_DETAILS.dateText}</h4>
+                  <p className="text-xs text-slate-600">{EVENT_DETAILS.timeText} (Full Day 2 Hari)</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-950 border border-slate-800">
-                <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0">
+              <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 text-[#1B4FD8] flex items-center justify-center shrink-0">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block">Lokasi Onsite Eksklusif</span>
-                  <h4 className="text-lg font-bold text-white">{EVENT_DETAILS.location}</h4>
-                  <p className="text-xs text-slate-300 mt-0.5">{EVENT_DETAILS.fullAddress}</p>
+                  <span className="text-xs font-display font-extrabold text-slate-500 uppercase tracking-wider block">Lokasi Onsite Eksklusif</span>
+                  <h4 className="text-lg font-display font-bold text-[#0F172A]">{EVENT_DETAILS.location}</h4>
+                  <p className="text-xs text-slate-600 mt-0.5">{EVENT_DETAILS.fullAddress}</p>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 text-center space-y-1">
-                  <Wifi className="w-5 h-5 text-emerald-400 mx-auto mb-1" />
-                  <span className="text-xs font-bold text-white block">High-Speed WiFi</span>
-                  <p className="text-[11px] text-slate-400">100 Mbps Dedicated</p>
+                <div className="p-4 rounded-xl bg-white border border-slate-200 text-center space-y-1">
+                  <Wifi className="w-5 h-5 text-[#16A34A] mx-auto mb-1" />
+                  <span className="text-xs font-display font-bold text-[#0F172A] block">High-Speed WiFi</span>
+                  <p className="text-[11px] text-slate-500">100 Mbps Dedicated</p>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-slate-950 border border-slate-800 text-center space-y-1">
-                  <Coffee className="w-5 h-5 text-amber-400 mx-auto mb-1" />
+                <div className="p-4 rounded-xl bg-white border border-slate-200 text-center space-y-1">
+                  <Coffee className="w-5 h-5 text-[#F59E0B] mx-auto mb-1" />
                   <span className="text-xs font-bold text-white block">Coffee Break &amp; Lunch</span>
                   <p className="text-[11px] text-slate-400">2x Coffee Break &amp; VIP Lunch</p>
                 </div>

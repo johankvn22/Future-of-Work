@@ -8,18 +8,18 @@ interface TestimonialsSectionProps {
 
 export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpenVideo }) => {
   return (
-    <section id="testimoni" className="py-16 lg:py-24 bg-slate-900 text-white border-b border-slate-800">
+    <section id="testimoni" className="py-16 lg:py-24 bg-[#F8FAFC] text-slate-900 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <span className="bg-amber-500/10 text-amber-400 border border-amber-500/30 font-bold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full inline-block">
+          <span className="bg-[#EFF4FF] text-[#1B4FD8] font-display font-extrabold text-xs uppercase tracking-[0.1em] px-4 py-1.5 rounded-full inline-block">
             Dari Sesama Leader
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Bukan Klaim Kami. <span className="text-amber-400">Pengalaman Nyata Mereka.</span>
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight text-[#0F172A]">
+            Bukan sekadar klaim kami. <span className="text-[#1B4FD8]">Ini pengalaman nyata mereka.</span>
           </h2>
-          <p className="text-slate-300 text-base leading-relaxed">
+          <p className="text-slate-600 text-base leading-relaxed">
             Dengarkan tanggapan dari para HR Leader, Management, dan Executive perusahaan terkemuka setelah mengikuti pelatihan MAXY Academy.
           </p>
         </div>
@@ -29,34 +29,34 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
           {TESTIMONIALS.map((t) => (
             <div
               key={t.id}
-              className="bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-2xl p-6 flex flex-col justify-between shadow-lg relative group transition-all"
+              className="bg-white border border-slate-200 hover:border-slate-300 rounded-2xl p-6 flex flex-col justify-between shadow-xs relative group transition-all"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="flex text-amber-400 gap-1">
+                  <div className="flex text-[#F59E0B] gap-1">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400" />
+                      <Star key={i} className="w-4 h-4 fill-[#F59E0B]" />
                     ))}
                   </div>
-                  <Quote className="w-8 h-8 text-slate-800 group-hover:text-amber-500/20 transition-colors" />
+                  <Quote className="w-8 h-8 text-slate-200 group-hover:text-amber-500/20 transition-colors" />
                 </div>
 
-                <p className="text-sm text-slate-200 leading-relaxed italic">
+                <p className="text-sm text-[#0F172A] leading-relaxed italic">
                   &ldquo;{t.quote}&rdquo;
                 </p>
               </div>
 
-              <div className="pt-4 mt-6 border-t border-slate-800/80 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-slate-800 text-amber-400 font-bold flex items-center justify-center text-sm border border-slate-700 shrink-0">
+              <div className="pt-4 mt-6 border-t border-slate-200 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-[#0B1628] text-[#F59E0B] font-display font-extrabold flex items-center justify-center text-sm shrink-0">
                   {t.initials}
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white flex items-center gap-1">
+                  <h4 className="text-sm font-display font-bold text-[#0F172A] flex items-center gap-1">
                     {t.name}
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#16A34A]" />
                   </h4>
-                  <p className="text-xs text-slate-400">
-                    {t.role} · <span className="text-amber-400/90 font-medium">{t.company}</span>
+                  <p className="text-xs text-slate-500">
+                    {t.role} · <span className="text-[#1B4FD8] font-semibold">{t.company}</span>
                   </p>
                 </div>
               </div>

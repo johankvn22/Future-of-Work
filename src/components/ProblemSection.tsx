@@ -14,19 +14,19 @@ export const ProblemSection: React.FC = () => {
   };
 
   return (
-    <section className="py-16 lg:py-24 bg-slate-900 text-white relative overflow-hidden border-b border-slate-800">
+    <section className="py-16 lg:py-24 bg-[#F8FAFC] text-slate-900 relative overflow-hidden border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <span className="bg-rose-500/10 text-rose-400 border border-rose-500/20 font-bold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full inline-block">
-            Realita di Lapangan Hari Ini
+          <span className="bg-[#EFF4FF] text-[#1B4FD8] font-display font-extrabold text-xs uppercase tracking-[0.1em] px-4 py-1.5 rounded-full inline-block">
+            Evaluasi Kritis
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Tim terbaik Anda sedang <span className="text-rose-400">burnout.</span>
+          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-[#0F172A] tracking-tight">
+            Waktu Anda habis. Model kepemimpinan tradisional <span className="text-rose-600">resmi kedaluwarsa.</span>
           </h2>
-          <p className="text-slate-300 text-base leading-relaxed">
-            Bukan karena mereka tidak kompeten. Tapi karena cara kerja yang ada tidak dirancang untuk tekanan bisnis yang terus naik — tanpa alat yang tepat.
+          <p className="text-[#475569] text-base sm:text-lg leading-relaxed">
+            Mari lihat realita di lapangan hari ini — dan kenali mana yang sedang terjadi di organisasi Anda.
           </p>
         </div>
 
@@ -35,16 +35,16 @@ export const ProblemSection: React.FC = () => {
           {REALITA_PAIN_POINTS.map((item, idx) => (
             <div
               key={idx}
-              className="bg-slate-950/80 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition-all flex flex-col justify-between group hover:scale-[1.01]"
+              className="bg-white border border-slate-200 rounded-2xl p-6 hover:-translate-y-1 hover:shadow-md transition-all flex flex-col justify-between group shadow-xs"
             >
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center group-hover:bg-slate-800 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-[#F8FAFC] border border-slate-200 flex items-center justify-center group-hover:bg-slate-100 transition-colors">
                   {getIcon(item.icon)}
                 </div>
-                <h3 className="text-lg font-bold text-white leading-snug">
+                <h3 className="text-lg font-display font-bold text-[#0F172A] leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-sm text-slate-300 leading-relaxed">
+                <p className="text-sm text-[#475569] leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -53,12 +53,12 @@ export const ProblemSection: React.FC = () => {
         </div>
 
         {/* Transformation Comparison Table: Manajemen Konvensional vs AI & Happiness-Driven */}
-        <div className="bg-slate-950 border border-slate-800 rounded-3xl p-6 lg:p-10 mb-16 shadow-2xl">
+        <div className="bg-white border border-slate-200 rounded-3xl p-6 lg:p-10 mb-16 shadow-xs">
           <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
-            <span className="text-amber-400 text-xs font-extrabold uppercase tracking-widest bg-amber-400/10 border border-amber-400/20 px-3.5 py-1 rounded-full inline-block">
+            <span className="bg-[#EFF4FF] text-[#1B4FD8] font-display font-extrabold text-xs uppercase tracking-[0.1em] px-4 py-1.5 rounded-full inline-block">
               Pilihan Ada di Tangan Anda
             </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-[#0F172A] tracking-tight">
               Transformasi Cara Kerja Eksekutif &amp; Management
             </h3>
           </div>
@@ -66,27 +66,27 @@ export const ProblemSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             
             {/* Manajemen Konvensional */}
-            <div className="bg-rose-950/30 border border-rose-900/50 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+            <div className="bg-[#FEF2F2] border border-[#FECACA] rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
               <div>
-                <div className="flex items-center gap-2 text-rose-400 font-extrabold text-xl pb-4 border-b border-rose-900/40">
+                <div className="flex items-center gap-2 text-[#991B1B] font-display font-extrabold text-xl pb-4 border-b border-[#FECACA]">
                   <span className="text-2xl">😮‍💨</span>
                   <span>Manajemen Konvensional</span>
                 </div>
-                <ul className="divide-y divide-rose-900/30">
-                  <li className="py-4 first:pt-4 flex items-start gap-3 text-sm text-rose-200/90 leading-relaxed">
-                    <X className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                <ul className="divide-y divide-[#FECACA]">
+                  <li className="py-3.5 first:pt-4 flex items-start gap-3 text-sm text-[#7F1D1D] leading-relaxed font-medium">
+                    <X className="w-4 h-4 text-[#DC2626] shrink-0 mt-0.5" />
                     <span>Mengorbankan banyak waktu untuk bekerja manual dalam analisis &amp; tugas repetitif</span>
                   </li>
-                  <li className="py-4 flex items-start gap-3 text-sm text-rose-200/90 leading-relaxed">
-                    <X className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                  <li className="py-3.5 flex items-start gap-3 text-sm text-[#7F1D1D] leading-relaxed font-medium">
+                    <X className="w-4 h-4 text-[#DC2626] shrink-0 mt-0.5" />
                     <span>Mengorbankan kesejahteraan karyawan demi target jangka pendek</span>
                   </li>
-                  <li className="py-4 flex items-start gap-3 text-sm text-rose-200/90 leading-relaxed">
-                    <X className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                  <li className="py-3.5 flex items-start gap-3 text-sm text-[#7F1D1D] leading-relaxed font-medium">
+                    <X className="w-4 h-4 text-[#DC2626] shrink-0 mt-0.5" />
                     <span>Pengambilan keputusan selalu terhambat birokrasi dan olah data</span>
                   </li>
-                  <li className="py-4 flex items-start gap-3 text-sm text-rose-200/90 leading-relaxed">
-                    <X className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                  <li className="py-3.5 flex items-start gap-3 text-sm text-[#7F1D1D] leading-relaxed font-medium">
+                    <X className="w-4 h-4 text-[#DC2626] shrink-0 mt-0.5" />
                     <span>Membiarkan talenta terbaik burnout karena beban kerja tak terukur</span>
                   </li>
                 </ul>
@@ -94,28 +94,28 @@ export const ProblemSection: React.FC = () => {
             </div>
 
             {/* AI & Happiness-Driven */}
-            <div className="bg-slate-900/90 border border-amber-500/30 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="bg-[#0B1628] border border-[#1B2C4A] rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xl relative overflow-hidden text-white">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#00C4E8]/10 rounded-full blur-2xl pointer-events-none" />
               <div>
-                <div className="flex items-center gap-2 text-amber-400 font-extrabold text-xl pb-4 border-b border-slate-800">
+                <div className="flex items-center gap-2 text-[#F59E0B] font-display font-extrabold text-xl pb-4 border-b border-[#1B2C4A]">
                   <span className="text-2xl">⚡</span>
                   <span>AI &amp; Happiness-Driven</span>
                 </div>
-                <ul className="divide-y divide-slate-800/80">
-                  <li className="py-4 first:pt-4 flex items-start gap-3 text-sm text-slate-200 leading-relaxed">
-                    <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <ul className="divide-y divide-white/10">
+                  <li className="py-3.5 first:pt-4 flex items-start gap-3 text-sm text-[#DBE5F2] leading-relaxed font-medium">
+                    <Check className="w-4 h-4 text-[#34D399] shrink-0 mt-0.5" />
                     <span>Hemat banyak waktu dalam mengerjakan tugas repetitif</span>
                   </li>
-                  <li className="py-4 flex items-start gap-3 text-sm text-slate-200 leading-relaxed">
-                    <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <li className="py-3.5 flex items-start gap-3 text-sm text-[#DBE5F2] leading-relaxed font-medium">
+                    <Check className="w-4 h-4 text-[#34D399] shrink-0 mt-0.5" />
                     <span>Ubah wellbeing karyawan menjadi keunggulan bisnis yang terukur</span>
                   </li>
-                  <li className="py-4 flex items-start gap-3 text-sm text-slate-200 leading-relaxed">
-                    <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <li className="py-3.5 flex items-start gap-3 text-sm text-[#DBE5F2] leading-relaxed font-medium">
+                    <Check className="w-4 h-4 text-[#34D399] shrink-0 mt-0.5" />
                     <span>Jadikan AI co-pilot strategis untuk keputusan yang lebih cepat &amp; tajam</span>
                   </li>
-                  <li className="py-4 flex items-start gap-3 text-sm text-slate-200 leading-relaxed">
-                    <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <li className="py-3.5 flex items-start gap-3 text-sm text-[#DBE5F2] leading-relaxed font-medium">
+                    <Check className="w-4 h-4 text-[#34D399] shrink-0 mt-0.5" />
                     <span>Jaga top performer Anda pada performa terbaiknya tanpa perlu takut turnover tinggi</span>
                   </li>
                 </ul>
@@ -126,12 +126,12 @@ export const ProblemSection: React.FC = () => {
         </div>
 
         {/* High Impact Quote Callout */}
-        <div className="bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-slate-950 rounded-3xl p-8 lg:p-12 text-center relative shadow-xl">
+        <div className="bg-gradient-to-r from-[#F59E0B] via-amber-400 to-[#F59E0B] text-slate-950 rounded-3xl p-8 lg:p-12 text-center relative shadow-xl">
           <Quote className="w-12 h-12 mx-auto mb-3 opacity-30 text-slate-950" />
-          <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight max-w-3xl mx-auto leading-snug">
+          <h3 className="text-2xl sm:text-3xl font-display font-extrabold tracking-tight max-w-3xl mx-auto leading-snug">
             &ldquo;Jawabannya bukan menambah jam kerja.<br />Jawabannya adalah leverage AI dengan benar.&rdquo;
           </h3>
-          <p className="text-sm font-bold opacity-80 mt-4 uppercase tracking-widest">
+          <p className="text-xs font-display font-bold opacity-80 mt-4 uppercase tracking-widest">
             — Principles of Modern Executive Leadership
           </p>
         </div>

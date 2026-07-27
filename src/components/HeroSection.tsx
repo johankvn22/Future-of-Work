@@ -152,7 +152,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
 
             {/* RIGHT VIDEO CARD — portrait Reel style, centered in blue area */}
             <div className="w-full lg:w-[52%] flex justify-center items-center">
-              <div className="w-full max-w-[360px] rounded-3xl overflow-hidden shadow-2xl border border-white/20 hover:border-white/40 transition-all" style={{background: 'rgba(10, 25, 80, 0.55)', backdropFilter: 'blur(12px)'}}>
+              <div className="w-full max-w-[420px] rounded-3xl overflow-hidden shadow-2xl border border-white/20 hover:border-white/40 transition-all" style={{background: 'rgba(10, 25, 80, 0.55)', backdropFilter: 'blur(12px)'}}>
 
                 {/* IG bar */}
                 <div className="px-4 py-3 flex items-center justify-between text-xs" style={{background: 'rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.12)'}}>
@@ -171,7 +171,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                 </div>
 
                 {/* Video — portrait/reel height */}
-                <div className="w-full h-[400px] bg-black flex items-center justify-center overflow-hidden">
+                <div className="w-full h-[480px] bg-black flex items-center justify-center overflow-hidden">
                   <video
                     src={VIDEO_LINKS.hero.videoSrc}
                     poster={VIDEO_LINKS.hero.thumbnailSrc}

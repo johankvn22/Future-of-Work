@@ -1,6 +1,7 @@
 import React from 'react';
 import { TRUSTED_BRANDS } from '../data/landingData';
 import { Award, Building2 } from 'lucide-react';
+import holonIqBadge from '../assets/images/holoniq-badge.png';
 
 export const TrustSection: React.FC = () => {
   return (
@@ -31,8 +32,8 @@ export const TrustSection: React.FC = () => {
 
         {/* Award Highlight Pill */}
         <div className="flex justify-center">
-          <div className="inline-flex items-center gap-3 bg-[#0B1628] text-white font-semibold text-xs sm:text-sm px-6 py-2.5 rounded-full shadow-md">
-            <Award className="w-5 h-5 text-[#F59E0B] shrink-0" />
+          <div className="inline-flex items-center gap-3.5 bg-[#0B1628] text-white font-semibold text-xs sm:text-sm px-6 py-2 rounded-full shadow-md border border-white/10">
+            <img src={holonIqBadge} alt="HolonIQ Southeast Asia EdTech 50" className="w-7 h-7 object-contain rounded-sm shrink-0" />
             <span>Recognized by <strong>HolonIQ Southeast Asia EdTech Top 50</strong></span>
           </div>
         </div>

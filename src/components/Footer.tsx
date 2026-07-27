@@ -1,6 +1,7 @@
 import React from 'react';
 import { EVENT_DETAILS } from '../data/landingData';
-import { MessageCircle, ShieldCheck, Heart } from 'lucide-react';
+import { MessageCircle, Heart } from 'lucide-react';
+import holonIqBadge from '../assets/images/holoniq-badge.png';
 
 export const Footer: React.FC = () => {
   return (
@@ -33,9 +34,10 @@ export const Footer: React.FC = () => {
               <MessageCircle className="w-4 h-4 text-[#25D366]" />
               WhatsApp Admin ({EVENT_DETAILS.adminName} · {EVENT_DETAILS.adminPhone})
             </a>
-            <span className="text-xs text-slate-400 flex items-center gap-1">
-              <ShieldCheck className="w-4 h-4 text-[#34D399]" /> HolonIQ SEA Top 50
-            </span>
+            <div className="flex items-center gap-2 bg-[#132038] px-3.5 py-1.5 rounded-xl border border-white/10">
+              <img src={holonIqBadge} alt="HolonIQ SE Asia EdTech 50" className="w-6 h-6 object-contain rounded-sm" />
+              <span className="text-xs text-slate-300 font-semibold">HolonIQ SE Asia EdTech 50</span>
+            </div>
           </div>
 
         </div>

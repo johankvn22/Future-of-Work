@@ -31,12 +31,12 @@ export const DeliverablesSection: React.FC = () => {
         </div>
 
         {/* 8 Deliverables Grid (3-Column Layout matching screenshot) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-16">
+        <div className="flex flex-wrap justify-center gap-5 sm:gap-6 mb-16">
           {DELIVERABLES.map((item) => (
             <div
               key={item.id}
               onClick={() => setActiveDeliverable(item)}
-              className="bg-[#0D1D35]/90 border border-[#1E304F] hover:bg-[#112544] hover:border-[#00C4E8]/50 rounded-2xl p-6 transition-all duration-300 hover:scale-[1.02] cursor-pointer group shadow-lg flex items-start gap-3.5 text-left"
+              className="w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.33%-14px)] bg-[#0D1D35]/90 border border-[#1E304F] hover:bg-[#112544] hover:border-[#00C4E8]/50 rounded-2xl p-6 transition-all duration-300 hover:scale-[1.02] cursor-pointer group shadow-lg flex items-start gap-3.5 text-left"
               title="Klik untuk lihat preview template & prompt"
             >
               <span className="text-[#00C4E8] font-extrabold text-lg shrink-0 mt-0.5 group-hover:scale-110 transition-transform">

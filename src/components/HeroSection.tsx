@@ -22,11 +22,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
       <div
         className="absolute z-0 bg-white pointer-events-none"
         style={{
-          width: '170vw',
-          height: '170vw',
+          width: '148vw',
+          height: '148vw',
           borderRadius: '50%',
           top: '50%',
-          left: '-10vw',
+          left: '-22vw',
           transform: 'translate(-50%, -50%)',
         }}
       />
@@ -150,9 +150,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
               </div>
             </div>
 
-            {/* RIGHT VIDEO CARD — sits on blue area */}
-            <div className="w-full lg:w-[52%]">
-              <div className="bg-[#0B1628]/85 backdrop-blur-sm border border-white/15 rounded-3xl overflow-hidden shadow-2xl hover:border-white/30 transition-all">
+            {/* RIGHT VIDEO CARD — portrait Reel style in the blue area */}
+            <div className="w-full lg:w-[52%] flex justify-center lg:justify-start items-start">
+              <div className="w-full max-w-[340px] bg-[#0B1628]/85 backdrop-blur-sm border border-white/15 rounded-3xl overflow-hidden shadow-2xl hover:border-white/30 transition-all">
 
                 {/* IG bar */}
                 <div className="px-4 py-2.5 bg-white/5 border-b border-white/10 flex items-center justify-between text-xs">
@@ -170,8 +170,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                   </button>
                 </div>
 
-                {/* Video */}
-                <div className="w-full h-[300px] sm:h-[340px] bg-black flex items-center justify-center overflow-hidden">
+                {/* Video — portrait/reel height */}
+                <div className="w-full h-[440px] bg-black flex items-center justify-center overflow-hidden">
                   <video
                     src={VIDEO_LINKS.hero.videoSrc}
                     poster={VIDEO_LINKS.hero.thumbnailSrc}
@@ -184,7 +184,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                 </div>
 
                 {/* Caption */}
-                <div className="px-5 py-2.5 bg-white/5 border-t border-white/10 flex items-center justify-between">
+                <div className="px-4 py-2.5 bg-white/5 border-t border-white/10 flex items-center justify-between">
                   <span className="text-xs text-blue-200 font-medium">▶ Tonton: Apa yang terjadi di 2 hari kelas ini</span>
                   <a
                     href={VIDEO_LINKS.hero.url}
@@ -198,29 +198,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
 
                 {/* Quick specs */}
                 <div className="grid grid-cols-3 divide-x divide-white/10 border-t border-white/10">
-                  <div className="px-4 py-3 text-center">
-                    <p className="text-white text-xs font-bold">28-29 Juli 2026</p>
-                    <p className="text-slate-400 text-[10px] mt-0.5">Online &amp; Onsite</p>
+                  <div className="px-3 py-2.5 text-center">
+                    <p className="text-white text-[11px] font-bold leading-tight">28-29 Juli 2026</p>
+                    <p className="text-slate-400 text-[9px] mt-0.5">Online &amp; Onsite</p>
                   </div>
-                  <div className="px-4 py-3 text-center">
-                    <p className="text-white text-xs font-bold">MAXY AI HUB</p>
-                    <p className="text-slate-400 text-[10px] mt-0.5">Jakarta</p>
+                  <div className="px-3 py-2.5 text-center">
+                    <p className="text-white text-[11px] font-bold leading-tight">MAXY AI HUB</p>
+                    <p className="text-slate-400 text-[9px] mt-0.5">Jakarta</p>
                   </div>
-                  <div className="px-4 py-3 text-center">
-                    <p className="text-white text-xs font-bold">2 × 8 jam</p>
-                    <p className="text-slate-400 text-[10px] mt-0.5">Intensif</p>
+                  <div className="px-3 py-2.5 text-center">
+                    <p className="text-white text-[11px] font-bold leading-tight">2 × 8 jam</p>
+                    <p className="text-slate-400 text-[9px] mt-0.5">Intensif</p>
                   </div>
                 </div>
 
                 {/* CTA inside card */}
-                <div className="px-5 py-4 border-t border-white/10">
+                <div className="px-4 py-3.5 border-t border-white/10">
                   <button
                     onClick={() => onOpenRegister('onsite')}
-                    className="w-full bg-white hover:bg-blue-50 text-[#1B4FD8] font-display font-extrabold text-sm py-3 rounded-xl shadow-lg transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                    className="w-full bg-white hover:bg-blue-50 text-[#1B4FD8] font-display font-extrabold text-sm py-2.5 rounded-xl shadow-lg transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2"
                   >
                     Amankan Slot Sekarang →
                   </button>
-                  <p className="text-center text-[10px] text-slate-400 mt-2">
+                  <p className="text-center text-[10px] text-slate-400 mt-1.5">
                     Untuk HR Manager · Direktur · Entrepreneur · Owner
                   </p>
                 </div>

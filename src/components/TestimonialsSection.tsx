@@ -64,90 +64,24 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
           ))}
         </div>
 
-        {/* Video Reel Showcase Header */}
-        <div className="mb-8 text-center sm:text-left flex flex-wrap items-center justify-between gap-4 border-t border-slate-800 pt-12">
+        {/* Video Reel & Portfolio Showcase Header */}
+        <div className="mb-8 text-center sm:text-left flex flex-wrap items-center justify-between gap-4 border-t border-slate-200 pt-12">
           <div>
-            <h3 className="text-xl font-extrabold text-white flex items-center justify-center sm:justify-start gap-2">
-              <Film className="w-5 h-5 text-amber-400" />
+            <h3 className="text-2xl font-display font-extrabold text-[#0F172A] flex items-center justify-center sm:justify-start gap-2.5">
+              <Film className="w-6 h-6 text-[#1B4FD8]" />
               Video Testimoni &amp; Portfolio Kegiatan
             </h3>
-            <p className="text-xs text-slate-400 mt-1">
+            <p className="text-sm text-slate-600 mt-1">
               Dokumentasi nyata keseruan suasana kelas Batch 1 &amp; Batch 2 di MAXY AI HUB
             </p>
           </div>
         </div>
 
-        {/* 3 Video Cards Grid (Direct IG Embed Players with Thumbnails & Instant Play) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Video Cards Grid: Batch 1 (Portrait) & Batch 2 (Landscape) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* 1. Video Testimoni Peserta */}
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-amber-500/40 transition-all group">
-            <div>
-              <div className="px-5 py-3.5 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
-                <span className="text-xs font-extrabold text-amber-400 uppercase tracking-wider bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
-                  ▶ Video Testimoni
-                </span>
-                <button
-                  onClick={() => onOpenVideo(VIDEO_LINKS.testimoni.url, VIDEO_LINKS.testimoni.title)}
-                  className="text-slate-400 hover:text-amber-300 text-xs inline-flex items-center gap-1 transition-colors font-semibold"
-                  title="Perbesar / Buka Modal"
-                >
-                  Perbesar ↗
-                </button>
-              </div>
-
-              {/* Instagram Reel Embed UI + Native Video Player */}
-              <div className="w-full bg-slate-950 border-t border-b border-slate-800/60 relative">
-                <div className="px-4 py-2 bg-gradient-to-r from-purple-600/15 via-pink-600/15 to-amber-500/15 border-b border-slate-800/80 flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 p-[2px] flex items-center justify-center">
-                      <div className="w-full h-full bg-slate-950 rounded-full flex items-center justify-center text-[8px] font-black text-white">IG</div>
-                    </div>
-                    <span className="font-bold text-slate-200">@maxy.academy</span>
-                  </div>
-                  <span className="text-[10px] text-slate-400 font-medium">Reels</span>
-                </div>
-                <div className="w-full h-[450px] bg-black relative flex items-center justify-center overflow-hidden">
-                  <video
-                    src={VIDEO_LINKS.testimoni.videoSrc}
-                    poster={VIDEO_LINKS.testimoni.thumbnailSrc}
-                    controls
-                    playsInline
-                    className="w-full h-full object-contain"
-                  >
-                    Your browser does not support HTML5 video.
-                  </video>
-                </div>
-              </div>
-
-              <div className="p-5 space-y-2">
-                <h4 className="text-base font-bold text-white group-hover:text-amber-300 transition-colors">
-                  {VIDEO_LINKS.testimoni.title}
-                </h4>
-                <p className="text-sm text-slate-300 leading-relaxed">
-                  {VIDEO_LINKS.testimoni.description}
-                </p>
-              </div>
-            </div>
-
-            <div className="px-5 py-3.5 bg-slate-950/80 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-              <span className="flex items-center gap-1.5 font-medium text-emerald-400">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                Siap putar langsung di atas 👆
-              </span>
-              <a
-                href={VIDEO_LINKS.testimoni.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-amber-400 hover:underline font-semibold flex items-center gap-1"
-              >
-                Buka di IG <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            </div>
-          </div>
-
-          {/* 2. Video Portfolio Batch 1 */}
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-cyan-500/40 transition-all group">
+          {/* 1. Video Portfolio Batch 1 (Portrait / Reel Format) */}
+          <div className="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between hover:border-cyan-500/40 transition-all group">
             <div>
               <div className="px-5 py-3.5 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
                 <span className="text-xs font-extrabold text-cyan-400 uppercase tracking-wider bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
@@ -212,12 +146,12 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
             </div>
           </div>
 
-          {/* 3. Video Portfolio Batch 2 */}
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-indigo-500/40 transition-all group">
+          {/* 2. Video Portfolio Batch 2 (Landscape Format) */}
+          <div className="lg:col-span-7 bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between hover:border-indigo-500/40 transition-all group">
             <div>
               <div className="px-5 py-3.5 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
                 <span className="text-xs font-extrabold text-indigo-400 uppercase tracking-wider bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
-                  ▶ Portfolio Batch 2
+                  ▶ Portfolio Batch 2 (Landscape)
                 </span>
                 <button
                   onClick={() => onOpenVideo(VIDEO_LINKS.portfolioBatch2.url, VIDEO_LINKS.portfolioBatch2.title)}
@@ -228,7 +162,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
                 </button>
               </div>
 
-              {/* Instagram Reel Embed UI + Native Video Player */}
+              {/* Landscape Video Embed UI */}
               <div className="w-full bg-slate-950 border-t border-b border-slate-800/60 relative">
                 <div className="px-4 py-2 bg-gradient-to-r from-purple-600/15 via-pink-600/15 to-indigo-500/15 border-b border-slate-800/80 flex items-center justify-between text-xs">
                   <div className="flex items-center gap-2">
@@ -237,9 +171,9 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
                     </div>
                     <span className="font-bold text-slate-200">@maxy.academy</span>
                   </div>
-                  <span className="text-[10px] text-slate-400 font-medium">Reels</span>
+                  <span className="text-[10px] text-slate-400 font-medium">Landscape Video</span>
                 </div>
-                <div className="w-full h-[450px] bg-black relative flex items-center justify-center overflow-hidden">
+                <div className="w-full aspect-video bg-black relative flex items-center justify-center overflow-hidden">
                   <video
                     src={VIDEO_LINKS.portfolioBatch2.videoSrc}
                     poster={VIDEO_LINKS.portfolioBatch2.thumbnailSrc}

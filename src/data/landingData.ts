@@ -1,4 +1,7 @@
 import { Speaker, Testimonial, Deliverable, PricingPackage, FaqItem } from '../types';
+import speakerRuben from '../assets/images/speaker-ruben.png';
+import speakerIsaac from '../assets/images/speaker-isaac.png';
+import speakerAndy from '../assets/images/speaker-andy.png';
 
 export const VIDEO_LINKS = {
   hero: {
@@ -223,7 +226,7 @@ export const SPEAKERS: Speaker[] = [
     cert: "Certified by Woohoo Academy Denmark",
     bio: "Pakar happiness at work yang telah bekerja sama dengan ratusan perusahaan di Indonesia. Menghubungkan wellbeing science dengan strategi bisnis yang terukur.",
     initials: "RS",
-    imageUrl: "/images/speaker-ruben.png"
+    imageUrl: speakerRuben
   },
   {
     id: "isaac",
@@ -232,7 +235,7 @@ export const SPEAKERS: Speaker[] = [
     cert: "AI Expert",
     bio: "Membangun MAXY Academy untuk mendampingi ratusan organisasi di Indonesia dalam transformasi talenta dan implementasi AI.",
     initials: "IM",
-    imageUrl: "/images/speaker-isaac.png"
+    imageUrl: speakerIsaac
   },
   {
     id: "andy",
@@ -241,7 +244,7 @@ export const SPEAKERS: Speaker[] = [
     cert: "AI Expert · Trainer 100+ Organisasi",
     bio: "CTO dan Co-Founder MAXY Academy. Memimpin implementasi AI untuk 100+ organisasi di Indonesia — dari enterprise hingga institusi pemerintah.",
     initials: "AB",
-    imageUrl: "/images/speaker-andy.png"
+    imageUrl: speakerAndy
   }
 ];
 

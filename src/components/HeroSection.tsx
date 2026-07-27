@@ -177,7 +177,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                     poster={VIDEO_LINKS.hero.thumbnailSrc}
                     controls
                     playsInline
-                    className="w-full h-full object-cover"
+                    preload="none"
+                    className="w-full h-full object-contain"
                   >
                     Your browser does not support HTML5 video.
                   </video>

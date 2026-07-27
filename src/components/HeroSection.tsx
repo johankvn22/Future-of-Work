@@ -32,7 +32,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
         <div className="flex flex-wrap items-center gap-2 mb-6">
           <span className="bg-[#00C4E8]/10 border border-[#00C4E8]/20 text-[#00C4E8] font-display font-bold text-xs px-3.5 py-1.5 rounded-full uppercase tracking-[0.14em] flex items-center gap-1.5">
             <Zap className="w-3.5 h-3.5 text-[#00C4E8]" />
-            Hybrid Class · 28–29 Juli 2026 · MAXY AI HUB Jakarta
+            Executive Program · 28–29 Juli 2026 · MAXY AI HUB Jakarta
           </span>
           <span className="bg-[#132038] text-slate-300 text-xs px-3.5 py-1.5 rounded-full font-medium border border-white/10">
             Khusus: HR Manager · Direktur · Entrepreneur · Owner

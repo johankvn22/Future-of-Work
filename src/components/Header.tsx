@@ -68,7 +68,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenRegister }) => {
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-center sm:text-left">
           <div className="flex items-center justify-center gap-2 mx-auto sm:mx-0">
             <span className="bg-slate-950 text-amber-400 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-md flex items-center gap-1">
-              <Sparkles className="w-3 h-3 animate-pulse" /> HYBRID CLASS
+              <Sparkles className="w-3 h-3 animate-pulse" /> EXECUTIVE PROGRAM
             </span>
             <span className="font-display font-extrabold tracking-tight">🔥 SPECIAL PRICE &amp; BONUS — 10 PENDAFTAR PERTAMA</span>
           </div>

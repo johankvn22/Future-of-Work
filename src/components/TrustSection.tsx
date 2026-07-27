@@ -32,8 +32,8 @@ export const TrustSection: React.FC = () => {
 
         {/* Award Highlight Pill */}
         <div className="flex justify-center">
-          <div className="inline-flex items-center gap-3.5 bg-[#0B1628] text-white font-semibold text-xs sm:text-sm px-6 py-2 rounded-full shadow-md border border-white/10">
-            <img src={holonIqBadge} alt="HolonIQ Southeast Asia EdTech 50" className="w-7 h-7 object-contain rounded-sm shrink-0" />
+          <div className="inline-flex items-center gap-4 bg-[#0B1628] text-white font-semibold text-xs sm:text-sm px-6 py-2.5 rounded-full shadow-md border border-white/10">
+            <img src={holonIqBadge} alt="HolonIQ Southeast Asia EdTech 50" className="w-11 h-11 sm:w-12 sm:h-12 object-contain rounded-sm shrink-0" />
             <span>Recognized by <strong>HolonIQ Southeast Asia EdTech Top 50</strong></span>
           </div>
         </div>

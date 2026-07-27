@@ -67,7 +67,7 @@ Mohon dikirimkan konfirmasi pendaftaran, invoice resmi, dan instruksi langkah se
               Formulir Pendaftaran Resmi
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-              Amankan Slot Masterclass
+              Amankan Executive Program
             </h2>
             <p className="text-xs sm:text-sm text-slate-300">
               Isi data di bawah ini — tim MAXY Academy akan mengirimkan rincian invoice &amp; konfirmasi pendaftaran dalam 1×24 jam kerja.

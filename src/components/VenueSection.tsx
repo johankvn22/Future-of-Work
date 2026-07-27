@@ -13,7 +13,7 @@ export const VenueSection: React.FC = () => {
             Lokasi &amp; Fasilitas Pelaksanaan
           </span>
           <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight text-[#0F172A]">
-            Detail Program <span className="text-[#1B4FD8]">Masterclass</span>
+            Detail <span className="text-[#1B4FD8]">Executive Program</span>
           </h2>
           <p className="text-slate-600 text-base leading-relaxed">
             Dilaksanakan di fasilitas AI HUB modern Jakarta Selatan dengan lingkungan pembelajaran eksklusif untuk para pemimpin perusahaan.

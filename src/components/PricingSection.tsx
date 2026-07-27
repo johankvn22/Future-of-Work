@@ -22,33 +22,30 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenRegister }
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
+        <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
           <span className="bg-[#EFF4FF] text-[#1B4FD8] font-display font-extrabold text-xs uppercase tracking-[0.1em] px-4 py-1.5 rounded-full inline-block">
-            Investasi Strategis Perusahaan
+            AMANKAN KURSI ANDA SEKARANG
           </span>
           <h2 className="text-3xl sm:text-4xl font-display font-extrabold tracking-tight text-[#0F172A]">
-            Pilih Paket &amp; <span className="text-[#F59E0B]">Amankan Slot Anda</span>
+            Investasi strategis untuk organisasi Anda
           </h2>
-          <p className="text-slate-600 text-base leading-relaxed">
-            Pendaftaran dibuka untuk individu maupun perwakilan tim korporat. Tersedia invoice resmi dan dokumen pengadaan resmi untuk reimbursement kantor.
-          </p>
         </div>
 
         {/* Interactive Pax / Seat Calculator Switcher */}
-        <div className="bg-[#F8FAFC] border border-slate-200 rounded-2xl p-6 max-w-xl mx-auto mb-12 shadow-xs text-center space-y-4">
+        <div className="bg-[#F8FAFC] border border-slate-200 rounded-2xl p-5 max-w-xl mx-auto mb-12 shadow-xs text-center space-y-3">
           <div className="flex items-center justify-center gap-2 text-xs font-display font-extrabold text-[#1B4FD8] uppercase tracking-wider">
             <Users className="w-4 h-4" />
             <span>Kalkulator Simulasi Jumlah Peserta (Pax):</span>
           </div>
 
-          <div className="flex items-center justify-center gap-3">
+          <div className="flex items-center justify-center gap-2.5">
             {[1, 2, 3, 5, 10].map((num) => (
               <button
                 key={num}
                 onClick={() => setSelectedPax(num)}
-                className={`w-10 h-10 rounded-xl font-display font-bold text-sm transition-all ${
+                className={`w-9 h-9 rounded-lg font-display font-bold text-xs transition-all ${
                   selectedPax === num
-                    ? 'bg-[#F59E0B] text-amber-950 shadow-md scale-105'
+                    ? 'bg-[#F59E0B] text-amber-950 shadow-sm scale-105'
                     : 'bg-white text-slate-700 border border-slate-200 hover:border-slate-300'
                 }`}
               >
@@ -130,79 +127,78 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenRegister }
               >
                 {/* Recommended Badge */}
                 {pkg.isRecommended && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#F59E0B] text-amber-950 text-xs font-display font-extrabold px-4 py-1 rounded-full uppercase tracking-widest shadow-md flex items-center gap-1">
-                    <Star className="w-3.5 h-3.5 fill-amber-950" /> RECOMMENDED ONSITE
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#F59E0B] text-amber-950 text-xs font-display font-extrabold px-4 py-1 rounded-full uppercase tracking-widest shadow-sm flex items-center gap-1">
+                    ★ RECOMMENDED
                   </div>
                 )}
 
-                <div className="space-y-6">
+                <div className="space-y-5">
                   <div>
-                    <span className={`text-xs font-display font-extrabold uppercase tracking-widest px-3 py-1 rounded-md border ${
-                      pkg.isRecommended ? 'bg-amber-50 text-[#B45309] border-amber-200' : 'bg-[#F8FAFC] text-slate-500 border-slate-200'
-                    }`}>
-                      {pkg.id === 'onsite' ? '2 Days Onsite Experience' : '2 Days Online Zoom'}
-                    </span>
-                    <h3 className="text-2xl font-display font-extrabold text-[#0F172A] mt-3">
+                    <h3 className="text-xs font-display font-extrabold text-slate-500 uppercase tracking-wider mb-2">
                       {pkg.name}
                     </h3>
-                    <p className="text-xs text-slate-500 mt-1">
-                      {pkg.location}
+                    <div className="text-3xl sm:text-4xl font-display font-extrabold text-[#0B1628]">
+                      {formatRupiah(totalPrice)}
+                    </div>
+                    <p className="text-xs text-[#94A3B8] mt-1 font-medium">
+                      {pkg.location} {selectedPax > 1 ? `(${formatRupiah(pkg.pricePerPax)} / pax)` : ''}
                     </p>
                   </div>
 
-                  {/* Price Box */}
-                  <div className="py-2 border-y border-slate-200">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-3xl font-display font-extrabold text-[#0F172A]">
-                        {formatRupiah(totalPrice)}
-                      </span>
-                      {selectedPax > 1 && (
-                        <span className="text-xs text-slate-500 font-medium">
-                          ({formatRupiah(pkg.pricePerPax)} / pax)
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-xs text-slate-500 mt-1">
-                      Termasuk sertifikat, dokumen invoice resmi &amp; deliverables
-                    </p>
-                  </div>
-
-                  {/* Bonuses List (if onsite) */}
-                  {pkg.bonuses && (
-                    <div className="bg-amber-50 border border-amber-200/80 rounded-xl p-3 space-y-2">
-                      <span className="text-[11px] font-display font-extrabold text-[#B45309] uppercase tracking-wider flex items-center gap-1">
-                        <Sparkles className="w-3 h-3" /> Special Bonus Onsite:
-                      </span>
-                      {pkg.bonuses.map((bonus, bIdx) => (
-                        <div key={bIdx} className="text-xs text-[#B45309] font-medium flex items-center gap-1.5">
-                          <span className="text-[#F59E0B]">★</span> {bonus}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Features List */}
-                  <ul className="space-y-3 text-sm text-slate-700">
-                    {pkg.features.map((feat, fIdx) => (
-                      <li key={fIdx} className="flex items-start gap-2.5">
-                        <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
+                  {/* Feature & Bonus List combined in exact order matching screenshot */}
+                  <ul className="space-y-3 text-sm text-slate-800 font-medium">
+                    {pkg.id === 'onsite' ? (
+                      <>
+                        <li className="flex items-start gap-2.5">
+                          <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" />
+                          <span>Akses onsite 2 hari penuh di MAXY AI HUB, Jakarta</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" />
+                          <span>Semua benefit pada paket Online</span>
+                        </li>
+                        <li className="flex items-start gap-2.5 text-[#B45309] font-semibold">
+                          <span className="text-[#F59E0B] shrink-0">★</span>
+                          <span>Bonus 10 pendaftar pertama: Free 1-on-1 Mentoring Session</span>
+                        </li>
+                        <li className="flex items-start gap-2.5 text-[#B45309] font-semibold">
+                          <span className="text-[#F59E0B] shrink-0">★</span>
+                          <span>Bonus: Buku fisik &quot;Happiness at Work&quot; (senilai Rp 250.000)</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" />
+                          <span>Networking tatap muka sesama HR Leader &amp; Owner</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" />
+                          <span>Akses fasilitas premium MAXY AI HUB</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" />
+                          <span>Makan siang &amp; coffee break 2 hari</span>
+                        </li>
+                      </>
+                    ) : (
+                      pkg.features.map((feat, fIdx) => (
+                        <li key={fIdx} className="flex items-start gap-2.5">
+                          <Check className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" />
+                          <span>{feat}</span>
+                        </li>
+                      ))
+                    )}
                   </ul>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-slate-200">
+                <div className="pt-6 mt-6">
                   <button
                     onClick={() => onOpenRegister(pkg.id, selectedPax)}
-                    className={`w-full font-display font-extrabold text-sm py-3.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-2 ${
+                    className={`w-full font-display font-extrabold text-sm py-3.5 rounded-xl transition-all text-center ${
                       pkg.isRecommended
-                        ? 'bg-[#F59E0B] hover:bg-amber-400 text-amber-950 shadow-amber-500/20'
-                        : 'border-2 border-[#0B1628] text-[#0B1628] hover:bg-[#0B1628] hover:text-white'
+                        ? 'bg-[#F59E0B] hover:bg-amber-400 text-amber-950 shadow-md'
+                        : 'border-1.5 border-[#0B1628] text-[#0B1628] hover:bg-[#0B1628] hover:text-white'
                     }`}
                   >
-                    Daftar {pkg.name}
-                    <ArrowRight className="w-4 h-4" />
+                    {pkg.id === 'onsite' ? 'Pilih Paket Onsite ⭐' : 'Pilih Paket Online'}
                   </button>
                 </div>
 

@@ -255,35 +255,36 @@ export const TESTIMONIALS: Testimonial[] = [
 export const PRICING_PACKAGES: PricingPackage[] = [
   {
     id: "online",
-    name: "Paket Online (2 Days Online)",
+    name: "PAKET ONLINE · Fleksibel",
     pricePerPax: 1800000,
-    location: "Live via Zoom — interaktif, bukan rekaman pasif",
+    location: "per peserta",
     features: [
-      "Akses kelas interaktif full 2 hari",
-      "Template AI workflow untuk eksekutif",
+      "Akses kelas interaktif live via Zoom 2 hari penuh (bukan rekaman)",
+      "Seluruh 8 deliverable siap pakai",
+      "Template workflow AI khusus eksekutif",
       "Draft AI Adoption Roadmap 30 hari",
-      "Sesi Q&A dengan kedua pemateri",
+      "Sesi Q&A langsung dengan para pemateri",
       "E-Certificate resmi MAXY Academy",
       "Invoice & dokumen pengadaan korporat"
     ]
   },
   {
     id: "onsite",
-    name: "Paket Onsite Eksklusif (2 Days Onsite)",
+    name: "PAKET ONSITE EKSKLUSIF",
     badge: "RECOMMENDED",
     pricePerPax: 2500000,
-    location: "MAXY AI HUB, Jakarta — pengalaman penuh",
+    location: "per peserta · MAXY AI HUB Jakarta",
     isRecommended: true,
     features: [
-      "Semua benefit paket Online",
-      "Networking dengan sesama HR Leader & Owner",
+      "Akses onsite 2 hari penuh di MAXY AI HUB, Jakarta",
+      "Semua benefit pada paket Online",
+      "Networking tatap muka sesama HR Leader & Owner",
       "Akses fasilitas premium MAXY AI HUB",
       "Makan siang & coffee break 2 hari"
     ],
     bonuses: [
-      "Bonus: Buku 'Happiness at Work' — senilai Rp 250.000",
-      "Free 1-on-1 Mentoring Session bersama pemateri",
-      "Special Price untuk 10 pendaftar pertama"
+      "Bonus 10 pendaftar pertama: Free 1-on-1 Mentoring Session",
+      "Bonus: Buku fisik \"Happiness at Work\" (senilai Rp 250.000)"
     ]
   },
   {

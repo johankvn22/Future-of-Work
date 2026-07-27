@@ -1,0 +1,6 @@
+{
+  "name": "The Future of Work - MAXY Academy",
+  "description": "Landing page and registration portal for Hybrid Class: How AI is Shaping Productivity & Workplace Happiness by MAXY Academy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

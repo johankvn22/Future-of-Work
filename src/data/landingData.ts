@@ -222,7 +222,8 @@ export const SPEAKERS: Speaker[] = [
     role: "Chief Happiness Officer",
     cert: "Certified by Woohoo Academy Denmark",
     bio: "Pakar happiness at work yang telah bekerja sama dengan ratusan perusahaan di Indonesia. Menghubungkan wellbeing science dengan strategi bisnis yang terukur.",
-    initials: "RS"
+    initials: "RS",
+    imageUrl: "/images/speaker-ruben.png"
   },
   {
     id: "isaac",
@@ -230,7 +231,8 @@ export const SPEAKERS: Speaker[] = [
     role: "Co-Founder & CEO MAXY Academy",
     cert: "AI Expert",
     bio: "Membangun MAXY Academy untuk mendampingi ratusan organisasi di Indonesia dalam transformasi talenta dan implementasi AI.",
-    initials: "IM"
+    initials: "IM",
+    imageUrl: "/images/speaker-isaac.png"
   },
   {
     id: "andy",
@@ -238,7 +240,8 @@ export const SPEAKERS: Speaker[] = [
     role: "Co-Founder & CTO MAXY Academy",
     cert: "AI Expert · Trainer 100+ Organisasi",
     bio: "CTO dan Co-Founder MAXY Academy. Memimpin implementasi AI untuk 100+ organisasi di Indonesia — dari enterprise hingga institusi pemerintah.",
-    initials: "AB"
+    initials: "AB",
+    imageUrl: "/images/speaker-andy.png"
   }
 ];
 

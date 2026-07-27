@@ -28,13 +28,23 @@ export const SpeakersSection: React.FC = () => {
               className="bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-3xl p-8 text-center transition-all hover:scale-[1.01] flex flex-col justify-between group shadow-xl"
             >
               <div>
-                {/* Speaker Avatar / Initials Badge */}
-                <div className="relative w-24 h-24 mx-auto mb-6">
-                  <div className="w-full h-full rounded-full bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 text-slate-950 font-black text-3xl flex items-center justify-center shadow-xl shadow-amber-500/20 group-hover:scale-105 transition-transform border-2 border-amber-400/40">
-                    {speaker.initials}
-                  </div>
-                  <div className="absolute -bottom-1 -right-1 bg-slate-950 p-1.5 rounded-full border border-slate-800 text-emerald-400">
-                    <ShieldCheck className="w-4 h-4" />
+                {/* Speaker Photo / Initials Badge */}
+                <div className="relative w-36 h-36 mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
+                  {speaker.imageUrl ? (
+                    <div className="w-full h-full rounded-2xl overflow-hidden border-2 border-amber-500/40 shadow-xl shadow-amber-500/10 bg-slate-800">
+                      <img
+                        src={speaker.imageUrl}
+                        alt={speaker.name}
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-full h-full rounded-2xl bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 text-slate-950 font-black text-4xl flex items-center justify-center shadow-xl shadow-amber-500/20 border-2 border-amber-400/40">
+                      {speaker.initials}
+                    </div>
+                  )}
+                  <div className="absolute -bottom-2 -right-2 bg-slate-950 p-2 rounded-full border border-slate-800 text-emerald-400 shadow-lg">
+                    <ShieldCheck className="w-5 h-5" />
                   </div>
                 </div>
 

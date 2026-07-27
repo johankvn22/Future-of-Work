@@ -5,6 +5,7 @@ export interface Speaker {
   cert: string;
   bio: string;
   initials: string;
+  imageUrl?: string;
 }
 
 export interface Testimonial {

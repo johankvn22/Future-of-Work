@@ -11,6 +11,17 @@ interface HeroSectionProps {
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpenVideo }) => {
   return (
     <section className="relative bg-[#0B1628] text-white overflow-hidden pt-8 pb-16 lg:py-20 border-b border-[#1B2C4A]">
+      {/* Floating HolonIQ Award Badge (Top Right - Matching Reference Screenshot) */}
+      <div className="hidden sm:block absolute top-6 right-4 sm:right-8 lg:right-12 z-20 transition-transform duration-300 hover:scale-105">
+        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 bg-[#0B1628] group">
+          <img
+            src={holonIqBadge}
+            alt="HolonIQ Southeast Asia EdTech 50"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      </div>
+
       {/* Subtle Background Glow Accent */}
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />

@@ -2,29 +2,43 @@ import { Speaker, Testimonial, Deliverable, PricingPackage, FaqItem } from '../t
 import speakerRuben from '../assets/images/speaker-ruben.png';
 import speakerIsaac from '../assets/images/speaker-isaac.png';
 import speakerAndy from '../assets/images/speaker-andy.png';
+import heroVideo from '../assets/videos/hero.mp4';
+import testimoniVideo from '../assets/videos/testimoni.mp4';
+import portfolioBatch2Video from '../assets/videos/portfolio-batch2.mp4';
+import heroThumb from '../assets/videos/hero-thumb.jpg';
+import testimoniThumb from '../assets/videos/testimoni-thumb.jpg';
+import portfolioBatch2Thumb from '../assets/videos/portfolio-batch2-thumb.jpg';
 
 export const VIDEO_LINKS = {
   hero: {
     url: "https://www.instagram.com/reel/DaLCdigzbUH/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     embedUrl: "https://www.instagram.com/reel/DaLCdigzbUH/embed/",
+    videoSrc: heroVideo,
+    thumbnailSrc: heroThumb,
     title: "Video Overview: The Future of Work",
     description: "Saksikan highlight & use case AI yang akan dipelajari di MAXY AI HUB.",
   },
   testimoni: {
     url: "https://www.instagram.com/reel/DYEriMzzq4W/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     embedUrl: "https://www.instagram.com/reel/DYEriMzzq4W/embed/",
+    videoSrc: testimoniVideo,
+    thumbnailSrc: testimoniThumb,
     title: "Video Testimoni Peserta",
     description: "Kisah nyata & tanggapan HR Leader serta Executive peserta pelatihan MAXY.",
   },
   portfolioBatch1: {
     url: "https://www.instagram.com/reel/DYEriMzzq4W/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     embedUrl: "https://www.instagram.com/reel/DYEriMzzq4W/embed/",
+    videoSrc: testimoniVideo,
+    thumbnailSrc: testimoniThumb,
     title: "Video Portfolio - Batch 1",
     description: "Dokumentasi suasana kelas & praktik langsung peserta Batch 1 di MAXY AI HUB.",
   },
   portfolioBatch2: {
     url: "https://www.instagram.com/reel/DaAn-x8zD8O/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     embedUrl: "https://www.instagram.com/reel/DaAn-x8zD8O/embed/",
+    videoSrc: portfolioBatch2Video,
+    thumbnailSrc: portfolioBatch2Thumb,
     title: "Video Portfolio - Batch 2",
     description: "Highlights pembelajaran, networking, & diskusi peserta Batch 2.",
   },

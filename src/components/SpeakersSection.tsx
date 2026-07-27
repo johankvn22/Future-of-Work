@@ -25,26 +25,27 @@ export const SpeakersSection: React.FC = () => {
           {SPEAKERS.map((speaker) => (
             <div
               key={speaker.id}
-              className="bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-3xl p-8 text-center transition-all hover:scale-[1.01] flex flex-col justify-between group shadow-xl"
+              className="bg-slate-900 border border-slate-800 hover:border-amber-500/40 rounded-3xl p-6 text-center transition-all hover:scale-[1.02] flex flex-col justify-between group shadow-2xl overflow-hidden"
             >
               <div>
-                {/* Speaker Photo / Initials Badge */}
-                <div className="relative w-36 h-36 mx-auto mb-6 group-hover:scale-105 transition-all duration-300">
+                {/* Enlarged Speaker Photo / Initials Badge */}
+                <div className="relative w-full h-72 sm:h-80 mb-6 group-hover:scale-[1.02] transition-all duration-500">
                   {speaker.imageUrl ? (
-                    <div className="w-full h-full rounded-2xl overflow-hidden border-2 border-amber-500/40 shadow-xl shadow-amber-500/10 bg-slate-800">
+                    <div className="w-full h-full rounded-2xl overflow-hidden border-2 border-amber-500/40 shadow-2xl shadow-amber-500/10 bg-slate-950 relative">
                       <img
                         src={speaker.imageUrl}
                         alt={speaker.name}
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
                     </div>
                   ) : (
-                    <div className="w-full h-full rounded-2xl bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 text-slate-950 font-black text-4xl flex items-center justify-center shadow-xl shadow-amber-500/20 border-2 border-amber-400/40">
+                    <div className="w-full h-full rounded-2xl bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 text-slate-950 font-black text-6xl flex items-center justify-center shadow-2xl shadow-amber-500/20 border-2 border-amber-400/40">
                       {speaker.initials}
                     </div>
                   )}
-                  <div className="absolute -bottom-2 -right-2 bg-slate-950 p-2 rounded-full border border-slate-800 text-emerald-400 shadow-lg">
-                    <ShieldCheck className="w-5 h-5" />
+                  <div className="absolute bottom-3 right-3 bg-slate-950 p-2.5 rounded-full border-2 border-slate-800 text-emerald-400 shadow-xl">
+                    <ShieldCheck className="w-6 h-6" />
                   </div>
                 </div>
 

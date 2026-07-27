@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, Sparkles, ExternalLink, ArrowRight } from 'lucide-react';
+import { VIDEO_LINKS } from '../data/landingData';
 
 interface VideoModalProps {
   isOpen: boolean;
@@ -41,6 +42,10 @@ export const VideoModal: React.FC<VideoModalProps> = ({
     }
   };
 
+  const matchedVideo = Object.values(VIDEO_LINKS).find((v) => v.url === videoUrl || v.embedUrl === videoUrl);
+  const videoToPlay = matchedVideo?.videoSrc;
+  const posterToUse = matchedVideo?.thumbnailSrc;
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 backdrop-blur-md p-4 animate-in fade-in">
       <div className="bg-slate-900 border border-slate-800 rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative">
@@ -63,14 +68,25 @@ export const VideoModal: React.FC<VideoModalProps> = ({
         </div>
 
         {/* Video Player Container */}
-        <div className="relative aspect-video bg-slate-950 flex items-center justify-center overflow-hidden">
-          <iframe
-            src={embedUrl}
-            title={title}
-            className="w-full h-full border-0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+        <div className="relative w-full h-[550px] bg-black flex items-center justify-center overflow-hidden">
+          {videoToPlay ? (
+            <video
+              src={videoToPlay}
+              poster={posterToUse}
+              controls
+              autoPlay
+              playsInline
+              className="w-full h-full object-contain"
+            />
+          ) : (
+            <iframe
+              src={embedUrl}
+              title={title}
+              className="w-full h-full border-0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          )}
         </div>
 
         {/* Footer Actions */}

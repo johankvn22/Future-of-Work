@@ -126,16 +126,38 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                 </button>
               </div>
 
-              {/* Direct Instagram Embed Player (Shows Thumbnail & Plays Directly) */}
-              <div className="w-full h-[470px] bg-slate-950 relative flex items-center justify-center overflow-hidden">
-                <iframe
-                  src={VIDEO_LINKS.hero.embedUrl}
-                  className="w-full h-full border-0"
-                  allow="autoplay; encrypted-media; picture-in-picture"
-                  allowFullScreen
-                  title="Video Overview & Informasi Pendaftaran"
-                  scrolling="no"
-                />
+              {/* Instagram Reel Direct Embed Wrapper with Native Inline Video Playback */}
+              <div className="w-full bg-slate-950 border-t border-b border-slate-800/60 relative">
+                {/* Instagram Header Bar */}
+                <div className="px-4 py-2.5 bg-gradient-to-r from-purple-600/15 via-pink-600/15 to-amber-500/15 border-b border-slate-800/80 flex items-center justify-between text-xs">
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 p-[2px] flex items-center justify-center shadow-md">
+                      <div className="w-full h-full bg-slate-950 rounded-full flex items-center justify-center text-[9px] font-extrabold text-white">
+                        IG
+                      </div>
+                    </div>
+                    <div>
+                      <span className="font-bold text-white block">@maxy.academy</span>
+                      <span className="text-[10px] text-slate-400 -mt-0.5 block">Instagram Reels · Diputar Langsung</span>
+                    </div>
+                  </div>
+                  <span className="text-[10px] bg-slate-800/90 text-amber-300 font-bold px-2 py-0.5 rounded-md border border-slate-700">
+                    Reels
+                  </span>
+                </div>
+
+                {/* Direct Inline HTML5 Player (Plays instantly without opening Instagram) */}
+                <div className="w-full h-[450px] sm:h-[480px] bg-black relative flex items-center justify-center overflow-hidden group/video">
+                  <video
+                    src={VIDEO_LINKS.hero.videoSrc}
+                    poster={VIDEO_LINKS.hero.thumbnailSrc}
+                    controls
+                    playsInline
+                    className="w-full h-full object-contain pointer-events-auto"
+                  >
+                    Your browser does not support HTML5 video.
+                  </video>
+                </div>
               </div>
 
               {/* Registration Call-to-Action Box below video */}

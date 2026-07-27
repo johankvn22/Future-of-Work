@@ -77,7 +77,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
           </div>
         </div>
 
-        {/* 3 Video Cards Grid (Direct Embed Players with Thumbnails & Instant Play) */}
+        {/* 3 Video Cards Grid (Direct IG Embed Players with Thumbnails & Instant Play) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           {/* 1. Video Testimoni Peserta */}
@@ -96,16 +96,28 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
                 </button>
               </div>
 
-              {/* Direct Instagram Embed Player (Shows Thumbnail & Plays Directly) */}
-              <div className="w-full h-[470px] bg-slate-950 relative flex items-center justify-center overflow-hidden">
-                <iframe
-                  src={VIDEO_LINKS.testimoni.embedUrl}
-                  className="w-full h-full border-0"
-                  allow="autoplay; encrypted-media; picture-in-picture"
-                  allowFullScreen
-                  title="Video Testimoni Peserta"
-                  scrolling="no"
-                />
+              {/* Instagram Reel Embed UI + Native Video Player */}
+              <div className="w-full bg-slate-950 border-t border-b border-slate-800/60 relative">
+                <div className="px-4 py-2 bg-gradient-to-r from-purple-600/15 via-pink-600/15 to-amber-500/15 border-b border-slate-800/80 flex items-center justify-between text-xs">
+                  <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 p-[2px] flex items-center justify-center">
+                      <div className="w-full h-full bg-slate-950 rounded-full flex items-center justify-center text-[8px] font-black text-white">IG</div>
+                    </div>
+                    <span className="font-bold text-slate-200">@maxy.academy</span>
+                  </div>
+                  <span className="text-[10px] text-slate-400 font-medium">Reels</span>
+                </div>
+                <div className="w-full h-[450px] bg-black relative flex items-center justify-center overflow-hidden">
+                  <video
+                    src={VIDEO_LINKS.testimoni.videoSrc}
+                    poster={VIDEO_LINKS.testimoni.thumbnailSrc}
+                    controls
+                    playsInline
+                    className="w-full h-full object-contain"
+                  >
+                    Your browser does not support HTML5 video.
+                  </video>
+                </div>
               </div>
 
               <div className="p-5 space-y-2">
@@ -150,16 +162,28 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
                 </button>
               </div>
 
-              {/* Direct Instagram Embed Player */}
-              <div className="w-full h-[470px] bg-slate-950 relative flex items-center justify-center overflow-hidden">
-                <iframe
-                  src={VIDEO_LINKS.portfolioBatch1.embedUrl}
-                  className="w-full h-full border-0"
-                  allow="autoplay; encrypted-media; picture-in-picture"
-                  allowFullScreen
-                  title="Video Portfolio Batch 1"
-                  scrolling="no"
-                />
+              {/* Instagram Reel Embed UI + Native Video Player */}
+              <div className="w-full bg-slate-950 border-t border-b border-slate-800/60 relative">
+                <div className="px-4 py-2 bg-gradient-to-r from-purple-600/15 via-pink-600/15 to-cyan-500/15 border-b border-slate-800/80 flex items-center justify-between text-xs">
+                  <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 p-[2px] flex items-center justify-center">
+                      <div className="w-full h-full bg-slate-950 rounded-full flex items-center justify-center text-[8px] font-black text-white">IG</div>
+                    </div>
+                    <span className="font-bold text-slate-200">@maxy.academy</span>
+                  </div>
+                  <span className="text-[10px] text-slate-400 font-medium">Reels</span>
+                </div>
+                <div className="w-full h-[450px] bg-black relative flex items-center justify-center overflow-hidden">
+                  <video
+                    src={VIDEO_LINKS.portfolioBatch1.videoSrc}
+                    poster={VIDEO_LINKS.portfolioBatch1.thumbnailSrc}
+                    controls
+                    playsInline
+                    className="w-full h-full object-contain"
+                  >
+                    Your browser does not support HTML5 video.
+                  </video>
+                </div>
               </div>
 
               <div className="p-5 space-y-2">
@@ -204,16 +228,28 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
                 </button>
               </div>
 
-              {/* Direct Instagram Embed Player */}
-              <div className="w-full h-[470px] bg-slate-950 relative flex items-center justify-center overflow-hidden">
-                <iframe
-                  src={VIDEO_LINKS.portfolioBatch2.embedUrl}
-                  className="w-full h-full border-0"
-                  allow="autoplay; encrypted-media; picture-in-picture"
-                  allowFullScreen
-                  title="Video Portfolio Batch 2"
-                  scrolling="no"
-                />
+              {/* Instagram Reel Embed UI + Native Video Player */}
+              <div className="w-full bg-slate-950 border-t border-b border-slate-800/60 relative">
+                <div className="px-4 py-2 bg-gradient-to-r from-purple-600/15 via-pink-600/15 to-indigo-500/15 border-b border-slate-800/80 flex items-center justify-between text-xs">
+                  <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 p-[2px] flex items-center justify-center">
+                      <div className="w-full h-full bg-slate-950 rounded-full flex items-center justify-center text-[8px] font-black text-white">IG</div>
+                    </div>
+                    <span className="font-bold text-slate-200">@maxy.academy</span>
+                  </div>
+                  <span className="text-[10px] text-slate-400 font-medium">Reels</span>
+                </div>
+                <div className="w-full h-[450px] bg-black relative flex items-center justify-center overflow-hidden">
+                  <video
+                    src={VIDEO_LINKS.portfolioBatch2.videoSrc}
+                    poster={VIDEO_LINKS.portfolioBatch2.thumbnailSrc}
+                    controls
+                    playsInline
+                    className="w-full h-full object-contain"
+                  >
+                    Your browser does not support HTML5 video.
+                  </video>
+                </div>
               </div>
 
               <div className="p-5 space-y-2">

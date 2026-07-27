@@ -1,5 +1,32 @@
 import { Speaker, Testimonial, Deliverable, PricingPackage, FaqItem } from '../types';
 
+export const VIDEO_LINKS = {
+  hero: {
+    url: "https://www.instagram.com/reel/DaLCdigzbUH/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    embedUrl: "https://www.instagram.com/reel/DaLCdigzbUH/embed/",
+    title: "Video Overview: The Future of Work",
+    description: "Saksikan highlight & use case AI yang akan dipelajari di MAXY AI HUB.",
+  },
+  testimoni: {
+    url: "https://www.instagram.com/reel/DYEriMzzq4W/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    embedUrl: "https://www.instagram.com/reel/DYEriMzzq4W/embed/",
+    title: "Video Testimoni Peserta",
+    description: "Kisah nyata & tanggapan HR Leader serta Executive peserta pelatihan MAXY.",
+  },
+  portfolioBatch1: {
+    url: "https://www.instagram.com/reel/DYEriMzzq4W/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    embedUrl: "https://www.instagram.com/reel/DYEriMzzq4W/embed/",
+    title: "Video Portfolio - Batch 1",
+    description: "Dokumentasi suasana kelas & praktik langsung peserta Batch 1 di MAXY AI HUB.",
+  },
+  portfolioBatch2: {
+    url: "https://www.instagram.com/reel/DaAn-x8zD8O/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    embedUrl: "https://www.instagram.com/reel/DaAn-x8zD8O/embed/",
+    title: "Video Portfolio - Batch 2",
+    description: "Highlights pembelajaran, networking, & diskusi peserta Batch 2.",
+  },
+};
+
 export const EVENT_DETAILS = {
   title: "The Future of Work: How AI is Shaping Productivity & Workplace Happiness",
   subtitle: "Program hybrid 2 hari untuk HR Manager, Direktur, Entrepreneur, dan Owner. Pulang membawa sistem AI + Happiness siap jalan, bukan teori.",

@@ -1,11 +1,12 @@
 import React from 'react';
-import { X, Sparkles, Play } from 'lucide-react';
+import { X, Sparkles, ExternalLink, ArrowRight } from 'lucide-react';
 
 interface VideoModalProps {
   isOpen: boolean;
   videoUrl: string;
   title: string;
   onClose: () => void;
+  onOpenRegister?: (pkgId?: string) => void;
 }
 
 export const VideoModal: React.FC<VideoModalProps> = ({
@@ -13,8 +14,32 @@ export const VideoModal: React.FC<VideoModalProps> = ({
   videoUrl,
   title,
   onClose,
+  onOpenRegister,
 }) => {
   if (!isOpen) return null;
+
+  const isInstagram = videoUrl.includes('instagram.com');
+  
+  // Format embed URL for Instagram Reel if needed
+  let embedUrl = videoUrl;
+  if (isInstagram && !videoUrl.includes('/embed')) {
+    const match = videoUrl.match(/instagram\.com\/reel\/([A-Za-z0-9_-]+)/);
+    if (match && match[1]) {
+      embedUrl = `https://www.instagram.com/reel/${match[1]}/embed/`;
+    }
+  }
+
+  const handleRegisterClick = () => {
+    onClose();
+    if (onOpenRegister) {
+      onOpenRegister('onsite');
+    } else {
+      const formElement = document.getElementById('daftar');
+      if (formElement) {
+        formElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 backdrop-blur-md p-4 animate-in fade-in">
@@ -38,9 +63,9 @@ export const VideoModal: React.FC<VideoModalProps> = ({
         </div>
 
         {/* Video Player Container */}
-        <div className="relative aspect-video bg-slate-950 flex items-center justify-center">
+        <div className="relative aspect-video bg-slate-950 flex items-center justify-center overflow-hidden">
           <iframe
-            src={`${videoUrl}?autoplay=1`}
+            src={embedUrl}
             title={title}
             className="w-full h-full border-0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -48,20 +73,42 @@ export const VideoModal: React.FC<VideoModalProps> = ({
           />
         </div>
 
-        {/* Footer Note */}
-        <div className="p-4 bg-slate-950 text-xs text-slate-400 flex items-center justify-between">
-          <span className="flex items-center gap-1 text-amber-400">
-            <Sparkles className="w-3.5 h-3.5" /> Live Masterclass Experience — MAXY Academy
-          </span>
-          <button
-            onClick={onClose}
-            className="text-slate-300 font-bold hover:text-white"
-          >
-            Tutup
-          </button>
+        {/* Footer Actions */}
+        <div className="p-4 bg-slate-950 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2">
+            <span className="flex items-center gap-1 text-amber-400 font-medium">
+              <Sparkles className="w-3.5 h-3.5" /> MAXY Academy Reel
+            </span>
+            <a
+              href={videoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-slate-300 hover:text-amber-400 bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-lg transition-colors font-medium"
+            >
+              <ExternalLink className="w-3.5 h-3.5" />
+              Buka di Instagram Reel ↗
+            </a>
+          </div>
+
+          <div className="flex items-center gap-2 ml-auto">
+            <button
+              onClick={handleRegisterClick}
+              className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 shadow-md"
+            >
+              Lanjut ke Pendaftaran
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+            <button
+              onClick={onClose}
+              className="text-slate-400 hover:text-white px-2 py-1.5"
+            >
+              Tutup
+            </button>
+          </div>
         </div>
 
       </div>
     </div>
   );
 };
+

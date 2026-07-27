@@ -1,6 +1,6 @@
 import React from 'react';
-import { EVENT_DETAILS } from '../data/landingData';
-import { Calendar, MapPin, Clock, Play, CheckCircle2, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { EVENT_DETAILS, VIDEO_LINKS } from '../data/landingData';
+import { Calendar, MapPin, Clock, Play, CheckCircle2, ArrowRight, ShieldCheck, Zap, ExternalLink } from 'lucide-react';
 
 interface HeroSectionProps {
   onOpenRegister: (pkgId?: string) => void;
@@ -111,33 +111,53 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
           {/* Right Video Preview Card & Event Quick Specs */}
           <div className="lg:col-span-5 space-y-6">
             
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl hover:border-slate-700 transition-all group">
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl hover:border-amber-500/40 transition-all group">
+              
+              {/* Click triggers registration directly */}
               <div
-                onClick={() => onOpenVideo('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Overview Masterclass: The Future of Work')}
+                onClick={() => onOpenRegister('onsite')}
                 className="relative aspect-video bg-slate-950 flex items-center justify-center cursor-pointer group-hover:scale-[1.01] transition-transform overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/70 to-transparent" />
                 
                 {/* Decorative Grid Pattern */}
                 <div className="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
 
                 <div className="relative z-10 flex flex-col items-center text-center p-6 space-y-3">
-                  <div className="w-16 h-16 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center shadow-lg shadow-amber-500/40 group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-amber-500 to-amber-400 text-slate-950 flex items-center justify-center shadow-lg shadow-amber-500/40 group-hover:scale-110 transition-transform">
                     <Play className="w-7 h-7 ml-1 fill-slate-950" />
                   </div>
                   <div>
                     <span className="text-xs font-bold text-amber-400 tracking-wider uppercase block">
-                      ▶ Video Preview Class
+                      ▶ Video Preview Class — Klik untuk Mendaftar
                     </span>
                     <p className="text-white font-bold text-sm mt-1">
-                      Praktik Use Case Bisnis Nyata — Bukan Demo Produk
+                      Praktik Use Case Bisnis Nyata — Langsung Mengarah ke Form Pendaftaran
                     </p>
                   </div>
+                  <span className="inline-flex items-center gap-1.5 text-xs bg-amber-500 text-slate-950 font-bold px-3 py-1 rounded-full shadow-md">
+                    Daftar Sekarang <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
                 </div>
               </div>
 
+              {/* Watch Video Reel on Instagram Action Bar */}
+              <div className="px-5 py-3 bg-slate-950 border-t border-b border-slate-800 flex items-center justify-between text-xs">
+                <span className="text-slate-400 font-medium">Video Highlight Instagram Reel:</span>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onOpenVideo(VIDEO_LINKS.hero.url, VIDEO_LINKS.hero.title);
+                  }}
+                  className="inline-flex items-center gap-1.5 font-semibold text-amber-400 hover:text-amber-300 transition-colors"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  Tonton Reel Instagram ↗
+                </button>
+              </div>
+
               {/* Event Schedule Quick Specs Bar */}
-              <div className="p-5 bg-slate-900/90 border-t border-slate-800/80 space-y-3">
+              <div className="p-5 bg-slate-900/90 space-y-3">
                 <div className="flex items-center gap-3 text-xs text-slate-300">
                   <Calendar className="w-4 h-4 text-amber-400 shrink-0" />
                   <div>
@@ -179,3 +199,4 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
     </section>
   );
 };
+

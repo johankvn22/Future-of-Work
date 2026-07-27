@@ -1,6 +1,6 @@
 import React from 'react';
-import { TESTIMONIALS } from '../data/landingData';
-import { Quote, Play, Building, Star, CheckCircle2 } from 'lucide-react';
+import { TESTIMONIALS, VIDEO_LINKS } from '../data/landingData';
+import { Quote, Play, Star, CheckCircle2, ExternalLink, Film } from 'lucide-react';
 
 interface TestimonialsSectionProps {
   onOpenVideo: (videoUrl: string, title: string) => void;
@@ -25,7 +25,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
         </div>
 
         {/* Testimonials Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {TESTIMONIALS.map((t) => (
             <div
               key={t.id}
@@ -64,46 +64,121 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
           ))}
         </div>
 
-        {/* Video Testimonials & Portfolio Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Video Reel Showcase Header */}
+        <div className="mb-8 text-center sm:text-left flex flex-wrap items-center justify-between gap-4 border-t border-slate-800 pt-12">
+          <div>
+            <h3 className="text-xl font-extrabold text-white flex items-center justify-center sm:justify-start gap-2">
+              <Film className="w-5 h-5 text-amber-400" />
+              Video Testimoni &amp; Portfolio Kegiatan
+            </h3>
+            <p className="text-xs text-slate-400 mt-1">
+              Dokumentasi nyata keseruan suasana kelas Batch 1 &amp; Batch 2 di MAXY AI HUB
+            </p>
+          </div>
+        </div>
+
+        {/* 3 Video Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
+          {/* 1. Video Testimoni Peserta */}
           <div
-            onClick={() => onOpenVideo('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Video Testimoni Alumni HR Leaders')}
-            className="bg-slate-950 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-6 cursor-pointer group flex items-center gap-5 transition-all shadow-xl"
+            onClick={() => onOpenVideo(VIDEO_LINKS.testimoni.url, VIDEO_LINKS.testimoni.title)}
+            className="bg-slate-950 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-5 cursor-pointer group flex flex-col justify-between transition-all shadow-xl hover:scale-[1.01]"
           >
-            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center shrink-0 shadow-lg group-hover:scale-105 transition-transform">
-              <Play className="w-8 h-8 text-slate-950 ml-1 fill-slate-950" />
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20">
+                  ▶ Video Testimoni
+                </span>
+                <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-amber-400 transition-colors" />
+              </div>
+
+              <div className="flex items-center gap-4 py-2">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center shrink-0 shadow-lg group-hover:scale-105 transition-transform">
+                  <Play className="w-6 h-6 text-slate-950 ml-0.5 fill-slate-950" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-white group-hover:text-amber-300 transition-colors line-clamp-2">
+                    {VIDEO_LINKS.testimoni.title}
+                  </h4>
+                  <p className="text-xs text-slate-400 mt-1 line-clamp-2">
+                    {VIDEO_LINKS.testimoni.description}
+                  </p>
+                </div>
+              </div>
             </div>
-            <div>
-              <span className="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-1">
-                ▶ Video Testimoni Peserta
-              </span>
-              <h4 className="text-base font-bold text-white group-hover:text-amber-300 transition-colors">
-                Dengar langsung dari HR Leader &amp; Management yang sudah menerapkannya
-              </h4>
-              <p className="text-xs text-slate-400 mt-1">
-                Tonton kisah nyata efisiensi kerja tim Ciputra, DSN Group, dan ADIRA Finance.
-              </p>
+
+            <div className="pt-3 border-t border-slate-900 flex items-center justify-between text-xs text-amber-400 font-semibold">
+              <span>Tonton Reel Instagram</span>
+              <span>↗</span>
             </div>
           </div>
 
+          {/* 2. Video Portfolio Batch 1 */}
           <div
-            onClick={() => onOpenVideo('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Dokumentasi Suasana Kelas MAXY AI HUB')}
-            className="bg-slate-950 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-6 cursor-pointer group flex items-center gap-5 transition-all shadow-xl"
+            onClick={() => onOpenVideo(VIDEO_LINKS.portfolioBatch1.url, VIDEO_LINKS.portfolioBatch1.title)}
+            className="bg-slate-950 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-5 cursor-pointer group flex flex-col justify-between transition-all shadow-xl hover:scale-[1.01]"
           >
-            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-700 flex items-center justify-center shrink-0 shadow-lg group-hover:scale-105 transition-transform">
-              <Play className="w-8 h-8 text-white ml-1 fill-white" />
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-bold text-cyan-400 uppercase tracking-wider bg-cyan-500/10 px-2.5 py-1 rounded-full border border-cyan-500/20">
+                  ▶ Portfolio Batch 1
+                </span>
+                <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-cyan-400 transition-colors" />
+              </div>
+
+              <div className="flex items-center gap-4 py-2">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-700 flex items-center justify-center shrink-0 shadow-lg group-hover:scale-105 transition-transform">
+                  <Play className="w-6 h-6 text-white ml-0.5 fill-white" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors line-clamp-2">
+                    {VIDEO_LINKS.portfolioBatch1.title}
+                  </h4>
+                  <p className="text-xs text-slate-400 mt-1 line-clamp-2">
+                    {VIDEO_LINKS.portfolioBatch1.description}
+                  </p>
+                </div>
+              </div>
             </div>
-            <div>
-              <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest block mb-1">
-                ▶ Video Portfolio Program
-              </span>
-              <h4 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors">
-                Lihat Suasana Kelas &amp; Hasil Deliverable Nyata
-              </h4>
-              <p className="text-xs text-slate-400 mt-1">
-                Aktivitas interaktif di MAXY AI HUB Jakarta &amp; Zoom Live Masterclass.
-              </p>
+
+            <div className="pt-3 border-t border-slate-900 flex items-center justify-between text-xs text-cyan-400 font-semibold">
+              <span>Tonton Reel Instagram</span>
+              <span>↗</span>
+            </div>
+          </div>
+
+          {/* 3. Video Portfolio Batch 2 */}
+          <div
+            onClick={() => onOpenVideo(VIDEO_LINKS.portfolioBatch2.url, VIDEO_LINKS.portfolioBatch2.title)}
+            className="bg-slate-950 border border-slate-800 hover:border-indigo-500/50 rounded-2xl p-5 cursor-pointer group flex flex-col justify-between transition-all shadow-xl hover:scale-[1.01]"
+          >
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-bold text-indigo-400 uppercase tracking-wider bg-indigo-500/10 px-2.5 py-1 rounded-full border border-indigo-500/20">
+                  ▶ Portfolio Batch 2
+                </span>
+                <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-indigo-400 transition-colors" />
+              </div>
+
+              <div className="flex items-center gap-4 py-2">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-700 flex items-center justify-center shrink-0 shadow-lg group-hover:scale-105 transition-transform">
+                  <Play className="w-6 h-6 text-white ml-0.5 fill-white" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors line-clamp-2">
+                    {VIDEO_LINKS.portfolioBatch2.title}
+                  </h4>
+                  <p className="text-xs text-slate-400 mt-1 line-clamp-2">
+                    {VIDEO_LINKS.portfolioBatch2.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-3 border-t border-slate-900 flex items-center justify-between text-xs text-indigo-400 font-semibold">
+              <span>Tonton Reel Instagram</span>
+              <span>↗</span>
             </div>
           </div>
 
@@ -113,3 +188,4 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
     </section>
   );
 };
+

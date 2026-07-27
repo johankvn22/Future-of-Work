@@ -108,6 +108,7 @@ export default function App() {
         videoUrl={videoModal.url}
         title={videoModal.title}
         onClose={handleCloseVideo}
+        onOpenRegister={handleOpenRegister}
       />
 
     </div>

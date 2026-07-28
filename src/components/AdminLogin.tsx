@@ -6,7 +6,7 @@ interface AdminLoginProps {
   onBackToSite: () => void;
 }
 
-const ADMIN_PASSWORD = 'maxy2026';
+const ADMIN_PASSWORD = 'maxyadmin';
 
 export const AdminLogin: React.FC<AdminLoginProps> = ({ onLoginSuccess, onBackToSite }) => {
   const [password, setPassword] = useState('');

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   Settings, Users, MessageSquare, DollarSign, HelpCircle,
-  Package, Layers, Trash2, Plus, Edit2, Save, RotateCcw,
+  Package, Layers, Trash2, Plus, Edit2, Save,
   LogOut, ExternalLink, Check, Upload, Star, BookOpen,
-  Target, Video, Building2, ArrowLeft, X
+  Target, Video, Building2, ArrowLeft, X, Cpu
 } from 'lucide-react';
 import { useContent, EventDetails, AiTool, TrustedBrand, PainPoint, ProgramPillar } from '../data/ContentContext';
 import { Speaker, Testimonial, Deliverable, PricingPackage, FaqItem } from '../types';
@@ -23,7 +23,8 @@ type TabId =
   | 'testimonials'
   | 'pricing'
   | 'faqs'
-  | 'brands';
+  | 'brands'
+  | 'ai_tools';
 
 export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, onBackToSite }) => {
   const {
@@ -39,7 +40,6 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, onBack
     setTestimonials,
     setPricingPackages,
     setFaqItems,
-    resetToDefault,
   } = useContent();
 
   const [activeTab, setActiveTab] = useState<TabId>('event');
@@ -214,8 +214,17 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, onBack
   };
 
   // ─── BRANDS ─────────────────────────────────────────────────────────────────
-  const [brandInput, setBrandInput] = useState<TrustedBrand>({ name: '' });
+  const brandFormRef = useRef<HTMLFormElement>(null);
+  const [brandInput, setBrandInput] = useState<TrustedBrand>({ name: '', logo: '' });
   const [editingBrandIdx, setEditingBrandIdx] = useState<number | null>(null);
+
+  const handleBrandLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onloadend = () => setBrandInput(prev => ({ ...prev, logo: reader.result as string }));
+    reader.readAsDataURL(file);
+  };
 
   const handleSaveBrand = (e: React.FormEvent) => {
     e.preventDefault();
@@ -225,8 +234,33 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, onBack
     else list.push(brandInput);
     setTrustedBrands(list);
     setEditingBrandIdx(null);
-    setBrandInput({ name: '' });
+    setBrandInput({ name: '', logo: '' });
     showToast('Brand berhasil disimpan!');
+  };
+
+  // ─── AI TOOLS ─────────────────────────────────────────────────────────────────
+  const aiToolFormRef = useRef<HTMLFormElement>(null);
+  const [editingAiToolIdx, setEditingAiToolIdx] = useState<number | null>(null);
+  const [aiToolInput, setAiToolInput] = useState<AiTool>({ name: '', logo: '' });
+
+  const handleAiToolLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onloadend = () => setAiToolInput(prev => ({ ...prev, logo: reader.result as string }));
+    reader.readAsDataURL(file);
+  };
+
+  const handleSaveAiTool = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!aiToolInput.name.trim()) return;
+    const list = [...content.aiTools];
+    if (editingAiToolIdx !== null) list[editingAiToolIdx] = aiToolInput;
+    else list.push(aiToolInput);
+    setAiTools(list);
+    setEditingAiToolIdx(null);
+    setAiToolInput({ name: '', logo: '' });
+    showToast('AI Tool berhasil disimpan!');
   };
 
   // ─── PROGRAM PILLARS ────────────────────────────────────────────────────────
@@ -263,6 +297,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, onBack
     { id: 'pricing', label: 'Paket Harga', icon: <DollarSign className="w-4 h-4" />, count: content.pricingPackages.length },
     { id: 'faqs', label: 'Tanya Jawab (FAQ)', icon: <HelpCircle className="w-4 h-4" />, count: content.faqItems.length },
     { id: 'brands', label: 'Brand & Klien', icon: <Building2 className="w-4 h-4" />, count: content.trustedBrands.length },
+    { id: 'ai_tools', label: 'Daftar AI Tools', icon: <Cpu className="w-4 h-4" />, count: content.aiTools.length },
   ];
 
   const inputClass = "w-full bg-slate-900 border border-slate-700 focus:border-[#1B4FD8] rounded-xl px-3 py-2.5 text-xs text-white placeholder-slate-500 outline-none transition-colors";
@@ -323,12 +358,6 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, onBack
             className="w-full flex items-center justify-center gap-2 bg-slate-800/60 hover:bg-slate-700 text-slate-300 border border-slate-700 px-4 py-2.5 rounded-xl text-xs font-bold transition-colors cursor-pointer"
           >
             <ExternalLink className="w-4 h-4" /> Lihat Landing Page
-          </button>
-          <button
-            onClick={() => { if (window.confirm('Reset semua konten ke default?')) { resetToDefault(); showToast('Konten direset ke default!'); }}}
-            className="w-full flex items-center justify-center gap-2 bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-500/30 px-4 py-2.5 rounded-xl text-xs font-bold transition-colors cursor-pointer"
-          >
-            <RotateCcw className="w-4 h-4" /> Reset ke Default
           </button>
           <button
             onClick={onLogout}
@@ -623,7 +652,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, onBack
                   <textarea rows={3} className={inputClass} value={speakerInput.bio} onChange={e => setSpeakerInput(p => ({...p, bio: e.target.value}))} />
                 </div>
                 <div>
-                  <label className={labelClass}>Foto Pemateri</label>
+                  <label className={labelClass}>Foto Pemateri (Upload Image File)</label>
                   <div className="flex items-center gap-3">
                     <label className="flex-1 bg-slate-900 border border-slate-700 hover:border-slate-600 rounded-xl px-3 py-2.5 text-xs text-slate-300 flex items-center justify-center gap-2 cursor-pointer font-bold transition-colors">
                       <Upload className="w-3.5 h-3.5 text-cyan-400" /> {speakerInput.imageUrl ? 'Ganti Foto' : 'Upload Foto'}
@@ -814,14 +843,30 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, onBack
           {/* ─── TAB: BRANDS ─────────────────────────────────────────────────── */}
           {activeTab === 'brands' && (
             <div className="max-w-3xl space-y-5">
-              <form onSubmit={handleSaveBrand} className={`p-6 rounded-2xl border space-y-4 ${editingBrandIdx !== null ? 'bg-slate-800/40 border-slate-600' : 'bg-[#111827] border-slate-800'}`}>
+              <form ref={brandFormRef} onSubmit={handleSaveBrand} className={`p-6 rounded-2xl border space-y-4 ${editingBrandIdx !== null ? 'bg-slate-800/40 border-slate-600' : 'bg-[#111827] border-slate-800'}`}>
                 <h4 className="font-bold text-sm text-white">{editingBrandIdx !== null ? 'Edit Brand/Klien' : 'Tambah Brand/Klien'}</h4>
-                <div>
-                  <label className={labelClass}>Nama Brand / Perusahaan</label>
-                  <input className={inputClass} value={brandInput.name} onChange={e => setBrandInput(p => ({...p, name: e.target.value}))} />
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className={labelClass}>Nama Brand / Perusahaan</label>
+                    <input className={inputClass} value={brandInput.name} onChange={e => setBrandInput(p => ({...p, name: e.target.value}))} placeholder="ASSA, SINARMAS LAND, dll" />
+                  </div>
+                  <div>
+                    <label className={labelClass}>Logo Brand (Upload Image)</label>
+                    <div className="flex items-center gap-3">
+                      <label className="flex-1 bg-slate-900 border border-slate-700 hover:border-slate-600 rounded-xl px-3 py-2.5 text-xs text-slate-300 flex items-center justify-center gap-2 cursor-pointer font-bold transition-colors">
+                        <Upload className="w-3.5 h-3.5 text-cyan-400" /> {brandInput.logo ? 'Ganti Logo' : 'Upload Logo'}
+                        <input type="file" accept="image/*" onChange={handleBrandLogoUpload} className="hidden" />
+                      </label>
+                      {brandInput.logo && (
+                        <div className="w-10 h-10 rounded-xl overflow-hidden bg-white p-1 border border-slate-700 shrink-0 flex items-center justify-center">
+                          <img src={brandInput.logo} alt="preview" className="max-w-full max-h-full object-contain" />
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
                 <div className="flex justify-end gap-2">
-                  {editingBrandIdx !== null && <button type="button" onClick={() => { setEditingBrandIdx(null); setBrandInput({ name: '' }); }} className={btnSecondary}>Batal</button>}
+                  {editingBrandIdx !== null && <button type="button" onClick={() => { setEditingBrandIdx(null); setBrandInput({ name: '', logo: '' }); }} className={btnSecondary}>Batal</button>}
                   <button type="submit" className={btnPrimary}><Save className="w-4 h-4" /> {editingBrandIdx !== null ? 'Simpan' : 'Tambah'}</button>
                 </div>
               </form>
@@ -831,10 +876,80 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, onBack
                 <div className="grid sm:grid-cols-2 gap-3">
                   {content.trustedBrands.map((item, idx) => (
                     <div key={idx} className="bg-[#111827] p-3 rounded-xl border border-slate-800 flex items-center justify-between gap-3">
-                      <span className="font-bold text-xs text-white">{item.name}</span>
+                      <div className="flex items-center gap-3 min-w-0">
+                        {item.logo ? (
+                          <div className="w-8 h-8 rounded-lg bg-white p-1 flex items-center justify-center shrink-0 border border-slate-700">
+                            <img src={item.logo} alt={item.name} className="max-w-full max-h-full object-contain" />
+                          </div>
+                        ) : (
+                          <div className="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 text-xs font-bold flex items-center justify-center shrink-0">
+                            {item.name.substring(0, 2).toUpperCase()}
+                          </div>
+                        )}
+                        <span className="font-bold text-xs text-white truncate">{item.name}</span>
+                      </div>
                       <div className="flex gap-1 shrink-0">
-                        <button onClick={() => { setEditingBrandIdx(idx); setBrandInput(item); }} className={btnEdit}><Edit2 className="w-3 h-3" /></button>
+                        <button onClick={() => { setEditingBrandIdx(idx); setBrandInput(item); setTimeout(() => brandFormRef.current?.scrollIntoView({ behavior: 'smooth' }), 50); }} className={btnEdit}><Edit2 className="w-3 h-3" /></button>
                         <button onClick={() => { if (window.confirm('Hapus?')) { setTrustedBrands(content.trustedBrands.filter((_, i) => i !== idx)); showToast('Dihapus!'); }}} className={btnDanger}><Trash2 className="w-3 h-3" /></button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ─── TAB: AI TOOLS ───────────────────────────────────────────────── */}
+          {activeTab === 'ai_tools' && (
+            <div className="max-w-3xl space-y-5">
+              <form ref={aiToolFormRef} onSubmit={handleSaveAiTool} className={`p-6 rounded-2xl border space-y-4 ${editingAiToolIdx !== null ? 'bg-cyan-950/20 border-cyan-500/40' : 'bg-[#111827] border-slate-800'}`}>
+                <h4 className="font-bold text-sm text-white">{editingAiToolIdx !== null ? 'Edit AI Tool' : 'Tambah AI Tool Baru'}</h4>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className={labelClass}>Nama AI Tool</label>
+                    <input className={inputClass} value={aiToolInput.name} onChange={e => setAiToolInput(p => ({...p, name: e.target.value}))} placeholder="ChatGPT, Gemini, dll" />
+                  </div>
+                  <div>
+                    <label className={labelClass}>Logo AI Tool (Upload Image)</label>
+                    <div className="flex items-center gap-3">
+                      <label className="flex-1 bg-slate-900 border border-slate-700 hover:border-slate-600 rounded-xl px-3 py-2.5 text-xs text-slate-300 flex items-center justify-center gap-2 cursor-pointer font-bold transition-colors">
+                        <Upload className="w-3.5 h-3.5 text-cyan-400" /> {aiToolInput.logo ? 'Ganti Logo' : 'Upload Logo'}
+                        <input type="file" accept="image/*" onChange={handleAiToolLogoUpload} className="hidden" />
+                      </label>
+                      {aiToolInput.logo && (
+                        <div className="w-10 h-10 rounded-xl overflow-hidden bg-slate-800 p-1 border border-slate-700 shrink-0 flex items-center justify-center">
+                          <img src={aiToolInput.logo} alt="preview" className="max-w-full max-h-full object-contain" />
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <div className="flex justify-end gap-2">
+                  {editingAiToolIdx !== null && <button type="button" onClick={() => { setEditingAiToolIdx(null); setAiToolInput({ name: '', logo: '' }); }} className={btnSecondary}>Batal</button>}
+                  <button type="submit" className={btnPrimary}><Save className="w-4 h-4" /> {editingAiToolIdx !== null ? 'Simpan' : 'Tambah'}</button>
+                </div>
+              </form>
+
+              <div className="space-y-3">
+                <h4 className="font-bold text-xs text-slate-400 uppercase tracking-wider">Daftar AI Tools ({content.aiTools.length})</h4>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {content.aiTools.map((item, idx) => (
+                    <div key={idx} className="bg-[#111827] p-3 rounded-xl border border-slate-800 flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-3 min-w-0">
+                        {item.logo ? (
+                          <div className="w-8 h-8 rounded-lg bg-slate-900 p-1 flex items-center justify-center shrink-0 border border-slate-700">
+                            <img src={item.logo} alt={item.name} className="max-w-full max-h-full object-contain" />
+                          </div>
+                        ) : (
+                          <div className="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 text-xs font-bold flex items-center justify-center shrink-0">
+                            {item.name.substring(0, 2).toUpperCase()}
+                          </div>
+                        )}
+                        <span className="font-bold text-xs text-white truncate">{item.name}</span>
+                      </div>
+                      <div className="flex gap-1 shrink-0">
+                        <button onClick={() => { setEditingAiToolIdx(idx); setAiToolInput(item); setTimeout(() => aiToolFormRef.current?.scrollIntoView({ behavior: 'smooth' }), 50); }} className={btnEdit}><Edit2 className="w-3 h-3" /></button>
+                        <button onClick={() => { if (window.confirm('Hapus?')) { setAiTools(content.aiTools.filter((_, i) => i !== idx)); showToast('Dihapus!'); }}} className={btnDanger}><Trash2 className="w-3 h-3" /></button>
                       </div>
                     </div>
                   ))}

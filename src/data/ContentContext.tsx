@@ -140,13 +140,20 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
             portfolioBatch1: { ...defaults.videoLinks.portfolioBatch1, ...(parsed.videoLinks?.portfolioBatch1 || {}), videoSrc: defaults.videoLinks.portfolioBatch1.videoSrc, thumbnailSrc: defaults.videoLinks.portfolioBatch1.thumbnailSrc },
             portfolioBatch2: { ...defaults.videoLinks.portfolioBatch2, ...(parsed.videoLinks?.portfolioBatch2 || {}), videoSrc: defaults.videoLinks.portfolioBatch2.videoSrc, thumbnailSrc: defaults.videoLinks.portfolioBatch2.thumbnailSrc },
           },
-          trustedBrands: Array.isArray(parsed.trustedBrands) ? parsed.trustedBrands : defaults.trustedBrands,
-          aiTools: Array.isArray(parsed.aiTools) ? parsed.aiTools : defaults.aiTools,
+          trustedBrands: Array.isArray(parsed.trustedBrands) ? parsed.trustedBrands.map((tb: TrustedBrand) => {
+            const defaultTb = defaults.trustedBrands.find(d => d.name === tb.name);
+            if (defaultTb && !tb.logo?.startsWith('data:')) return { ...tb, logo: tb.logo || defaultTb.logo };
+            return tb;
+          }) : defaults.trustedBrands,
+          aiTools: Array.isArray(parsed.aiTools) ? parsed.aiTools.map((at: AiTool) => {
+            const defaultAt = defaults.aiTools.find(d => d.name === at.name);
+            if (defaultAt && !at.logo?.startsWith('data:')) return { ...at, logo: at.logo || defaultAt.logo };
+            return at;
+          }) : defaults.aiTools,
           painPoints: Array.isArray(parsed.painPoints) ? parsed.painPoints : defaults.painPoints,
           programPillars: Array.isArray(parsed.programPillars) ? parsed.programPillars : defaults.programPillars,
           deliverables: Array.isArray(parsed.deliverables) ? parsed.deliverables : defaults.deliverables,
           speakers: Array.isArray(parsed.speakers) ? parsed.speakers.map((sp: Speaker) => {
-            // Restore static image imports for default speakers
             const defaultSp = defaults.speakers.find(d => d.id === sp.id);
             if (defaultSp && !sp.imageUrl?.startsWith('data:')) return { ...sp, imageUrl: sp.imageUrl || defaultSp.imageUrl };
             return sp;
@@ -164,7 +171,6 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
   useEffect(() => {
     try {
-      // Don't save binary blob data for static assets
       const toSave = {
         ...content,
         videoLinks: {

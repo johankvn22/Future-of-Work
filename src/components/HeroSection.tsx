@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useContent } from '../data/ContentContext';
-import { CheckCircle2, ArrowRight, ShieldCheck, Zap, ExternalLink } from 'lucide-react';
+import { CheckCircle2, ArrowRight, ShieldCheck, Zap, ExternalLink, Play } from 'lucide-react';
 import holonIqBadge from '../assets/images/holoniq-badge.png';
 
 interface HeroSectionProps {
@@ -13,6 +13,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
   const EVENT_DETAILS = content.eventDetails;
   const VIDEO_LINKS = content.videoLinks;
   const AI_TOOLS = content.aiTools;
+  const [heroPlaying, setHeroPlaying] = useState(false);
   return (
     <section className="relative overflow-hidden bg-[#2B5CE6] min-h-screen">
 
@@ -174,18 +175,49 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                   </button>
                 </div>
 
-                {/* Video — portrait/reel height */}
-                <div className="w-full h-[480px] bg-black flex items-center justify-center overflow-hidden">
-                  <video
-                    src={VIDEO_LINKS.hero.videoSrc}
-                    poster={VIDEO_LINKS.hero.thumbnailSrc}
-                    controls
-                    playsInline
-                    preload="none"
-                    className="w-full h-full object-contain"
-                  >
-                    Your browser does not support HTML5 video.
-                  </video>
+                {/* Video — portrait/reel height with custom thumbnail overlay */}
+                <div className="w-full h-[480px] bg-black flex items-center justify-center overflow-hidden relative">
+                  {!heroPlaying ? (
+                    /* Thumbnail Overlay */
+                    <div
+                      className="absolute inset-0 cursor-pointer group"
+                      onClick={() => setHeroPlaying(true)}
+                    >
+                      {/* Thumbnail image */}
+                      <img
+                        src={VIDEO_LINKS.hero.thumbnailSrc}
+                        alt={VIDEO_LINKS.hero.title}
+                        className="w-full h-full object-cover"
+                      />
+                      {/* Dark gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10 group-hover:from-black/70 transition-all duration-300" />
+                      {/* Play button */}
+                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                        <div className="w-16 h-16 rounded-full bg-white/95 group-hover:bg-white group-hover:scale-110 transition-all duration-300 flex items-center justify-center shadow-2xl shadow-black/40">
+                          <Play className="w-6 h-6 text-[#2B5CE6] fill-[#2B5CE6] ml-1" />
+                        </div>
+                        <span className="text-white text-xs font-bold tracking-wide opacity-90 group-hover:opacity-100 transition-opacity">
+                          Tonton Video
+                        </span>
+                      </div>
+                      {/* Duration badge */}
+                      <div className="absolute bottom-3 right-3 bg-black/70 text-white text-[10px] font-bold px-2 py-1 rounded-md">
+                        ▶ Preview Kelas
+                      </div>
+                    </div>
+                  ) : (
+                    /* Actual video player */
+                    <video
+                      src={VIDEO_LINKS.hero.videoSrc}
+                      poster={VIDEO_LINKS.hero.thumbnailSrc}
+                      controls
+                      autoPlay
+                      playsInline
+                      className="w-full h-full object-contain"
+                    >
+                      Your browser does not support HTML5 video.
+                    </video>
+                  )}
                 </div>
 
                 {/* Caption */}

@@ -1,8 +1,10 @@
 import React from 'react';
-import { EVENT_DETAILS } from '../data/landingData';
+import { useContent } from '../data/ContentContext';
 import { MapPin, Calendar, Clock, Navigation, Wifi, Coffee, Users, ShieldCheck } from 'lucide-react';
 
 export const VenueSection: React.FC = () => {
+  const { content } = useContent();
+  const EVENT_DETAILS = content.eventDetails;
   return (
     <section className="py-16 lg:py-24 bg-white text-slate-900 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

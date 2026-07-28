@@ -1,8 +1,10 @@
 import React from 'react';
-import { REALITA_PAIN_POINTS } from '../data/landingData';
+import { useContent } from '../data/ContentContext';
 import { Flame, UserX, Cpu, Clock, AlertTriangle, Check, X, Quote, TrendingDown, Sparkles, ShieldAlert } from 'lucide-react';
 
 export const ProblemSection: React.FC = () => {
+  const { content } = useContent();
+  const REALITA_PAIN_POINTS = content.painPoints;
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'Flame': return <Flame className="w-6 h-6 text-rose-600" />;

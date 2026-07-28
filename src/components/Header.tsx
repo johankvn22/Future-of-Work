@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { EVENT_DETAILS } from '../data/landingData';
+import { useContent } from '../data/ContentContext';
 import { MessageCircle, Menu, X, Clock, Sparkles } from 'lucide-react';
 
 interface HeaderProps {
@@ -7,6 +7,8 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ onOpenRegister }) => {
+  const { content } = useContent();
+  const EVENT_DETAILS = content.eventDetails;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 

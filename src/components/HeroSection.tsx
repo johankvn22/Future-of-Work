@@ -1,5 +1,5 @@
 import React from 'react';
-import { EVENT_DETAILS, VIDEO_LINKS, AI_TOOLS } from '../data/landingData';
+import { useContent } from '../data/ContentContext';
 import { CheckCircle2, ArrowRight, ShieldCheck, Zap, ExternalLink } from 'lucide-react';
 import holonIqBadge from '../assets/images/holoniq-badge.png';
 
@@ -9,6 +9,10 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpenVideo }) => {
+  const { content } = useContent();
+  const EVENT_DETAILS = content.eventDetails;
+  const VIDEO_LINKS = content.videoLinks;
+  const AI_TOOLS = content.aiTools;
   return (
     <section className="relative overflow-hidden bg-[#2B5CE6] min-h-screen">
 

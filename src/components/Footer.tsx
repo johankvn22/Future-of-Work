@@ -1,9 +1,11 @@
 import React from 'react';
-import { EVENT_DETAILS } from '../data/landingData';
+import { useContent } from '../data/ContentContext';
 import { MessageCircle, Heart } from 'lucide-react';
 import holonIqBadge from '../assets/images/holoniq-badge.png';
 
 export const Footer: React.FC = () => {
+  const { content } = useContent();
+  const EVENT_DETAILS = content.eventDetails;
   return (
     <footer className="bg-[#0B1628] text-slate-400 border-t border-white/10 py-12 text-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">

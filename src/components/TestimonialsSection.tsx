@@ -1,5 +1,5 @@
 import React from 'react';
-import { TESTIMONIALS, VIDEO_LINKS } from '../data/landingData';
+import { useContent } from '../data/ContentContext';
 import { Quote, Play, Star, CheckCircle2, ExternalLink, Film } from 'lucide-react';
 
 interface TestimonialsSectionProps {
@@ -7,6 +7,9 @@ interface TestimonialsSectionProps {
 }
 
 export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpenVideo }) => {
+  const { content } = useContent();
+  const TESTIMONIALS = content.testimonials;
+  const VIDEO_LINKS = content.videoLinks;
   return (
     <section id="testimoni" className="py-16 lg:py-24 bg-[#F8FAFC] text-slate-900 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,8 +1,10 @@
 import React from 'react';
-import { EVENT_DETAILS } from '../data/landingData';
+import { useContent } from '../data/ContentContext';
 import { MessageCircle } from 'lucide-react';
 
 export const FloatingWA: React.FC = () => {
+  const { content } = useContent();
+  const EVENT_DETAILS = content.eventDetails;
   const waUrl = `https://wa.me/${EVENT_DETAILS.rawPhone}?text=Halo%20Admin%20MAXY%20(${EVENT_DETAILS.adminName}),%20saya%20ingin%20tanya%20mengenai%20kelas%20The%20Future%20of%20Work.`;
 
   return (

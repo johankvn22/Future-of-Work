@@ -1,6 +1,6 @@
 import React from 'react';
 import { X, Sparkles, ExternalLink, ArrowRight } from 'lucide-react';
-import { VIDEO_LINKS } from '../data/landingData';
+import { useContent } from '../data/ContentContext';
 
 interface VideoModalProps {
   isOpen: boolean;
@@ -18,6 +18,9 @@ export const VideoModal: React.FC<VideoModalProps> = ({
   onOpenRegister,
 }) => {
   if (!isOpen) return null;
+
+  const { content } = useContent();
+  const VIDEO_LINKS = content.videoLinks;
 
   const isInstagram = videoUrl.includes('instagram.com');
   

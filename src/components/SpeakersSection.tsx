@@ -1,8 +1,10 @@
 import React from 'react';
-import { SPEAKERS } from '../data/landingData';
+import { useContent } from '../data/ContentContext';
 import { Award, UserCheck, ShieldCheck } from 'lucide-react';
 
 export const SpeakersSection: React.FC = () => {
+  const { content } = useContent();
+  const SPEAKERS = content.speakers;
   return (
     <section id="pemateri" className="py-16 lg:py-24 bg-white text-slate-900 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

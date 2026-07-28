@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { EVENT_DETAILS } from '../data/landingData';
+import { useContent } from '../data/ContentContext';
 import { MessageCircle, CheckCircle, ShieldCheck, Sparkles, Building2, User, Phone, Mail, Briefcase } from 'lucide-react';
 
 interface RegistrationFormProps {
@@ -11,6 +11,8 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
   initialPackage = 'onsite',
   initialPax = 1
 }) => {
+  const { content } = useContent();
+  const EVENT_DETAILS = content.eventDetails;
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');

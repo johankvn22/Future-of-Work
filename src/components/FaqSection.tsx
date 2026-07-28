@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { FAQ_ITEMS } from '../data/landingData';
+import { useContent } from '../data/ContentContext';
 import { ChevronDown, Search, HelpCircle, MessageCircle } from 'lucide-react';
-import { EVENT_DETAILS } from '../data/landingData';
 
 export const FaqSection: React.FC = () => {
+  const { content } = useContent();
+  const FAQ_ITEMS = content.faqItems;
+  const EVENT_DETAILS = content.eventDetails;
   const [searchQuery, setSearchQuery] = useState('');
   const [openId, setOpenId] = useState<string | null>('faq-1');
 

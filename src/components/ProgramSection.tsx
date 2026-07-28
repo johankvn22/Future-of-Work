@@ -1,5 +1,5 @@
 import React from 'react';
-import { PROGRAM_PILLARS, AI_TOOLS } from '../data/landingData';
+import { useContent } from '../data/ContentContext';
 import { HeartHandshake, Sparkles, Check, ArrowUpRight } from 'lucide-react';
 
 interface ProgramSectionProps {
@@ -7,6 +7,8 @@ interface ProgramSectionProps {
 }
 
 export const ProgramSection: React.FC<ProgramSectionProps> = ({ onOpenRegister }) => {
+  const { content } = useContent();
+  const PROGRAM_PILLARS = content.programPillars;
   return (
     <section id="program" className="py-16 lg:py-24 bg-[#F8FAFC] text-slate-900 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

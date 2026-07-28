@@ -1,9 +1,11 @@
 import React from 'react';
-import { TRUSTED_BRANDS } from '../data/landingData';
+import { useContent } from '../data/ContentContext';
 import { Award, Building2 } from 'lucide-react';
 import holonIqBadge from '../assets/images/holoniq-badge.png';
 
 export const TrustSection: React.FC = () => {
+  const { content } = useContent();
+  const TRUSTED_BRANDS = content.trustedBrands;
   return (
     <section className="bg-[#F8FAFC] border-b border-slate-200 py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

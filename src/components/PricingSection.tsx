@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PRICING_PACKAGES, EVENT_DETAILS } from '../data/landingData';
+import { useContent } from '../data/ContentContext';
 import { Check, Star, Sparkles, Users, MessageCircle, ArrowRight, ShieldCheck, Building2 } from 'lucide-react';
 
 interface PricingSectionProps {
@@ -7,6 +7,9 @@ interface PricingSectionProps {
 }
 
 export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenRegister }) => {
+  const { content } = useContent();
+  const PRICING_PACKAGES = content.pricingPackages;
+  const EVENT_DETAILS = content.eventDetails;
   const [selectedPax, setSelectedPax] = useState<number>(1);
 
   const formatRupiah = (num: number) => {

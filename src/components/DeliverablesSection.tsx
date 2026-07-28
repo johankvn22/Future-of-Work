@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { DELIVERABLES } from '../data/landingData';
+import { useContent } from '../data/ContentContext';
 import { Deliverable } from '../types';
 import { CheckCircle2, Copy, Check, FileText, ArrowRight, X, Sparkles, Download } from 'lucide-react';
 
 export const DeliverablesSection: React.FC = () => {
+  const { content } = useContent();
+  const DELIVERABLES = content.deliverables;
   const [activeDeliverable, setActiveDeliverable] = useState<Deliverable | null>(null);
   const [copied, setCopied] = useState(false);
 

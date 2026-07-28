@@ -72,36 +72,31 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
               <div>
                 <span className="text-[#1B4FD8] font-display font-bold text-xs uppercase tracking-[0.14em] flex items-start gap-1.5">
                   <Zap className="w-3.5 h-3.5 shrink-0 mt-0.5" />
-                  Hybrid Class · 28–29 Juli 2026 · 08.30–17.00 WIB · MAXY AI HUB Jakarta
+                  {content.heroContent.eyebrowText}
                 </span>
               </div>
 
               {/* Headline */}
               <h1 className="text-3xl sm:text-4xl lg:text-[2.4rem] xl:text-5xl font-display font-extrabold tracking-tight text-slate-900 leading-[1.1]">
-                Sistem kerja Anda sedang menguras profit &amp; mencetak{' '}
-                <span className="text-[#2B5CE6]">burnout.</span>
+                {content.heroContent.headlineText}{' '}
+                <span className="text-[#2B5CE6]">{content.heroContent.headlineHighlight}</span>
               </h1>
 
               {/* Body copy */}
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                Tim Anda tidak butuh sesi motivasi tambahan.{' '}
-                <strong className="text-slate-800 font-semibold">Mereka butuh sistem.</strong>{' '}
-                Setiap jam yang Anda tunda mengadopsi AI adalah jam terbuang untuk pekerjaan repetitif — sementara talenta terbaik Anda diam-diam membuka lowongan di tab sebelah.
+                {content.heroContent.descriptionText}
               </p>
 
               {/* Italic callout */}
-              <p className="border-l-4 border-[#2B5CE6] pl-4 text-slate-500 text-sm italic py-0.5">
-                Sementara Anda masih menanti laporan manual, eksekutif kompetitor sudah mengambil keputusan bisnis{' '}
-                <strong className="text-slate-700 not-italic">60% lebih cepat</strong> dengan AI.
-              </p>
+              {content.heroContent.calloutText && (
+                <p className="border-l-4 border-[#2B5CE6] pl-4 text-slate-500 text-sm italic py-0.5">
+                  {content.heroContent.calloutText}
+                </p>
+              )}
 
               {/* Achievement bullets */}
               <ul className="space-y-2.5">
-                {[
-                  'Selamatkan top performer sebelum mereka resign',
-                  '100% use case nyata untuk eksekutif – bukan teori teknis',
-                  'Pulang membawa 7 deliverable siap jalan besok pagi',
-                ].map((point) => (
+                {(content.heroContent.bulletPoints || []).map((point) => (
                   <li key={point} className="flex items-start gap-3 text-sm text-slate-700">
                     <CheckCircle2 className="w-5 h-5 text-[#2B5CE6] shrink-0 mt-0.5" />
                     <span>{point}</span>
@@ -133,14 +128,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                   onClick={() => onOpenRegister('onsite')}
                   className="bg-[#2B5CE6] hover:bg-blue-700 text-white font-display font-extrabold text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2"
                 >
-                  Amankan Executive Program
+                  {content.heroContent.ctaPrimaryText}
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <a
                   href="#harga"
                   className="bg-slate-100 hover:bg-slate-200 text-slate-700 font-display font-bold text-sm px-5 py-3.5 rounded-xl border border-slate-200 transition-all text-center"
                 >
-                  Lihat Paket &amp; Harga
+                  {content.heroContent.ctaSecondaryText}
                 </a>
               </div>
 

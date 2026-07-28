@@ -24,6 +24,17 @@ export interface EventDetails {
   countdownTargetDate: string;
 }
 
+export interface HeroContent {
+  eyebrowText: string;
+  headlineText: string;
+  headlineHighlight: string;
+  descriptionText: string;
+  calloutText: string;
+  bulletPoints: string[];
+  ctaPrimaryText: string;
+  ctaSecondaryText: string;
+}
+
 export interface VideoLink {
   url: string;
   embedUrl: string;
@@ -60,6 +71,7 @@ export interface ProgramPillar {
 
 export interface SiteContent {
   eventDetails: EventDetails;
+  heroContent: HeroContent;
   videoLinks: {
     hero: VideoLink;
     testimoni: VideoLink;
@@ -82,6 +94,7 @@ export interface SiteContent {
 export interface ContentContextType {
   content: SiteContent;
   updateEventDetails: (data: Partial<EventDetails>) => void;
+  updateHeroContent: (data: Partial<HeroContent>) => void;
   updateVideoLink: (key: keyof SiteContent['videoLinks'], data: Partial<VideoLink>) => void;
   setTrustedBrands: (brands: TrustedBrand[]) => void;
   setAiTools: (tools: AiTool[]) => void;
@@ -97,8 +110,24 @@ export interface ContentContextType {
 
 // ─── Default State ─────────────────────────────────────────────────────────────
 
+const defaultHeroContent: HeroContent = {
+  eyebrowText: "Hybrid Class · 28–29 Juli 2026 · 08.30–17.00 WIB · MAXY AI HUB Jakarta",
+  headlineText: "Sistem kerja Anda sedang menguras profit & mencetak",
+  headlineHighlight: "burnout.",
+  descriptionText: "Tim Anda tidak butuh sesi motivasi tambahan. Mereka butuh sistem. Setiap jam yang Anda tunda mengadopsi AI adalah jam terbuang untuk pekerjaan repetitif — sementara talenta terbaik Anda diam-diam membuka lowongan di tab sebelah.",
+  calloutText: "Sementara Anda masih menanti laporan manual, eksekutif kompetitor sudah mengambil keputusan bisnis 60% lebih cepat dengan AI.",
+  bulletPoints: [
+    "Selamatkan top performer sebelum mereka resign",
+    "100% use case nyata untuk eksekutif – bukan teori teknis",
+    "Pulang membawa 7 deliverable siap jalan besok pagi"
+  ],
+  ctaPrimaryText: "Amankan Executive Program",
+  ctaSecondaryText: "Lihat Paket & Harga"
+};
+
 const buildDefaultContent = (): SiteContent => ({
   eventDetails: EVENT_DETAILS as EventDetails,
+  heroContent: defaultHeroContent,
   videoLinks: {
     hero: VIDEO_LINKS.hero as VideoLink,
     testimoni: VIDEO_LINKS.testimoni as VideoLink,
@@ -129,11 +158,11 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
       if (stored) {
         const parsed = JSON.parse(stored);
         const defaults = buildDefaultContent();
-        // Deep merge: keep static assets (video/image imports) from defaults
         return {
           ...defaults,
           ...parsed,
           eventDetails: { ...defaults.eventDetails, ...(parsed.eventDetails || {}) },
+          heroContent: { ...defaults.heroContent, ...(parsed.heroContent || {}) },
           videoLinks: {
             hero: { ...defaults.videoLinks.hero, ...(parsed.videoLinks?.hero || {}), videoSrc: defaults.videoLinks.hero.videoSrc, thumbnailSrc: defaults.videoLinks.hero.thumbnailSrc },
             testimoni: { ...defaults.videoLinks.testimoni, ...(parsed.videoLinks?.testimoni || {}), videoSrc: defaults.videoLinks.testimoni.videoSrc, thumbnailSrc: defaults.videoLinks.testimoni.thumbnailSrc },
@@ -190,6 +219,10 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
     setContent(prev => ({ ...prev, eventDetails: { ...prev.eventDetails, ...data } }));
   };
 
+  const updateHeroContent = (data: Partial<HeroContent>) => {
+    setContent(prev => ({ ...prev, heroContent: { ...prev.heroContent, ...data } }));
+  };
+
   const updateVideoLink = (key: keyof SiteContent['videoLinks'], data: Partial<VideoLink>) => {
     setContent(prev => ({
       ...prev,
@@ -216,6 +249,7 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
     <ContentContext.Provider value={{
       content,
       updateEventDetails,
+      updateHeroContent,
       updateVideoLink,
       setTrustedBrands,
       setAiTools,

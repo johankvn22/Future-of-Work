@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   Settings, Users, MessageSquare, DollarSign, HelpCircle,
-  Package, Layers, Trash2, Plus, Edit2, Save,
+  Package, Layers, Trash2, Plus, Edit2, Save, Sparkles,
   LogOut, ExternalLink, Check, Upload, Star, BookOpen,
   Target, Video, Building2, ArrowLeft, X, Cpu
 } from 'lucide-react';
-import { useContent, EventDetails, AiTool, TrustedBrand, PainPoint, ProgramPillar } from '../data/ContentContext';
+import { useContent, EventDetails, HeroContent, AiTool, TrustedBrand, PainPoint, ProgramPillar } from '../data/ContentContext';
 import { Speaker, Testimonial, Deliverable, PricingPackage, FaqItem } from '../types';
 
 interface AdminDashboardProps {
@@ -14,6 +14,7 @@ interface AdminDashboardProps {
 }
 
 type TabId =
+  | 'hero'
   | 'event'
   | 'videos'
   | 'pain_points'
@@ -30,6 +31,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, onBack
   const {
     content,
     updateEventDetails,
+    updateHeroContent,
     updateVideoLink,
     setTrustedBrands,
     setAiTools,
@@ -42,12 +44,30 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, onBack
     setFaqItems,
   } = useContent();
 
-  const [activeTab, setActiveTab] = useState<TabId>('event');
+  const [activeTab, setActiveTab] = useState<TabId>('hero');
   const [toast, setToast] = useState<string | null>(null);
 
   const showToast = (msg: string) => {
     setToast(msg);
     setTimeout(() => setToast(null), 3000);
+  };
+
+  // ─── HERO CONTENT ────────────────────────────────────────────────────────────
+  const [heroForm, setHeroForm] = useState({ ...content.heroContent });
+  const [heroBulletsText, setHeroBulletsText] = useState((content.heroContent.bulletPoints || []).join('\n'));
+
+  useEffect(() => {
+    setHeroForm({ ...content.heroContent });
+    setHeroBulletsText((content.heroContent.bulletPoints || []).join('\n'));
+  }, [content.heroContent]);
+
+  const handleSaveHero = (e: React.FormEvent) => {
+    e.preventDefault();
+    updateHeroContent({
+      ...heroForm,
+      bulletPoints: heroBulletsText.split('\n').map(s => s.trim()).filter(Boolean),
+    });
+    showToast('Hero section berhasil disimpan!');
   };
 
   // ─── EVENT DETAILS ──────────────────────────────────────────────────────────
@@ -287,6 +307,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, onBack
 
   // ─── Sidebar Tabs ───────────────────────────────────────────────────────────
   const tabs: { id: TabId; label: string; icon: React.ReactNode; count?: number }[] = [
+    { id: 'hero', label: 'Hero Section Text', icon: <Sparkles className="w-4 h-4 text-amber-400" /> },
     { id: 'event', label: 'Detail Event & Kontak', icon: <Settings className="w-4 h-4" /> },
     { id: 'videos', label: 'Video Embed Links', icon: <Video className="w-4 h-4" /> },
     { id: 'pain_points', label: 'Pain Points Masalah', icon: <Target className="w-4 h-4" />, count: content.painPoints.length },
@@ -381,6 +402,61 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, onBack
         </header>
 
         <div className="flex-1 overflow-auto p-6 md:p-8">
+
+          {/* ─── TAB: HERO SECTION ─────────────────────────────────────────── */}
+          {activeTab === 'hero' && (
+            <div className="max-w-3xl space-y-6">
+              <form onSubmit={handleSaveHero} className="bg-[#111827] p-6 rounded-2xl border border-slate-800 space-y-5">
+                <h3 className="font-bold text-sm text-white">Edit Teks Hero Section</h3>
+
+                <div>
+                  <label className={labelClass}>Eyebrow (Teks Atas Sub-Judul)</label>
+                  <input className={inputClass} value={heroForm.eyebrowText} onChange={e => setHeroForm(p => ({...p, eyebrowText: e.target.value}))} />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className={labelClass}>Headline Utama</label>
+                    <input className={inputClass} value={heroForm.headlineText} onChange={e => setHeroForm(p => ({...p, headlineText: e.target.value}))} />
+                  </div>
+                  <div>
+                    <label className={labelClass}>Headline Highlight (Teks Biru)</label>
+                    <input className={inputClass} value={heroForm.headlineHighlight} onChange={e => setHeroForm(p => ({...p, headlineHighlight: e.target.value}))} />
+                  </div>
+                </div>
+
+                <div>
+                  <label className={labelClass}>Deskripsi Utama (Paragraf)</label>
+                  <textarea rows={3} className={inputClass} value={heroForm.descriptionText} onChange={e => setHeroForm(p => ({...p, descriptionText: e.target.value}))} />
+                </div>
+
+                <div>
+                  <label className={labelClass}>Callout Highlight (Teks Italic Border Biru)</label>
+                  <textarea rows={2} className={inputClass} value={heroForm.calloutText} onChange={e => setHeroForm(p => ({...p, calloutText: e.target.value}))} />
+                </div>
+
+                <div>
+                  <label className={labelClass}>Poin-poin Keunggulan / Bullets (1 per baris)</label>
+                  <textarea rows={4} className={inputClass} value={heroBulletsText} onChange={e => setHeroBulletsText(e.target.value)} />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className={labelClass}>Teks Tombol CTA Utama</label>
+                    <input className={inputClass} value={heroForm.ctaPrimaryText} onChange={e => setHeroForm(p => ({...p, ctaPrimaryText: e.target.value}))} />
+                  </div>
+                  <div>
+                    <label className={labelClass}>Teks Tombol CTA Sekunder</label>
+                    <input className={inputClass} value={heroForm.ctaSecondaryText} onChange={e => setHeroForm(p => ({...p, ctaSecondaryText: e.target.value}))} />
+                  </div>
+                </div>
+
+                <div className="flex justify-end">
+                  <button type="submit" className={btnPrimary}><Save className="w-4 h-4" /> Simpan Hero Section</button>
+                </div>
+              </form>
+            </div>
+          )}
 
           {/* ─── TAB: EVENT DETAILS ─────────────────────────────────────────── */}
           {activeTab === 'event' && (

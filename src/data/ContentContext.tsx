@@ -164,10 +164,10 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
           eventDetails: { ...defaults.eventDetails, ...(parsed.eventDetails || {}) },
           heroContent: { ...defaults.heroContent, ...(parsed.heroContent || {}) },
           videoLinks: {
-            hero: { ...defaults.videoLinks.hero, ...(parsed.videoLinks?.hero || {}), videoSrc: defaults.videoLinks.hero.videoSrc, thumbnailSrc: defaults.videoLinks.hero.thumbnailSrc },
-            testimoni: { ...defaults.videoLinks.testimoni, ...(parsed.videoLinks?.testimoni || {}), videoSrc: defaults.videoLinks.testimoni.videoSrc, thumbnailSrc: defaults.videoLinks.testimoni.thumbnailSrc },
-            portfolioBatch1: { ...defaults.videoLinks.portfolioBatch1, ...(parsed.videoLinks?.portfolioBatch1 || {}), videoSrc: defaults.videoLinks.portfolioBatch1.videoSrc, thumbnailSrc: defaults.videoLinks.portfolioBatch1.thumbnailSrc },
-            portfolioBatch2: { ...defaults.videoLinks.portfolioBatch2, ...(parsed.videoLinks?.portfolioBatch2 || {}), videoSrc: defaults.videoLinks.portfolioBatch2.videoSrc, thumbnailSrc: defaults.videoLinks.portfolioBatch2.thumbnailSrc },
+            hero: { ...defaults.videoLinks.hero, ...(parsed.videoLinks?.hero || {}), videoSrc: defaults.videoLinks.hero.videoSrc, thumbnailSrc: parsed.videoLinks?.hero?.thumbnailSrc || defaults.videoLinks.hero.thumbnailSrc },
+            testimoni: { ...defaults.videoLinks.testimoni, ...(parsed.videoLinks?.testimoni || {}), videoSrc: defaults.videoLinks.testimoni.videoSrc, thumbnailSrc: parsed.videoLinks?.testimoni?.thumbnailSrc || defaults.videoLinks.testimoni.thumbnailSrc },
+            portfolioBatch1: { ...defaults.videoLinks.portfolioBatch1, ...(parsed.videoLinks?.portfolioBatch1 || {}), videoSrc: defaults.videoLinks.portfolioBatch1.videoSrc, thumbnailSrc: parsed.videoLinks?.portfolioBatch1?.thumbnailSrc || defaults.videoLinks.portfolioBatch1.thumbnailSrc },
+            portfolioBatch2: { ...defaults.videoLinks.portfolioBatch2, ...(parsed.videoLinks?.portfolioBatch2 || {}), videoSrc: defaults.videoLinks.portfolioBatch2.videoSrc, thumbnailSrc: parsed.videoLinks?.portfolioBatch2?.thumbnailSrc || defaults.videoLinks.portfolioBatch2.thumbnailSrc },
           },
           trustedBrands: Array.isArray(parsed.trustedBrands) ? parsed.trustedBrands.map((tb: TrustedBrand) => {
             const defaultTb = defaults.trustedBrands.find(d => d.name === tb.name);
@@ -203,10 +203,10 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
       const toSave = {
         ...content,
         videoLinks: {
-          hero: { ...content.videoLinks.hero, videoSrc: '', thumbnailSrc: '' },
-          testimoni: { ...content.videoLinks.testimoni, videoSrc: '', thumbnailSrc: '' },
-          portfolioBatch1: { ...content.videoLinks.portfolioBatch1, videoSrc: '', thumbnailSrc: '' },
-          portfolioBatch2: { ...content.videoLinks.portfolioBatch2, videoSrc: '', thumbnailSrc: '' },
+          hero: { ...content.videoLinks.hero, videoSrc: '' },
+          testimoni: { ...content.videoLinks.testimoni, videoSrc: '' },
+          portfolioBatch1: { ...content.videoLinks.portfolioBatch1, videoSrc: '' },
+          portfolioBatch2: { ...content.videoLinks.portfolioBatch2, videoSrc: '' },
         },
       };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));

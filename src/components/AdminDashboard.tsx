@@ -82,16 +82,38 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, onBack
 
   // ─── VIDEOS ─────────────────────────────────────────────────────────────────
   const [videoForms, setVideoForms] = useState({
-    hero: { url: content.videoLinks.hero.url, title: content.videoLinks.hero.title, description: content.videoLinks.hero.description },
-    testimoni: { url: content.videoLinks.testimoni.url, title: content.videoLinks.testimoni.title, description: content.videoLinks.testimoni.description },
-    portfolioBatch1: { url: content.videoLinks.portfolioBatch1.url, title: content.videoLinks.portfolioBatch1.title, description: content.videoLinks.portfolioBatch1.description },
-    portfolioBatch2: { url: content.videoLinks.portfolioBatch2.url, title: content.videoLinks.portfolioBatch2.title, description: content.videoLinks.portfolioBatch2.description },
+    hero: { url: content.videoLinks.hero.url, title: content.videoLinks.hero.title, description: content.videoLinks.hero.description, thumbnailSrc: content.videoLinks.hero.thumbnailSrc || '' },
+    testimoni: { url: content.videoLinks.testimoni.url, title: content.videoLinks.testimoni.title, description: content.videoLinks.testimoni.description, thumbnailSrc: content.videoLinks.testimoni.thumbnailSrc || '' },
+    portfolioBatch1: { url: content.videoLinks.portfolioBatch1.url, title: content.videoLinks.portfolioBatch1.title, description: content.videoLinks.portfolioBatch1.description, thumbnailSrc: content.videoLinks.portfolioBatch1.thumbnailSrc || '' },
+    portfolioBatch2: { url: content.videoLinks.portfolioBatch2.url, title: content.videoLinks.portfolioBatch2.title, description: content.videoLinks.portfolioBatch2.description, thumbnailSrc: content.videoLinks.portfolioBatch2.thumbnailSrc || '' },
   });
+
+  useEffect(() => {
+    setVideoForms({
+      hero: { url: content.videoLinks.hero.url, title: content.videoLinks.hero.title, description: content.videoLinks.hero.description, thumbnailSrc: content.videoLinks.hero.thumbnailSrc || '' },
+      testimoni: { url: content.videoLinks.testimoni.url, title: content.videoLinks.testimoni.title, description: content.videoLinks.testimoni.description, thumbnailSrc: content.videoLinks.testimoni.thumbnailSrc || '' },
+      portfolioBatch1: { url: content.videoLinks.portfolioBatch1.url, title: content.videoLinks.portfolioBatch1.title, description: content.videoLinks.portfolioBatch1.description, thumbnailSrc: content.videoLinks.portfolioBatch1.thumbnailSrc || '' },
+      portfolioBatch2: { url: content.videoLinks.portfolioBatch2.url, title: content.videoLinks.portfolioBatch2.title, description: content.videoLinks.portfolioBatch2.description, thumbnailSrc: content.videoLinks.portfolioBatch2.thumbnailSrc || '' },
+    });
+  }, [content.videoLinks]);
+
+  const handleVideoThumbnailUpload = (key: keyof typeof videoForms, e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setVideoForms(prev => ({
+        ...prev,
+        [key]: { ...prev[key], thumbnailSrc: reader.result as string }
+      }));
+    };
+    reader.readAsDataURL(file);
+  };
 
   const handleSaveVideo = (e: React.FormEvent, key: keyof typeof videoForms) => {
     e.preventDefault();
     updateVideoLink(key, videoForms[key]);
-    showToast('Video info berhasil disimpan!');
+    showToast('Video info & thumbnail berhasil disimpan!');
   };
 
   // ─── PAIN POINTS ────────────────────────────────────────────────────────────
@@ -539,6 +561,20 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, onBack
                   <div>
                     <label className={labelClass}>URL Instagram Reel</label>
                     <input className={inputClass} value={videoForms[key].url} onChange={e => setVideoForms(p => ({...p, [key]: {...p[key], url: e.target.value}}))} placeholder="https://www.instagram.com/reel/..." />
+                  </div>
+                  <div>
+                    <label className={labelClass}>Thumbnail Video (Upload Image File)</label>
+                    <div className="flex items-center gap-3">
+                      <label className="flex-1 bg-slate-900 border border-slate-700 hover:border-slate-600 rounded-xl px-3 py-2.5 text-xs text-slate-300 flex items-center justify-center gap-2 cursor-pointer font-bold transition-colors">
+                        <Upload className="w-3.5 h-3.5 text-cyan-400" /> {videoForms[key].thumbnailSrc ? 'Ganti Thumbnail Image' : 'Upload Thumbnail Image'}
+                        <input type="file" accept="image/*" onChange={e => handleVideoThumbnailUpload(key, e)} className="hidden" />
+                      </label>
+                      {videoForms[key].thumbnailSrc && (
+                        <div className="w-16 h-10 rounded-xl overflow-hidden bg-black border border-slate-700 shrink-0">
+                          <img src={videoForms[key].thumbnailSrc} alt="thumbnail preview" className="w-full h-full object-cover" />
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <div>
                     <label className={labelClass}>Deskripsi Singkat</label>

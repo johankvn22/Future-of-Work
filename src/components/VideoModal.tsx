@@ -45,7 +45,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
     }
   };
 
-  const matchedVideo = Object.values(VIDEO_LINKS).find((v) => v.url === videoUrl || v.embedUrl === videoUrl);
+  const matchedVideo = (Object.values(VIDEO_LINKS) as Array<{ url?: string; embedUrl?: string; videoSrc?: string; thumbnailSrc?: string }>).find((v) => v.url === videoUrl || v.embedUrl === videoUrl);
   const videoToPlay = matchedVideo?.videoSrc;
   const posterToUse = matchedVideo?.thumbnailSrc;
 

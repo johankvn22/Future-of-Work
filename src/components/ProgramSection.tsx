@@ -114,10 +114,13 @@ export const ProgramSection: React.FC<ProgramSectionProps> = ({ onOpenRegister }
             {AI_TOOLS.map((tool, idx) => (
               <div
                 key={idx}
-                className="px-5 py-3 rounded-xl bg-[#F8FAFC] border border-slate-200 text-[#0F172A] text-sm font-display font-bold shadow-xs hover:border-slate-300 hover:shadow-sm transition-all flex items-center gap-3"
+                className="px-5 py-3.5 rounded-xl bg-[#F8FAFC] border border-slate-200 shadow-xs hover:border-slate-300 hover:shadow-sm transition-all flex items-center justify-center"
               >
-                <img src={tool.logo} alt={tool.name} className="h-6 sm:h-7 w-auto max-w-[90px] object-contain shrink-0" />
-                <span>{tool.name}</span>
+                <img
+                  src={tool.logo}
+                  alt={tool.name}
+                  className="h-7 sm:h-9 w-auto max-w-[125px] sm:max-w-[160px] object-contain shrink-0"
+                />
               </div>
             ))}
           </div>

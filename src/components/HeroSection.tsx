@@ -102,14 +102,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                 <p className="text-[10px] sm:text-xs font-display font-extrabold uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-1">
                   <Sparkles className="w-3 h-3 text-amber-500" /> AI Tools yang Dikuasai:
                 </p>
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
                   {AI_TOOLS.map((tool) => (
                     <div
                       key={tool.name}
-                      className="bg-slate-100 hover:bg-slate-200/80 border border-slate-200 text-slate-800 font-display font-bold text-[11px] sm:text-xs px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow-2xs hover:scale-105 transition-all"
+                      className="bg-slate-100 hover:bg-slate-200/90 border border-slate-200/90 px-3.5 sm:px-4 py-2 rounded-xl flex items-center justify-center shadow-2xs hover:scale-105 transition-all"
                     >
-                      <img src={tool.logo} alt={tool.name} className="h-3.5 sm:h-4 w-auto max-w-[50px] sm:max-w-[60px] object-contain shrink-0" />
-                      <span>{tool.name}</span>
+                      <img
+                        src={tool.logo}
+                        alt={tool.name}
+                        className="h-4.5 sm:h-5.5 w-auto max-w-[85px] sm:max-w-[115px] object-contain shrink-0"
+                      />
                     </div>
                   ))}
                 </div>

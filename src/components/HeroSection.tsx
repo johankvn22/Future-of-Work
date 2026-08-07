@@ -106,12 +106,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                   {AI_TOOLS.map((tool) => (
                     <div
                       key={tool.name}
-                      className="bg-slate-100 hover:bg-slate-200/90 border border-slate-200/90 px-3.5 sm:px-4 py-2 rounded-xl flex items-center justify-center shadow-2xs hover:scale-105 transition-all"
+                      className="bg-slate-100 hover:bg-slate-200/90 border border-slate-200/90 px-3.5 sm:px-4 py-2 rounded-xl flex items-center justify-center shadow-2xs hover:scale-105 transition-all min-h-[38px] sm:min-h-[44px]"
                     >
                       <img
                         src={tool.logo}
                         alt={tool.name}
-                        className="h-4.5 sm:h-5.5 w-auto max-w-[85px] sm:max-w-[115px] object-contain shrink-0"
+                        className={`w-auto object-contain shrink-0 ${
+                          tool.name === 'NotebookLM'
+                            ? 'h-5 sm:h-6 max-w-[105px] sm:max-w-[135px]'
+                            : tool.name === 'FlowBuddy'
+                            ? 'h-5 sm:h-6.5 max-w-[110px] sm:max-w-[135px]'
+                            : 'h-4.5 sm:h-5.5 max-w-[85px] sm:max-w-[110px]'
+                        }`}
                       />
                     </div>
                   ))}

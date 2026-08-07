@@ -64,32 +64,32 @@ export const Header: React.FC<HeaderProps> = ({ onOpenRegister }) => {
   ];
 
   return (
-    <>
+    <div className="sticky top-0 z-50">
       {/* Top Bar Announcement */}
-      <div className="bg-gradient-to-r from-amber-700 via-amber-500 to-amber-700 text-slate-950 text-xs font-bold py-2.5 px-4 sticky top-0 z-50 shadow-md">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-center sm:text-left">
-          <div className="flex items-center justify-center gap-2 mx-auto sm:mx-0">
-            <span className="bg-slate-950 text-amber-400 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-md flex items-center gap-1">
+      <div className="bg-gradient-to-r from-amber-700 via-amber-500 to-amber-700 text-slate-950 text-[11px] sm:text-xs font-bold py-1.5 sm:py-2.5 px-3 sm:px-4 shadow-md">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2 text-center sm:text-left">
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 mx-auto sm:mx-0">
+            <span className="bg-slate-950 text-amber-400 text-[9px] sm:text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded flex items-center gap-1 shrink-0">
               <Sparkles className="w-3 h-3 animate-pulse" /> EXECUTIVE PROGRAM
             </span>
-            <span className="font-display font-extrabold tracking-tight">🔥 SPECIAL PRICE &amp; BONUS — 10 PENDAFTAR PERTAMA</span>
+            <span className="font-display font-extrabold tracking-tight text-[10px] sm:text-xs truncate">🔥 SPECIAL PRICE — 10 PENDAFTAR PERTAMA</span>
           </div>
 
-          <div className="flex items-center justify-center gap-2 mx-auto sm:mx-0">
-            <Clock className="w-3.5 h-3.5 text-slate-900" />
-            <span className="text-[11px] opacity-90 hidden md:inline font-semibold">Hitung Mundur Pendaftaran:</span>
-            <div className="flex items-center gap-1 font-display font-extrabold text-xs bg-slate-950 text-amber-400 px-2 py-1 rounded-md shadow-xs">
-              <span>{String(timeLeft.days).padStart(2, '0')}<small className="text-[8px] block text-amber-300 -mt-0.5">HARI</small></span>:
-              <span>{String(timeLeft.hours).padStart(2, '0')}<small className="text-[8px] block text-amber-300 -mt-0.5">JAM</small></span>:
-              <span>{String(timeLeft.minutes).padStart(2, '0')}<small className="text-[8px] block text-amber-300 -mt-0.5">MNT</small></span>:
-              <span>{String(timeLeft.seconds).padStart(2, '0')}<small className="text-[8px] block text-amber-300 -mt-0.5">DTK</small></span>
+          <div className="flex items-center justify-center gap-1.5 mx-auto sm:mx-0">
+            <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-slate-900 shrink-0" />
+            <span className="text-[10px] sm:text-[11px] opacity-90 hidden sm:inline font-semibold">Pendaftaran:</span>
+            <div className="flex items-center gap-1 font-display font-extrabold text-[10px] sm:text-xs bg-slate-950 text-amber-400 px-1.5 py-0.5 rounded shadow-xs">
+              <span>{String(timeLeft.days).padStart(2, '0')}<small className="text-[7px] sm:text-[8px] block text-amber-300 -mt-0.5">HARI</small></span>:
+              <span>{String(timeLeft.hours).padStart(2, '0')}<small className="text-[7px] sm:text-[8px] block text-amber-300 -mt-0.5">JAM</small></span>:
+              <span>{String(timeLeft.minutes).padStart(2, '0')}<small className="text-[7px] sm:text-[8px] block text-amber-300 -mt-0.5">MNT</small></span>:
+              <span>{String(timeLeft.seconds).padStart(2, '0')}<small className="text-[7px] sm:text-[8px] block text-amber-300 -mt-0.5">DTK</small></span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Sticky Navigation Header */}
-      <header className={`sticky top-[37px] z-40 transition-all duration-300 ${scrolled ? 'bg-[#0B1628]/95 backdrop-blur-md border-b border-white/10 shadow-xl' : 'bg-[#0B1628] border-b border-white/10'}`}>
+      <header className={`transition-all duration-300 ${scrolled ? 'bg-[#0B1628]/95 backdrop-blur-md border-b border-white/10 shadow-xl' : 'bg-[#0B1628] border-b border-white/10'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             
@@ -187,6 +187,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenRegister }) => {
           </div>
         )}
       </header>
-    </>
+    </div>
   );
 };
